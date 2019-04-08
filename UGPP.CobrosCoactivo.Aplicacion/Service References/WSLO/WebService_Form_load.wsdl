@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CONEXION_PPAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CONEXION_PPALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CONEXION_PPALResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CONEXION_DE_UNION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pws" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CONEXION_DE_UNIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CONEXION_DE_UNIONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CONEXION_PPALSoapIn">
+    <wsdl:part name="parameters" element="tns:CONEXION_PPAL" />
+  </wsdl:message>
+  <wsdl:message name="CONEXION_PPALSoapOut">
+    <wsdl:part name="parameters" element="tns:CONEXION_PPALResponse" />
+  </wsdl:message>
+  <wsdl:message name="CONEXION_DE_UNIONSoapIn">
+    <wsdl:part name="parameters" element="tns:CONEXION_DE_UNION" />
+  </wsdl:message>
+  <wsdl:message name="CONEXION_DE_UNIONSoapOut">
+    <wsdl:part name="parameters" element="tns:CONEXION_DE_UNIONResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService_Form_loadSoap">
+    <wsdl:operation name="Retorna_Conexion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la conexión local o pricipal de coactivosyp</wsdl:documentation>
+      <wsdl:input name="CONEXION_PPAL" message="tns:CONEXION_PPALSoapIn" />
+      <wsdl:output name="CONEXION_PPAL" message="tns:CONEXION_PPALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Retorna_Conexion_Union">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve la conexión con la que esta amarado el gestor documental </wsdl:documentation>
+      <wsdl:input name="CONEXION_DE_UNION" message="tns:CONEXION_DE_UNIONSoapIn" />
+      <wsdl:output name="CONEXION_DE_UNION" message="tns:CONEXION_DE_UNIONSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService_Form_loadSoap" type="tns:WebService_Form_loadSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Retorna_Conexion">
+      <soap:operation soapAction="http://tempuri.org/CONEXION_PPAL" style="document" />
+      <wsdl:input name="CONEXION_PPAL">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CONEXION_PPAL">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retorna_Conexion_Union">
+      <soap:operation soapAction="http://tempuri.org/CONEXION_DE_UNION" style="document" />
+      <wsdl:input name="CONEXION_DE_UNION">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CONEXION_DE_UNION">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService_Form_loadSoap12" type="tns:WebService_Form_loadSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Retorna_Conexion">
+      <soap12:operation soapAction="http://tempuri.org/CONEXION_PPAL" style="document" />
+      <wsdl:input name="CONEXION_PPAL">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CONEXION_PPAL">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retorna_Conexion_Union">
+      <soap12:operation soapAction="http://tempuri.org/CONEXION_DE_UNION" style="document" />
+      <wsdl:input name="CONEXION_DE_UNION">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CONEXION_DE_UNION">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService_Form_load">
+    <wsdl:port name="WebService_Form_loadSoap" binding="tns:WebService_Form_loadSoap">
+      <soap:address location="http://localhost:10000/PublicServicios/WebService_Form_load.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService_Form_loadSoap12" binding="tns:WebService_Form_loadSoap12">
+      <soap12:address location="http://localhost:10000/PublicServicios/WebService_Form_load.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

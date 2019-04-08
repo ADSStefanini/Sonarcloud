@@ -1,0 +1,16 @@
+/*
+Nombre		:	SP_TIPOS_TITULO_POR_CARTERA
+Descripcion	:	Consulta todos los tipos de titulo por una cartera
+Parametros	:	@COD_TIPOTITULO AS INT codigo de area origen
+
+Historia	:
+VERSION 	FECHA 			AUTOR 					DESCRIPCION
+1.00.000	2018/11/18		OSCAR GONZALEZ 			CREACION
+*/
+CREATE PROCEDURE [dbo].[c]
+	@ID_TIPO_CARTERA AS INT
+AS
+	SELECT TT.codigo,TT.nombre,TT.COD_PROCEDENCIA,TT.ID_TIPO_CARTERA FROM TIPOS_TITULO TT 	
+	WHERE TT.ID_TIPO_CARTERA = @ID_TIPO_CARTERA
+	
+GO

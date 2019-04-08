@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:HDR5="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" xmlns:HDR3="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" xmlns:tns="http://wmMonitorbrk/ws:SrvIntCobros" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:HDR2="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" xmlns:HDR4="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:HDR1="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SrvIntCobros" targetNamespace="http://wmMonitorbrk/ws:SrvIntCobros" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:dx3="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" xmlns:dx="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" targetNamespace="http://wmMonitorbrk/ws:SrvIntCobros">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" />
+      <xsd:element name="OpIniciarInstanciaPar" type="tns:OpIniciarInstanciaPar" />
+      <xsd:element name="OpIniciarInstanciaParResponse" type="tns:OpIniciarInstanciaParResponse" />
+      <xsd:element name="OpActualizarEstadoInstanciaCobros" type="tns:OpActualizarEstadoInstanciaCobros" />
+      <xsd:element name="OpActualizarEstadoInstanciaCobrosResponse" type="tns:OpActualizarEstadoInstanciaCobrosResponse" />
+      <xsd:complexType name="OpIniciarInstanciaPar">
+        <xsd:sequence>
+          <xsd:element name="IniciarInstanciaCobros" nillable="true" type="tns:IniciarInstanciaCobrosReq" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IniciarInstanciaCobrosReq">
+        <xsd:sequence>
+          <xsd:element name="TituloEjecutivo" nillable="true" type="tns:TituloEjecutivo" />
+          <xsd:element name="ContextoTransaccional" nillable="true" type="dx:ContextoTransaccionalTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TituloEjecutivo">
+        <xsd:sequence>
+          <xsd:element name="idTipoCartera" nillable="true" type="xsd:string" />
+          <xsd:element name="idTipoObligacion" nillable="true" type="xsd:string" />
+          <xsd:element name="numeroExpedienteOrigen" nillable="true" type="xsd:string" />
+          <xsd:element name="idAreaOrigen" nillable="true" type="xsd:string" />
+          <xsd:element name="idTipoTitulo" nillable="true" type="xsd:string" />
+          <xsd:element name="numeroTituloEjecutivo" nillable="true" type="xsd:string" />
+          <xsd:element name="fechaTituloEjecutivo" nillable="true" type="xsd:string" />
+          <xsd:element name="valorObligacion" nillable="true" type="xsd:string" />
+          <xsd:element name="idFormaNotificacion" nillable="true" type="xsd:string" />
+          <xsd:element name="fechaNotificacionTituloEjecutivo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="presentaRecursoReconsideracion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="presentaRecursoReposicion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="existeSentenciaSegundaInstancia" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="existeFalloCasacion" nillable="true" type="xsd:string" />
+          <xsd:element name="Deudor" nillable="true" type="tns:Deudor" />
+          <xsd:element maxOccurs="unbounded" name="Documentos" nillable="true" type="tns:Documento" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Deudor">
+        <xsd:sequence>
+          <xsd:element name="idTipoPersona" nillable="true" type="xsd:string" />
+          <xsd:element name="idTipoIdentificacion" nillable="true" type="xsd:string" />
+          <xsd:element name="nombreCompleto" nillable="true" type="xsd:string" />
+          <xsd:element name="numeroIdentificacion" nillable="true" type="xsd:string" />
+          <xsd:element name="DireccionNotificacion" nillable="true" type="tns:DireccionNotificacion" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DireccionNotificacion">
+        <xsd:sequence>
+          <xsd:element name="valDireccionCompleta" nillable="true" type="xsd:string" />
+          <xsd:element name="codDepartamento" nillable="true" type="xsd:string" />
+          <xsd:element name="codCiudad" nillable="true" type="xsd:string" />
+          <xsd:element name="valTelefono" nillable="true" type="xsd:string" />
+          <xsd:element name="valTelefono" nillable="true" type="xsd:string" />
+          <xsd:element name="valEmail" nillable="true" type="xsd:string" />
+          <xsd:element name="idFuenteDireccion" nillable="true" type="xsd:string" />
+          <xsd:element name="idOtrasFuentesDirecciones" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Documento">
+        <xsd:sequence>
+          <xsd:element name="tipoDocumental" nillable="true" type="xsd:string" />
+          <xsd:element name="esValido" nillable="true" type="xsd:string" />
+          <xsd:element maxOccurs="unbounded" name="Observaciones" nillable="true" type="tns:ObservacionesDocumento" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ObservacionesDocumento">
+        <xsd:sequence>
+          <xsd:element name="usuario" nillable="true" type="xsd:string" />
+          <xsd:element name="fecha" nillable="true" type="xsd:string" />
+          <xsd:element name="detalle" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="idTx">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:length value="36" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaProceso">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idDefinicionProceso">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="valNombreDefinicionProceso">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="100" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaActividad">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="valNombreDefinicionActividad">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="100" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="OpIniciarInstanciaParResponse">
+        <xsd:sequence>
+          <xsd:element name="RspIniciarInstanciaCobros" nillable="true" type="tns:IniciarInstanciaCobrosResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IniciarInstanciaCobrosResp">
+        <xsd:sequence>
+          <xsd:element name="ContextoRespuesta" nillable="true" type="dx3:FalloTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="idTx2">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:length value="36" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaProceso2">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaActividad2">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="OpActualizarEstadoInstanciaCobros">
+        <xsd:sequence>
+          <xsd:element name="ActualizacionEstadoProcesoCobrosReq" nillable="true" type="tns:ActualizacionEstadoProcesoCobrosReq" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ActualizacionEstadoProcesoCobrosReq">
+        <xsd:sequence>
+          <xsd:element name="idTituloOrigen" nillable="true" type="xsd:string" />
+          <xsd:element name="idTipoCartera" nillable="true" type="xsd:string" />
+          <xsd:element name="resultadoEvaluacion" nillable="true" type="xsd:string" />
+          <xsd:element name="observacionesEvaluacionTitulo" nillable="true" type="xsd:string" />
+          <xsd:element name="usuarioEvaluador" nillable="true" type="xsd:string" />
+          <xsd:element name="fechaEvaluacion" nillable="true" type="xsd:string" />
+          <xsd:element maxOccurs="unbounded" name="documentos" nillable="true" type="tns:DocumentoCobros" />
+          <xsd:element name="ContextoTransaccional" nillable="true" type="dx:ContextoTransaccionalTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DocumentoCobros">
+        <xsd:sequence>
+          <xsd:element name="valNombreDocumento" nillable="true" type="xsd:string" />
+          <xsd:element name="codDocumentic" nillable="true" type="xsd:string" />
+          <xsd:element name="codTipoDocumento" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="observacionesDocumento" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpActualizarEstadoInstanciaCobrosResponse">
+        <xsd:sequence>
+          <xsd:element name="RspActualizacionEstadoProcesoCobros" nillable="true" type="tns:ActualizacionEstadoProcesoCobrosResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ActualizacionEstadoProcesoCobrosResp">
+        <xsd:sequence>
+          <xsd:element name="ContextoRespuesta" nillable="true" type="dx3:FalloTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx5="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1">
+      <xsd:complexType name="ErrorTipo">
+        <xsd:sequence>
+          <xsd:element name="codError" nillable="true" type="xsd:string" />
+          <xsd:element name="valDescError" nillable="true" type="xsd:string" />
+          <xsd:element name="valDescErrorTecnico" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx3="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" xmlns:dx4="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" xmlns:dx5="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" />
+      <xsd:complexType name="FalloTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx4:ContextoRespuestaTipo" />
+          <xsd:element maxOccurs="unbounded" name="errores" type="dx5:ErrorTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx2="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" xmlns:dx="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1">
+      <xsd:import namespace="http://wmMonitorbrk/ws:SrvIntCobros" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" />
+      <xsd:complexType name="ContextoTransaccionalTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="idTx" nillable="true" type="tns:idTx" />
+          <xsd:element name="fechaInicioTx" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="idInstanciaProceso" nillable="true" type="tns:idInstanciaProceso" />
+          <xsd:element minOccurs="0" name="idDefinicionProceso" nillable="true" type="tns:idDefinicionProceso" />
+          <xsd:element minOccurs="0" name="valNombreDefinicionProceso" nillable="true" type="tns:valNombreDefinicionProceso" />
+          <xsd:element minOccurs="0" name="idInstanciaActividad" nillable="true" type="tns:idInstanciaActividad" />
+          <xsd:element minOccurs="0" name="valNombreDefinicionActividad" nillable="true" type="tns:valNombreDefinicionActividad" />
+          <xsd:element name="idUsuarioAplicacion" type="xsd:string" />
+          <xsd:element name="valClaveUsuarioAplicacion" type="xsd:string" />
+          <xsd:element name="idUsuario" type="xsd:string" />
+          <xsd:element name="idEmisor" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valTamPagina" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="valNumPagina" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="criteriosOrdenamiento" nillable="true" type="dx2:CriterioOrdenamientoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx2="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" targetNamespace="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo">
+      <xsd:complexType name="CriterioOrdenamientoTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="valOrden" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="valNombreCampo" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx4="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1">
+      <xsd:import namespace="http://wmMonitorbrk/ws:SrvIntCobros" />
+      <xsd:complexType name="ContextoRespuestaTipo">
+        <xsd:sequence>
+          <xsd:element name="idTx" type="tns:idTx2" />
+          <xsd:element name="codEstadoTx" type="xsd:string" />
+          <xsd:element name="fechaTx" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="idInstanciaProceso" nillable="true" type="tns:idInstanciaProceso2" />
+          <xsd:element minOccurs="0" name="idInstanciaActividad" nillable="true" type="tns:idInstanciaActividad2" />
+          <xsd:element minOccurs="0" name="valCantidadPaginas" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="valNumPagina" nillable="true" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SrvIntCobros_PortType_OpActualizarEstadoInstanciaCobros">
+    <wsdl:part name="parameters" element="tns:OpActualizarEstadoInstanciaCobros" />
+  </wsdl:message>
+  <wsdl:message name="SrvIntCobros_PortType_OpActualizarEstadoInstanciaCobrosResponse">
+    <wsdl:part name="parameters" element="tns:OpActualizarEstadoInstanciaCobrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="SrvIntCobros_PortType_OpIniciarInstanciaParResponse">
+    <wsdl:part name="parameters" element="tns:OpIniciarInstanciaParResponse" />
+  </wsdl:message>
+  <wsdl:message name="SrvIntCobros_PortType_OpIniciarInstanciaPar">
+    <wsdl:part name="parameters" element="tns:OpIniciarInstanciaPar" />
+  </wsdl:message>
+  <wsdl:portType name="SrvIntCobros_PortType">
+    <wsdl:operation name="OpActualizarEstadoInstanciaCobros">
+      <wsdl:input message="tns:SrvIntCobros_PortType_OpActualizarEstadoInstanciaCobros" />
+      <wsdl:output message="tns:SrvIntCobros_PortType_OpActualizarEstadoInstanciaCobrosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="OpIniciarInstanciaPar">
+      <wsdl:input message="tns:SrvIntCobros_PortType_OpIniciarInstanciaPar" />
+      <wsdl:output message="tns:SrvIntCobros_PortType_OpIniciarInstanciaParResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ws_SrvIntCobros_Binder" type="tns:SrvIntCobros_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpActualizarEstadoInstanciaCobros">
+      <soap:operation soapAction="ws_SrvIntCobros_Binder_OpActualizarEstadoInstanciaCobros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpIniciarInstanciaPar">
+      <soap:operation soapAction="ws_SrvIntCobros_Binder_OpIniciarInstanciaPar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ws.SrvIntCobros">
+    <wsdl:port name="ws_SrvIntCobros_Port" binding="tns:ws_SrvIntCobros_Binder">
+      <soap:address location="http://ACUGPPR68.ugppdc.local:5565/ws/ws:SrvIntCobros/ws_SrvIntCobros_Port" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

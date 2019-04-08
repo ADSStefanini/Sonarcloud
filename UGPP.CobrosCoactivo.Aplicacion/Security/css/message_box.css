@@ -1,0 +1,43 @@
+﻿/*  barra de la izquierda flotante */
+#message_box {
+position: absolute;
+top:200px; 
+left: 0;
+
+background-color:#094194;
+padding:0px;
+margin:0px;
+
+z-index:100;
+border:1px solid #0E0F10;
+
+-moz-box-shadow: 5px 5px 10px #000; /* Firefox */
+-webkit-box-shadow: 5px 5px 10px #000; /* Safari y Chrome */
+box-shadow: 5px 5px 10px #000;
+}
+
+#message_box ol, #message_box ul, #message_box li, #message_box a {
+border:0pt none;
+margin:0pt;
+padding:0pt;
+vertical-align:baseline;
+}
+#message_box ul{
+list-style: none;
+list-style-type: none;
+list-style-position: outside;
+}
+#message_box ul li{
+line-height: 0em;
+}
+#message_box li a 
+{
+text-decoration:none;
+display: block;
+outline: none !Important;
+}
+#message_box li a img 
+{
+border: none;
+}
+/* fin de la barra izquierda flotante  */

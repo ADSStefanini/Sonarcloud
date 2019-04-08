@@ -1,0 +1,7 @@
+SELECT     dbo.PAGOS.NroConsignacion, dbo.PAGOS.NroExp, dbo.PAGOS.FecSolverif, dbo.PAGOS.FecVerificado, dbo.PAGOS.pagFecha, dbo.PAGOS.pagFechaDeudor, 
+                      dbo.PAGOS.pagTotal, dbo.PAGOS.estado, dbo.ESTADOS_PAGO.nombre AS NombreEstadoPago, dbo.USUARIOS.nombre AS NombreUsuario, 
+                      dbo.ESTADOS_PROCESO.nombre AS NombreEstadoProc
+FROM         dbo.PAGOS LEFT OUTER JOIN
+                      dbo.ESTADOS_PAGO ON dbo.PAGOS.estado = dbo.ESTADOS_PAGO.codigo LEFT OUTER JOIN
+                      dbo.USUARIOS ON dbo.PAGOS.UserSolicita = dbo.USUARIOS.codigo LEFT OUTER JOIN
+                      dbo.ESTADOS_PROCESO ON dbo.PAGOS.pagestadoprocfrp = dbo.ESTADOS_PROCESO.codigo

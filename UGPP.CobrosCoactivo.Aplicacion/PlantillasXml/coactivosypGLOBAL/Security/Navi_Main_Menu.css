@@ -1,0 +1,291 @@
+body 
+{
+	text-align:center;
+	margin:0;
+	background-color:#01557c;
+	align:center;
+}
+
+
+#message_box {
+	position: absolute;
+	top: 0; left: 0;
+	z-index: 10;
+	background:#ffc;
+	padding:5px;
+	border:1px solid #0c4397;
+	text-align:left;
+	font-size:11px;
+	color:#EFEDED;
+	
+	background-image:url(Menu_PPal/Li.png);
+	width:98%;
+	font-family:Verdana,Geneva, sans-serif;
+	opacity:0;
+}
+		 
+div#container
+{
+	position:absolute; 
+}
+
+.idDivMSN
+{
+	float:left;
+	width:608px;
+
+	padding:10px;
+	opacity:0;
+	text-align:left;
+	font-family:Verdana,Geneva, sans-serif;
+	font-size:10px;
+
+	border-left:2px solid #40bedf;
+	border-bottom:2px solid #40bedf;
+
+	background-color:white;
+	background-image:url(Menu_PPal/msn.png);
+	background-repeat: repeat-x;
+}		 		 	 
+.opcion 
+{
+	text-align:center;
+							
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:10px;
+	font-style: normal;
+	font-weight: normal;
+	color:white;
+	
+	float:left;
+	margin:8px;
+	
+	padding:8px;					
+	position:relative;
+	width:115px; 
+}
+	 
+.opcion div#usuario a.imagen1
+{
+		 
+	background-image:url(Menu_PPal/usuarios2.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+			
+	display:block;
+	width:115px; 
+	height:75px; 
+}
+		  
+.opcion div#usuario a.imagen1 span.hover 
+{
+	background-image:url(Menu_PPal/usuarios.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+				
+	position: absolute !important;
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+				 
+.opcion div#caClave a.imagen2
+{	 
+	background-image:url(Menu_PPal/Keys2.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+			
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+		  
+.opcion div#caClave a.imagen2 span.hover 
+{
+	background-image:url(Menu_PPal/Keys.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+		
+	position: absolute !important;
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+
+/* Opcion Cerrar sesion */
+.opcion div#Cerrars a.imagen2
+{	 
+	background-image:url(Menu_PPal/Shutdown2.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+			
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+		  
+.opcion div#Cerrars a.imagen2 span.hover 
+{
+	background-image:url(Menu_PPal/Shutdown.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+		
+	position: absolute !important;
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+
+/*--------------------*/
+/* MENU DE CONSULTOR */	
+/*------------------*/
+
+/* Consultar expedientes */
+.opcion div#ConExp a.imagen2
+{	 
+	background-image:url(Menu_PPal/My-Documents2.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+			
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+		  
+.opcion div#ConExp a.imagen2 span.hover 
+{
+	background-image:url(Menu_PPal/My-Documents.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+		
+	position: absolute !important;
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+
+/* Actualizar expedientes */
+.opcion div#ActExp a.imagen2
+{	 
+	background-image:url(Menu_PPal/actualizar2.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+			
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+		  
+.opcion div#ActExp a.imagen2 span.hover 
+{
+	background-image:url(Menu_PPal/actualizar.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+		
+	position: absolute !important;
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+
+/* Consulta diaria */
+.opcion div#ConDia a.imagen2
+{	 
+	background-image:url(Menu_PPal/Search2.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+			
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+		  
+.opcion div#ConDia a.imagen2 span.hover 
+{
+	background-image:url(Menu_PPal/Search.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+		
+	position: absolute !important;
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+
+
+/*--------------------*/
+/* MENU DE PREDIAL */	
+/*------------------*/
+/* Predial */
+
+.opcion div#OpPredial a.imagen2
+{	 
+	background-image:url(Menu_PPal/Predial2.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+			
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+		  
+.opcion div#OpPredial a.imagen2 span.hover 
+{
+	background-image:url(Menu_PPal/Predial.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+		
+	position: absolute !important;
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+
+/* Gestión de actuaciones */
+.opcion div#opActuaciones a.imagen2
+{	 
+	background-image:url(Menu_PPal/imgopActuaciones2.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+			
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+		  
+.opcion div#opActuaciones a.imagen2 span.hover 
+{
+	background-image:url(Menu_PPal/imgopActuaciones.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+		
+	position: absolute !important;
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+
+
+/* Historico */
+.opcion div#opHistoricoexp a.imagen2
+{	 
+	background-image:url(Menu_PPal/HistoriCalendar2.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+			
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}
+		  
+.opcion div#opHistoricoexp a.imagen2 span.hover 
+{
+	background-image:url(Menu_PPal/HistoriCalendar.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+		
+	position: absolute !important;
+	display:block;
+	width:115px; /* Ancho */
+	height:75px; /* Alto */
+}

@@ -1,0 +1,45 @@
+﻿.xxtabla {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+text-align: left;
+font-family: Arial;
+text-transform: uppercase;
+background-color: #EDEDE9;
+margin:0px;
+width:100%;
+font-style:normal;
+}
+
+.xxtabla th 
+{
+font-size:11px;
+padding: 2px;
+background-color: #e3e2e2;
+color: #000000;
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-right-style: solid;
+border-bottom-style: solid;
+border-right-color: #6E6E6E;
+border-bottom-color: #6E6E6E;
+font-weight:bold;
+text-align:left;
+}
+.xxtabla td 
+{
+font-size:11px;
+padding: 2px;
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-right-style: solid;
+border-bottom-style: solid;
+border-right-color: #D8D8D8;
+border-bottom-color: #D8D8D8;
+
+background-color: #EDEDE9;
+color: #34484E;
+}
+.to
+{
+color:#FF0000;
+}

@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:HDR10="http://www.ugpp.gov.co/schema/GestionDocumental/DocumentoTipo/v1" xmlns:HDR11="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1" xmlns:HDR16="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" xmlns:HDR17="http://www.ugpp.gov.co/schema/GestionDocumental/DatosPlantillaTipo/v1" xmlns:HDR14="http://www.ugpp.gov.co/esb/schema/ContactoPersonaTipo/v1" xmlns:HDR15="http://www.ugpp.gov.co/schema/GestionDocumental/PlantillaTipo/v1" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://192.168.64.128/AP_SRV_GestionDocumental.co.gov.ugpp.srv.gestionDocumental.proveedor.documento:SrvIntDocumento" xmlns:HDR4="http://www.ugpp.gov.co/schema/GestionDocumental/MetadataDocumentoTipo/v1" xmlns:HDR7="http://www.ugpp.gov.co/esb/schema/UbicacionPersonaTipo/v1" xmlns:HDR8="http://www.ugpp.gov.co/schema/Transversales/CorreoElectronicoTipo/v1" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:HDR5="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1" xmlns:HDR3="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:HDR2="http://www.ugpp.gov.co/schema/GestionDocumental/CorrespondenciaTipo/v1" xmlns:HDR1="http://www.ugpp.gov.co/schema/GestionDocumental/ArchivoTipo/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:HDR6="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" xmlns:HDR22="http://www.ugpp.gov.co/esb/schema/DepartamentoTipo/v1" xmlns:HDR20="http://www.ugpp.gov.co/schema/Transversales/ValidacionDocumentoTipo/v1" xmlns:HDR21="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1" xmlns:tns1="http://www.ugpp.gov.co/GestionDocumental/SrvIntDocumento/v1" xmlns:HDR18="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" xmlns:HDR19="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:HDR9="http://www.ugpp.gov.co/esb/schema/TelefonoTipo/v1" xmlns:HDR12="http://www.ugpp.gov.co/schema/GestionDocumental/ExpedienteTipo/v1" xmlns:HDR13="http://www.ugpp.gov.co/esb/schema/PersonaNaturalTipo/v1" name="VS_SrvIntDocumento" targetNamespace="http://www.ugpp.gov.co/GestionDocumental/SrvIntDocumento/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation />
+  <wsdl:types>
+    <xsd:schema xmlns:dx4="http://www.ugpp.gov.co/schema/GestionDocumental/ArchivoTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/GestionDocumental/ArchivoTipo/v1">
+      <xsd:complexType name="ArchivoTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="valNombreArchivo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="idArchivo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valContenidoArchivo" nillable="true" type="xsd:base64Binary" />
+          <xsd:element minOccurs="0" name="valContenidoFirma" nillable="true" type="xsd:base64Binary" />
+          <xsd:element minOccurs="0" name="codTipoMIMEArchivo" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx9="http://www.ugpp.gov.co/esb/schema/PersonaNaturalTipo/v1" xmlns:dx8="http://www.ugpp.gov.co/schema/GestionDocumental/CorrespondenciaTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/GestionDocumental/CorrespondenciaTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/PersonaNaturalTipo/v1" />
+      <xsd:complexType name="CorrespondenciaTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="codEntidadOriginadora" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codEntidadOriginadoraInicial" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNombreEntidadOriginadora" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codMedioRecepcion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codMedioEnvio" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNombreEntidadCorrespondencia" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codPais" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codTipoCliente" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codPuntoImpresion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codSede" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codTipoEnvio" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valDescripcionAnexos" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codDependencia" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codPuntoRecepcion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codTipoCorrespondencia" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNombreProceso" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valIndRequiereRespuestaNotificacion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="personaNatural" nillable="true" type="dx9:PersonaNaturalTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx18="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1">
+      <xsd:complexType name="ErrorTipo">
+        <xsd:sequence>
+          <xsd:element name="codError" nillable="true" type="xsd:string" />
+          <xsd:element name="valDescError" nillable="true" type="xsd:string" />
+          <xsd:element name="valDescErrorTecnico" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx5="http://www.ugpp.gov.co/schema/GestionDocumental/MetadataDocumentoTipo/v1" xmlns:dx6="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/GestionDocumental/MetadataDocumentoTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1" />
+      <xsd:complexType name="MetadataDocumentoTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="serieDocumental" nillable="true" type="dx6:SerieDocumentalTipo" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="valAgrupador" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx11="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1" xmlns:dx12="http://www.ugpp.gov.co/esb/schema/DepartamentoTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/DepartamentoTipo/v1" />
+      <xsd:complexType name="MunicipioTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="codMunicipio" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNombre" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="departamento" nillable="true" type="dx12:DepartamentoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx8="http://www.ugpp.gov.co/schema/GestionDocumental/CorrespondenciaTipo/v1" xmlns:dx17="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" xmlns:dx7="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" xmlns:dx21="http://www.ugpp.gov.co/schema/GestionDocumental/PlantillaTipo/v1" xmlns:dx19="http://www.ugpp.gov.co/schema/Transversales/ValidacionDocumentoTipo/v1" xmlns:dx="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" xmlns:dx3="http://www.ugpp.gov.co/schema/GestionDocumental/DocumentoTipo/v1" xmlns:dx20="http://www.ugpp.gov.co/schema/GestionDocumental/ExpedienteTipo/v1" xmlns:tns="http://www.ugpp.gov.co/GestionDocumental/SrvIntDocumento/v1" targetNamespace="http://www.ugpp.gov.co/GestionDocumental/SrvIntDocumento/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/GestionDocumental/DocumentoTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/GestionDocumental/CorrespondenciaTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/Transversales/ValidacionDocumentoTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/GestionDocumental/ExpedienteTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/GestionDocumental/PlantillaTipo/v1" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpConsultarDocumento_Input" type="tns:portSrvIntDocumentoSOAP_OpConsultarDocumento_Input" />
+      <xsd:element name="OpConsultarDocumentoSol" nillable="true" type="tns:OpConsultarDocumentoSolTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpConsultarDocumento_Output" type="tns:portSrvIntDocumentoSOAP_OpConsultarDocumento_Output" />
+      <xsd:element name="OpConsultarDocumentoResp" nillable="true" type="tns:OpConsultarDocumentoRespTipo" />
+      <xsd:element name="msjOpConsultarDocumentoFallo" type="tns:msjOpConsultarDocumentoFallo" />
+      <xsd:element name="OpConsultarDocumentoFallo" nillable="true" type="dx17:FalloTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Input" type="tns:portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Input" />
+      <xsd:element name="OpConvertirDocumentoPDFSol" nillable="true" type="tns:OpConvertirDocumentoPDFSolTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Output" type="tns:portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Output" />
+      <xsd:element name="OpConvertirDocumentoPDFResp" nillable="true" type="tns:OpConvertirDocumentoPDFRespTipo" />
+      <xsd:element name="msjOpConvertirDocumentoPDFFallo" type="tns:msjOpConvertirDocumentoPDFFallo" />
+      <xsd:element name="OpConvertirDocumentoPDFFallo" nillable="true" type="dx17:FalloTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Input" type="tns:portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Input" />
+      <xsd:element name="OpDevolverPorValidacionDocumentoSol" nillable="true" type="tns:OpDevolverPorValidacionDocumentoSolTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Output" type="tns:portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Output" />
+      <xsd:element name="OpDevolverPorValidacionDocumentoResp" nillable="true" type="tns:OpDevolverPorValidacionDocumentoRespTipo" />
+      <xsd:element name="msjOpDevolverPorValidacionDocumentoFallo" type="tns:msjOpDevolverPorValidacionDocumentoFallo" />
+      <xsd:element name="OpDevolverPorValidacionDocumentoFallo" nillable="true" type="dx17:FalloTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Input" type="tns:portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Input" />
+      <xsd:element name="OpFirmarDigitalmenteSol" nillable="true" type="tns:OpFirmarDigitalmenteSolTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Output" type="tns:portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Output" />
+      <xsd:element name="OpFirmarDigitalmenteResp" nillable="true" type="tns:OpFirmarDigitalmenteRespTipo" />
+      <xsd:element name="msjOpFirmarDigitalmenteFallo" type="tns:msjOpFirmarDigitalmenteFallo" />
+      <xsd:element name="OpFirmarDigitalmenteFallo" nillable="true" type="dx17:FalloTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Input" type="tns:portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Input" />
+      <xsd:element name="OpGenerarGuardarDocumentoSol" nillable="true" type="tns:OpGenerarGuardarDocumentoSolTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Output" type="tns:portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Output" />
+      <xsd:element name="OpGenerarGuardarDocumentoResp" nillable="true" type="tns:OpGenerarGuardarDocumentoRespTipo" />
+      <xsd:element name="msjOpGenerarGuardarDocumentoFallo" type="tns:msjOpGenerarGuardarDocumentoFallo" />
+      <xsd:element name="OpGenerarGuardarDocumentoFallo" nillable="true" type="dx17:FalloTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Input" type="tns:portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Input" />
+      <xsd:element name="OpGenerarGuardarDocumentoRadicadoSol" nillable="true" type="tns:OpGenerarGuardarDocumentoRadicadoSolTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Output" type="tns:portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Output" />
+      <xsd:element name="OpGenerarGuardarDocumentoRadicadoResp" nillable="true" type="tns:OpGenerarGuardarDocumentoRadicadoRespTipo" />
+      <xsd:element name="msjOpGenerarGuardarDocumentoRadicadoFallo" type="tns:msjOpGenerarGuardarDocumentoRadicadoFallo" />
+      <xsd:element name="OpGenerarGuardarDocumentoRadicadoFallo" nillable="true" type="dx17:FalloTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpIngresarDocumento_Input" type="tns:portSrvIntDocumentoSOAP_OpIngresarDocumento_Input" />
+      <xsd:element name="OpIngresarDocumentoSol" nillable="true" type="tns:OpIngresarDocumentoSolTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpIngresarDocumento_Output" type="tns:portSrvIntDocumentoSOAP_OpIngresarDocumento_Output" />
+      <xsd:element name="OpIngresarDocumentoResp" nillable="true" type="tns:OpIngresarDocumentoRespTipo" />
+      <xsd:element name="msjOpIngresarDocumentoFallo" type="tns:msjOpIngresarDocumentoFallo" />
+      <xsd:element name="OpIngresarDocumentoFallo" nillable="true" type="dx17:FalloTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Input" type="tns:portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Input" />
+      <xsd:element name="OpObtenerInformacionDocumentoSol" nillable="true" type="tns:OpObtenerInformacionDocumentoSolTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Output" type="tns:portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Output" />
+      <xsd:element name="OpObtenerInformacionDocumentoResp" nillable="true" type="tns:OpObtenerInformacionDocumentoRespTipo" />
+      <xsd:element name="msjOpObtenerInformacionDocumentoFallo" type="tns:msjOpObtenerInformacionDocumentoFallo" />
+      <xsd:element name="OpObtenerInformacionDocumentoFallo" nillable="true" type="dx17:FalloTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Input" type="tns:portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Input" />
+      <xsd:element name="OpRecibirDocumentoFirmadoSol" nillable="true" type="tns:OpRecibirDocumentoFirmadoSolTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Output" type="tns:portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Output" />
+      <xsd:element name="OpRecibirDocumentoFirmadoResp" nillable="true" type="tns:OpRecibirDocumentoFirmadoRespTipo" />
+      <xsd:element name="msjOpRecibirDocumentoFirmadoFallo" type="tns:msjOpRecibirDocumentoFirmadoFallo" />
+      <xsd:element name="OpRecibirDocumentoFirmadoFallo" nillable="true" type="dx17:FalloTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpReferenciarDocumento_Input" type="tns:portSrvIntDocumentoSOAP_OpReferenciarDocumento_Input" />
+      <xsd:element name="OpReferenciarDocumentoSol" nillable="true" type="tns:OpReferenciarDocumentoSolTipo" />
+      <xsd:element name="portSrvIntDocumentoSOAP_OpReferenciarDocumento_Output" type="tns:portSrvIntDocumentoSOAP_OpReferenciarDocumento_Output" />
+      <xsd:element name="OpReferenciarDocumentoResp" nillable="true" type="tns:OpReferenciarDocumentoRespTipo" />
+      <xsd:element name="msjOpReferenciarDocumentoFallo" type="tns:msjOpReferenciarDocumentoFallo" />
+      <xsd:element name="OpReferenciarDocumentoFallo" nillable="true" type="dx17:FalloTipo" />
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpConsultarDocumento_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpConsultarDocumentoSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpConsultarDocumentoSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element name="documento" type="dx3:DocumentoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="idTx">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:length value="36" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaProceso">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idDefinicionProceso">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="valNombreDefinicionProceso">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="100" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaActividad">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="valNombreDefinicionActividad">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="100" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpConsultarDocumento_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpConsultarDocumentoResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpConsultarDocumentoRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx7:ContextoRespuestaTipo" />
+          <xsd:element minOccurs="0" name="documento" type="dx3:DocumentoTipo" />
+          <xsd:element minOccurs="0" name="correspondencia" type="dx8:CorrespondenciaTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="idTx2">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:length value="36" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaProceso2">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaActividad2">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="msjOpConsultarDocumentoFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpConsultarDocumentoFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpConvertirDocumentoPDFSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpConvertirDocumentoPDFSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element name="docDocumento" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpConvertirDocumentoPDFResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpConvertirDocumentoPDFRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx7:ContextoRespuestaTipo" />
+          <xsd:element name="docDocumentoPDF" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="msjOpConvertirDocumentoPDFFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpConvertirDocumentoPDFFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpDevolverPorValidacionDocumentoSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpDevolverPorValidacionDocumentoSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element name="validacionDocumento" type="dx19:ValidacionDocumentoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpDevolverPorValidacionDocumentoResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpDevolverPorValidacionDocumentoRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx7:ContextoRespuestaTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="msjOpDevolverPorValidacionDocumentoFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpDevolverPorValidacionDocumentoFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpFirmarDigitalmenteSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpFirmarDigitalmenteSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="idDocumento" type="xsd:string" />
+          <xsd:element minOccurs="0" name="idUsuarioAprobacion" type="xsd:string" />
+          <xsd:element minOccurs="0" name="idUsuarioFirma" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fecVencimiento" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="codAplicacion" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpFirmarDigitalmenteResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpFirmarDigitalmenteRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx7:ContextoRespuestaTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="msjOpFirmarDigitalmenteFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpFirmarDigitalmenteFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpGenerarGuardarDocumentoSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpGenerarGuardarDocumentoSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element name="correspondencia" type="dx8:CorrespondenciaTipo" />
+          <xsd:element name="expediente" type="dx20:ExpedienteTipo" />
+          <xsd:element name="plantilla" type="dx21:PlantillaTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpGenerarGuardarDocumentoResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpGenerarGuardarDocumentoRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx7:ContextoRespuestaTipo" />
+          <xsd:element name="documento" type="dx3:DocumentoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="msjOpGenerarGuardarDocumentoFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpGenerarGuardarDocumentoFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpGenerarGuardarDocumentoRadicadoSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpGenerarGuardarDocumentoRadicadoSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element name="correspondencia" type="dx8:CorrespondenciaTipo" />
+          <xsd:element name="expediente" type="dx20:ExpedienteTipo" />
+          <xsd:element name="idRadicadoSalida" type="xsd:string" />
+          <xsd:element name="plantilla" type="dx21:PlantillaTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpGenerarGuardarDocumentoRadicadoResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpGenerarGuardarDocumentoRadicadoRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx7:ContextoRespuestaTipo" />
+          <xsd:element name="documento" type="dx3:DocumentoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="msjOpGenerarGuardarDocumentoRadicadoFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpGenerarGuardarDocumentoRadicadoFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpIngresarDocumento_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpIngresarDocumentoSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpIngresarDocumentoSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element maxOccurs="unbounded" name="documentos" type="dx3:DocumentoTipo" />
+          <xsd:element name="expediente" type="dx20:ExpedienteTipo" />
+          <xsd:element name="correspondencia" type="dx8:CorrespondenciaTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpIngresarDocumento_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpIngresarDocumentoResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpIngresarDocumentoRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx7:ContextoRespuestaTipo" />
+          <xsd:element maxOccurs="unbounded" name="documentos" type="dx3:DocumentoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="msjOpIngresarDocumentoFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpIngresarDocumentoFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpObtenerInformacionDocumentoSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpObtenerInformacionDocumentoSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element name="idDocumento" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpObtenerInformacionDocumentoResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpObtenerInformacionDocumentoRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx7:ContextoRespuestaTipo" />
+          <xsd:element minOccurs="0" name="documento" type="dx3:DocumentoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="msjOpObtenerInformacionDocumentoFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpObtenerInformacionDocumentoFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpRecibirDocumentoFirmadoSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpRecibirDocumentoFirmadoSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="idDocumento" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpRecibirDocumentoFirmadoResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpRecibirDocumentoFirmadoRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx7:ContextoRespuestaTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="msjOpRecibirDocumentoFirmadoFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpRecibirDocumentoFirmadoFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpReferenciarDocumento_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpReferenciarDocumentoSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpReferenciarDocumentoSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element name="documento" type="dx3:DocumentoTipo" />
+          <xsd:element name="expedienteOrigen" type="dx20:ExpedienteTipo" />
+          <xsd:element name="expedienteDestino" type="dx20:ExpedienteTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntDocumentoSOAP_OpReferenciarDocumento_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpReferenciarDocumentoResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpReferenciarDocumentoRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx7:ContextoRespuestaTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="msjOpReferenciarDocumentoFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpReferenciarDocumentoFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx18="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" xmlns:dx17="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" xmlns:dx7="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" />
+      <xsd:complexType name="FalloTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx7:ContextoRespuestaTipo" />
+          <xsd:element maxOccurs="unbounded" name="errores" type="dx18:ErrorTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx11="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1" xmlns:dx16="http://www.ugpp.gov.co/esb/schema/UbicacionPersonaTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/UbicacionPersonaTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1" />
+      <xsd:complexType name="UbicacionPersonaTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="municipio" nillable="true" type="dx11:MunicipioTipo" />
+          <xsd:element minOccurs="0" name="valDireccion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codTipoDireccion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="descTipoDireccion" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx15="http://www.ugpp.gov.co/schema/Transversales/CorreoElectronicoTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/Transversales/CorreoElectronicoTipo/v1">
+      <xsd:complexType name="CorreoElectronicoTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="valCorreoElectronico" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codFuente" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="descFuenteCorreo" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx14="http://www.ugpp.gov.co/esb/schema/TelefonoTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/TelefonoTipo/v1">
+      <xsd:complexType name="TelefonoTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="codTipoTelefono" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNumeroTelefono" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx3="http://www.ugpp.gov.co/schema/GestionDocumental/DocumentoTipo/v1" xmlns:dx4="http://www.ugpp.gov.co/schema/GestionDocumental/ArchivoTipo/v1" xmlns:dx5="http://www.ugpp.gov.co/schema/GestionDocumental/MetadataDocumentoTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/GestionDocumental/DocumentoTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/GestionDocumental/ArchivoTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/GestionDocumental/MetadataDocumentoTipo/v1" />
+      <xsd:complexType name="DocumentoTipo">
+        <xsd:sequence>
+          <xsd:element name="idDocumento" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNombreDocumento" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="docDocumento" nillable="true" type="dx4:ArchivoTipo" />
+          <xsd:element minOccurs="0" name="fecDocumento" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valPaginas" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="codTipoDocumento" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valAutorOriginador" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="idRadicadoCorrespondencia" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fecRadicacionCorrespondencia" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNaturalezaDocumento" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valOrigenDocumento" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="descObservacionLegibilidad" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="esMover" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNombreTipoDocumental" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="numFolios" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="valLegible" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valTipoFirma" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="metadataDocumento" nillable="true" type="dx5:MetadataDocumentoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx11="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1" xmlns:dx10="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1" />
+      <xsd:complexType name="IdentificacionTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="codTipoIdentificacion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNumeroIdentificacion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="municipioExpedicion" nillable="true" type="dx11:MunicipioTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx6="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1" xmlns:dx20="http://www.ugpp.gov.co/schema/GestionDocumental/ExpedienteTipo/v1" xmlns:dx10="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/GestionDocumental/ExpedienteTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1" />
+      <xsd:complexType name="ExpedienteTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="idNumExpediente" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codSeccion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valSeccion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codSubSeccion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valSubSeccion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="serieDocumental" nillable="true" type="dx6:SerieDocumentalTipo" />
+          <xsd:element minOccurs="0" name="valAnoApertura" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valFondo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valEntidadPredecesora" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="identificacion" nillable="true" type="dx10:IdentificacionTipo" />
+          <xsd:element minOccurs="0" name="descDescripcion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="idCarpetaFileNet" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx13="http://www.ugpp.gov.co/esb/schema/ContactoPersonaTipo/v1" xmlns:dx9="http://www.ugpp.gov.co/esb/schema/PersonaNaturalTipo/v1" xmlns:dx10="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/PersonaNaturalTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ContactoPersonaTipo/v1" />
+      <xsd:complexType name="PersonaNaturalTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="idPersona" nillable="true" type="dx10:IdentificacionTipo" />
+          <xsd:element minOccurs="0" name="valNombreCompleto" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valPrimerNombre" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valSegundoNombre" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valPrimerApellido" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valSegundoApellido" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codSexo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="descSexo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codEstadoCivil" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="descEstadoCivil" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codNivelEducativo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="descNivelEducativo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codTipoPersonaNatural" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="descTipoPersonaNatural" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contacto" nillable="true" type="dx13:ContactoPersonaTipo" />
+          <xsd:element minOccurs="0" name="idAutorizado" nillable="true" type="dx10:IdentificacionTipo" />
+          <xsd:element minOccurs="0" name="idAbogado" nillable="true" type="dx10:IdentificacionTipo" />
+          <xsd:element minOccurs="0" name="codFuente" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx13="http://www.ugpp.gov.co/esb/schema/ContactoPersonaTipo/v1" xmlns:dx14="http://www.ugpp.gov.co/esb/schema/TelefonoTipo/v1" xmlns:dx16="http://www.ugpp.gov.co/esb/schema/UbicacionPersonaTipo/v1" xmlns:dx15="http://www.ugpp.gov.co/schema/Transversales/CorreoElectronicoTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/ContactoPersonaTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/TelefonoTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/Transversales/CorreoElectronicoTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/UbicacionPersonaTipo/v1" />
+      <xsd:complexType name="ContactoPersonaTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="telefonos" nillable="true" type="dx14:TelefonoTipo" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="correosElectronicos" nillable="true" type="dx15:CorreoElectronicoTipo" />
+          <xsd:element minOccurs="0" name="esAutorizaNotificacionElectronica" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ubicaciones" nillable="true" type="dx16:UbicacionPersonaTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx22="http://www.ugpp.gov.co/schema/GestionDocumental/DatosPlantillaTipo/v1" xmlns:dx21="http://www.ugpp.gov.co/schema/GestionDocumental/PlantillaTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/GestionDocumental/PlantillaTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/GestionDocumental/DatosPlantillaTipo/v1" />
+      <xsd:complexType name="PlantillaTipo">
+        <xsd:sequence>
+          <xsd:element name="idPlantilla" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="valVersionPlantilla" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="datosPlantilla" nillable="true" type="dx22:DatosPlantillaTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx2="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" targetNamespace="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo">
+      <xsd:complexType name="CriterioOrdenamientoTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="valOrden" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="valNombreCampo" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx22="http://www.ugpp.gov.co/schema/GestionDocumental/DatosPlantillaTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/GestionDocumental/DatosPlantillaTipo/v1">
+      <xsd:complexType name="DatosPlantillaTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="idLlave" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="valValor" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx7="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" xmlns:tns="http://www.ugpp.gov.co/GestionDocumental/SrvIntDocumento/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/GestionDocumental/SrvIntDocumento/v1" />
+      <xsd:complexType name="ContextoRespuestaTipo">
+        <xsd:sequence>
+          <xsd:element name="idTx" type="tns:idTx2" />
+          <xsd:element name="codEstadoTx" type="xsd:string" />
+          <xsd:element name="fechaTx" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="idInstanciaProceso" nillable="true" type="tns:idInstanciaProceso2" />
+          <xsd:element minOccurs="0" name="idInstanciaActividad" nillable="true" type="tns:idInstanciaActividad2" />
+          <xsd:element minOccurs="0" name="valCantidadPaginas" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="valNumPagina" nillable="true" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx2="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" xmlns:tns="http://www.ugpp.gov.co/GestionDocumental/SrvIntDocumento/v1" xmlns:dx="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/GestionDocumental/SrvIntDocumento/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" />
+      <xsd:complexType name="ContextoTransaccionalTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="idTx" nillable="true" type="tns:idTx" />
+          <xsd:element name="fechaInicioTx" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="idInstanciaProceso" nillable="true" type="tns:idInstanciaProceso" />
+          <xsd:element minOccurs="0" name="idDefinicionProceso" nillable="true" type="tns:idDefinicionProceso" />
+          <xsd:element minOccurs="0" name="valNombreDefinicionProceso" nillable="true" type="tns:valNombreDefinicionProceso" />
+          <xsd:element minOccurs="0" name="idInstanciaActividad" nillable="true" type="tns:idInstanciaActividad" />
+          <xsd:element minOccurs="0" name="valNombreDefinicionActividad" nillable="true" type="tns:valNombreDefinicionActividad" />
+          <xsd:element name="idUsuarioAplicacion" type="xsd:string" />
+          <xsd:element name="valClaveUsuarioAplicacion" type="xsd:string" />
+          <xsd:element name="idUsuario" type="xsd:string" />
+          <xsd:element name="idEmisor" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valTamPagina" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="valNumPagina" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="criteriosOrdenamiento" nillable="true" type="dx2:CriterioOrdenamientoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx19="http://www.ugpp.gov.co/schema/Transversales/ValidacionDocumentoTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/Transversales/ValidacionDocumentoTipo/v1">
+      <xsd:complexType name="ValidacionDocumentoTipo">
+        <xsd:sequence>
+          <xsd:element name="idDocumento" type="xsd:string" />
+          <xsd:element name="idRadicadoCorrespondencia" type="xsd:string" />
+          <xsd:element minOccurs="0" name="esDevolucion" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="codCausalDevolucion" type="xsd:string" />
+          <xsd:element minOccurs="0" name="desCausalDevolucion" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx12="http://www.ugpp.gov.co/esb/schema/DepartamentoTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/DepartamentoTipo/v1">
+      <xsd:complexType name="DepartamentoTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="codDepartamento" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNombre" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx6="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1">
+      <xsd:complexType name="SerieDocumentalTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="valNombreSerie" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codSerie" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNombreSubserie" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codSubserie" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codTipoDocumental" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="msjOpObtenerInformacionDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpObtenerInformacionDocumentoFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpObtenerInformacionDocumentoFallo" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Input" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpConsultarDocumento_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpConsultarDocumento_Input" />
+  </wsdl:message>
+  <wsdl:message name="msjOpReferenciarDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpReferenciarDocumentoFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpReferenciarDocumentoFallo" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpReferenciarDocumento_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpReferenciarDocumento_Output" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpConsultarDocumento_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpConsultarDocumento_Output" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Output" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Input" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpIngresarDocumento_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpIngresarDocumento_Output" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpReferenciarDocumento_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpReferenciarDocumento_Input" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Input" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpIngresarDocumento_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpIngresarDocumento_Input" />
+  </wsdl:message>
+  <wsdl:message name="msjOpFirmarDigitalmenteFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpFirmarDigitalmenteFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpFirmarDigitalmenteFallo" />
+  </wsdl:message>
+  <wsdl:message name="msjOpIngresarDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpIngresarDocumentoFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpIngresarDocumentoFallo" />
+  </wsdl:message>
+  <wsdl:message name="msjOpConvertirDocumentoPDFFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpConvertirDocumentoPDFFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpConvertirDocumentoPDFFallo" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Input" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Output" />
+  </wsdl:message>
+  <wsdl:message name="msjOpGenerarGuardarDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpGenerarGuardarDocumentoFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpGenerarGuardarDocumentoFallo" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Output" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Output" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Input" />
+  </wsdl:message>
+  <wsdl:message name="msjOpRecibirDocumentoFirmadoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpRecibirDocumentoFirmadoFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpRecibirDocumentoFirmadoFallo" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Input" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Input" />
+  </wsdl:message>
+  <wsdl:message name="msjOpGenerarGuardarDocumentoRadicadoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpGenerarGuardarDocumentoRadicadoFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpGenerarGuardarDocumentoRadicadoFallo" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Output" />
+  </wsdl:message>
+  <wsdl:message name="msjOpConsultarDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpConsultarDocumentoFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpConsultarDocumentoFallo" />
+  </wsdl:message>
+  <wsdl:message name="msjOpDevolverPorValidacionDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpDevolverPorValidacionDocumentoFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpDevolverPorValidacionDocumentoFallo" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Output" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Output" />
+  </wsdl:message>
+  <wsdl:portType name="portSrvIntDocumentoSOAP">
+    <wsdl:operation name="OpRecibirDocumentoFirmado">
+      <wsdl:input message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Input" />
+      <wsdl:output message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpRecibirDocumentoFirmado_Output" />
+      <wsdl:fault name="msjOpRecibirDocumentoFirmadoFallo" message="tns1:msjOpRecibirDocumentoFirmadoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpRecibirDocumentoFirmadoFallo" />
+    </wsdl:operation>
+    <wsdl:operation name="OpGenerarGuardarDocumento">
+      <wsdl:input message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Input" />
+      <wsdl:output message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpGenerarGuardarDocumento_Output" />
+      <wsdl:fault name="msjOpGenerarGuardarDocumentoFallo" message="tns1:msjOpGenerarGuardarDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpGenerarGuardarDocumentoFallo" />
+    </wsdl:operation>
+    <wsdl:operation name="OpDevolverPorValidacionDocumento">
+      <wsdl:input message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Input" />
+      <wsdl:output message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpDevolverPorValidacionDocumento_Output" />
+      <wsdl:fault name="msjOpDevolverPorValidacionDocumentoFallo" message="tns1:msjOpDevolverPorValidacionDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpDevolverPorValidacionDocumentoFallo" />
+    </wsdl:operation>
+    <wsdl:operation name="OpIngresarDocumento">
+      <wsdl:input message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpIngresarDocumento_Input" />
+      <wsdl:output message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpIngresarDocumento_Output" />
+      <wsdl:fault name="msjOpIngresarDocumentoFallo" message="tns1:msjOpIngresarDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpIngresarDocumentoFallo" />
+    </wsdl:operation>
+    <wsdl:operation name="OpConsultarDocumento">
+      <wsdl:input message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpConsultarDocumento_Input" />
+      <wsdl:output message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpConsultarDocumento_Output" />
+      <wsdl:fault name="msjOpConsultarDocumentoFallo" message="tns1:msjOpConsultarDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpConsultarDocumentoFallo" />
+    </wsdl:operation>
+    <wsdl:operation name="OpFirmarDigitalmente">
+      <wsdl:input message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Input" />
+      <wsdl:output message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpFirmarDigitalmente_Output" />
+      <wsdl:fault name="msjOpFirmarDigitalmenteFallo" message="tns1:msjOpFirmarDigitalmenteFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpFirmarDigitalmenteFallo" />
+    </wsdl:operation>
+    <wsdl:operation name="OpConvertirDocumentoPDF">
+      <wsdl:input message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Input" />
+      <wsdl:output message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpConvertirDocumentoPDF_Output" />
+      <wsdl:fault name="msjOpConvertirDocumentoPDFFallo" message="tns1:msjOpConvertirDocumentoPDFFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpConvertirDocumentoPDFFallo" />
+    </wsdl:operation>
+    <wsdl:operation name="OpObtenerInformacionDocumento">
+      <wsdl:input message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Input" />
+      <wsdl:output message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpObtenerInformacionDocumento_Output" />
+      <wsdl:fault name="msjOpObtenerInformacionDocumentoFallo" message="tns1:msjOpObtenerInformacionDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpObtenerInformacionDocumentoFallo" />
+    </wsdl:operation>
+    <wsdl:operation name="OpReferenciarDocumento">
+      <wsdl:input message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpReferenciarDocumento_Input" />
+      <wsdl:output message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpReferenciarDocumento_Output" />
+      <wsdl:fault name="msjOpReferenciarDocumentoFallo" message="tns1:msjOpReferenciarDocumentoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpReferenciarDocumentoFallo" />
+    </wsdl:operation>
+    <wsdl:operation name="OpGenerarGuardarDocumentoRadicado">
+      <wsdl:input message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Input" />
+      <wsdl:output message="tns1:portSrvIntDocumentoSOAP_portSrvIntDocumentoSOAP_OpGenerarGuardarDocumentoRadicado_Output" />
+      <wsdl:fault name="msjOpGenerarGuardarDocumentoRadicadoFallo" message="tns1:msjOpGenerarGuardarDocumentoRadicadoFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_docTypes_msjOpGenerarGuardarDocumentoRadicadoFallo" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="bndSrvIntDocumentoHttp" type="tns1:portSrvIntDocumentoSOAP">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpRecibirDocumentoFirmado">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_Binder_OpRecibirDocumentoFirmado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpRecibirDocumentoFirmadoFallo">
+        <soap12:fault use="literal" name="msjOpRecibirDocumentoFirmadoFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpGenerarGuardarDocumento">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_Binder_OpGenerarGuardarDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpGenerarGuardarDocumentoFallo">
+        <soap12:fault use="literal" name="msjOpGenerarGuardarDocumentoFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpDevolverPorValidacionDocumento">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_Binder_OpDevolverPorValidacionDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpDevolverPorValidacionDocumentoFallo">
+        <soap12:fault use="literal" name="msjOpDevolverPorValidacionDocumentoFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpIngresarDocumento">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_Binder_OpIngresarDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpIngresarDocumentoFallo">
+        <soap12:fault use="literal" name="msjOpIngresarDocumentoFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpConsultarDocumento">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_Binder_OpConsultarDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpConsultarDocumentoFallo">
+        <soap12:fault use="literal" name="msjOpConsultarDocumentoFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpFirmarDigitalmente">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_Binder_OpFirmarDigitalmente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpFirmarDigitalmenteFallo">
+        <soap12:fault use="literal" name="msjOpFirmarDigitalmenteFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpConvertirDocumentoPDF">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_Binder_OpConvertirDocumentoPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpConvertirDocumentoPDFFallo">
+        <soap12:fault use="literal" name="msjOpConvertirDocumentoPDFFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpObtenerInformacionDocumento">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_Binder_OpObtenerInformacionDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpObtenerInformacionDocumentoFallo">
+        <soap12:fault use="literal" name="msjOpObtenerInformacionDocumentoFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpReferenciarDocumento">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_Binder_OpReferenciarDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpReferenciarDocumentoFallo">
+        <soap12:fault use="literal" name="msjOpReferenciarDocumentoFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpGenerarGuardarDocumentoRadicado">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_documento_SrvIntDocumento_Binder_OpGenerarGuardarDocumentoRadicado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpGenerarGuardarDocumentoRadicadoFallo">
+        <soap12:fault use="literal" name="msjOpGenerarGuardarDocumentoRadicadoFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VS_SrvIntDocumento">
+    <wsdl:port name="VS_SrvIntDocumentosoap12http" binding="tns1:bndSrvIntDocumentoHttp">
+      <soap12:address location="http://ugpp-cl-wmis-mg/ws/VS_SrvIntDocumento" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

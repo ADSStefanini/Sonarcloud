@@ -1,0 +1,51 @@
+﻿.style4 {
+    border: 1px solid #4297d7;
+    background: #5c9ccc url(../Security/Maestros/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png) repeat-x 50% 50%;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 20px;
+    max-width: 200px !important;
+}
+.form-content > div {
+    margin-bottom: 0.4rem;
+}
+.form-content > div > .col-sm-9 {
+    min-width: 300px;
+    padding-left: 5px;
+    margin-top: 1px;
+}
+.form-content > div > .col-sm-9 input, .form-content > div > .col-sm-9 label {
+    font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+    font-size: 1em;
+}
+.form-content > div > .col-sm-9 > input, .form-content > div > .col-sm-9 > select{
+    max-width: 50%;
+    min-width: 250px;
+}
+.form-content > div > label, .form-content > div > span {
+    font-size: 12px;
+}
+
+.error-msg {
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    font-weight: bold;
+}
+.radio-list-content, .radio-list-content table{
+    width: 100%;
+}
+.radio-list-content table tr{
+    margin-right: 10px;
+    float:left;
+}
+.radio-list-content table tr label{
+    margin-bottom: 0;
+    padding-left: 5px;
+}
+
+/*Bootstrap*/
+.form-check-inline {
+    margin-top: 0.8rem;
+}
+/*Bootstrap / END*/

@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{304BC98B-AC7F-464E-8A21-FB554641E4BD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>UGPP.CobrosCoativo.Servicios</RootNamespace>
+    <AssemblyName>UGPP.CobrosCoativo.Servicios</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>UGPP.CobrosCoativo.Servicios.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>UGPP.CobrosCoativo.Servicios.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.ServiceModel" />
+    <Import Include="System.ServiceModel.Web" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Runtime.Serialization" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UGPPSrvIntCobros\configuration91.svcinfo" />
+    <None Include="Connected Services\UGPPSrvIntCobros\configuration.svcinfo" />
+    <None Include="Connected Services\UGPPSrvIntCobros\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpConsultarDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpConsultarDocumentoRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpConvertirDocumentoPDFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpConvertirDocumentoPDFRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpDevolverPorValidacionDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpDevolverPorValidacionDocumentoRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpFirmarDigitalmenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpFirmarDigitalmenteRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpGenerarGuardarDocumentoRadicadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpGenerarGuardarDocumentoRadicadoRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpGenerarGuardarDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpGenerarGuardarDocumentoRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpIngresarDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpIngresarDocumentoRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpObtenerInformacionDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpObtenerInformacionDocumentoRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpRecibirDocumentoFirmadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpRecibirDocumentoFirmadoRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpReferenciarDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntDocumento\UGPP.CobrosCoativo.Servicios.UGPPSrvIntDocumento.OpReferenciarDocumentoRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\UGPPSrvIntCobros\SrvIntCobros.wsdl" />
+    <Content Include="Connected Services\UGPPSrvIntCobros\UGPP.CobrosCoativo.Servicios.UGPPSrvIntCobros.ActualizacionEstadoProcesoCobrosResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntCobros\UGPP.CobrosCoativo.Servicios.UGPPSrvIntCobros.IniciarInstanciaCobrosResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntCobros\UGPP.CobrosCoativo.Servicios.UGPPSrvIntCobros.OpActualizarEstadoInstanciaCobrosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntCobros\UGPP.CobrosCoativo.Servicios.UGPPSrvIntCobros.OpIniciarInstanciaParResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\UGPPSrvIntDocumento\VS_SrvIntDocumento.wsdl" />
+    <None Include="Connected Services\UGPPSrvIntExpediente\configuration91.svcinfo" />
+    <None Include="Connected Services\UGPPSrvIntExpediente\configuration.svcinfo" />
+    <None Include="Connected Services\UGPPSrvIntExpediente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Connected Services\UGPPSrvIntDocumento\configuration91.svcinfo" />
+    <None Include="Connected Services\UGPPSrvIntDocumento\configuration.svcinfo" />
+    <None Include="Connected Services\UGPPSrvIntDocumento\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Connected Services\UGPPSvcDocumento\configuration91.svcinfo" />
+    <None Include="Connected Services\UGPPSvcDocumento\configuration.svcinfo" />
+    <None Include="Connected Services\UGPPSvcDocumento\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Formatos\CargueTitulosEjecutivos.xml" />
+    <Content Include="Formatos\CargueTitulosEjecutivosOtrasFuentes.xml" />
+    <Content Include="Formatos\CargueTitulosEjecutivosParafiscales.xml" />
+    <Content Include="Formatos\CargueTitulosEjecutivosPensiones.xml" />
+    <Content Include="SrvAplCobros.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\Deudor.xml" />
+    <Content Include="XML\ServicioIniciarInstancia.xml" />
+    <None Include="Connected Services\UGPPSvcDocumento\SvcDocumento.wsdl" />
+    <None Include="Connected Services\UGPPSvcDocumento\SvcDocumento_schema1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.ActualizarDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.ConfirmacionEntregaCorrespondenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.ConsultarDocumentosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.DevolucionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.EnvioDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.estadoEjecucion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.GeneracionNumeroRadicadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.IngresarDocumentoBASE64Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.IngresarDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.MoverDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.obtenerContenidoBASE64Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.ObtenerDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.obtenerDocumentosZipResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.OpConsultaDocumentosPorIdCarpetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.ReferenciarDocumentoFromRadicadoMasivoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.ReferenciarDocumentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.resultadoDocumento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.resultadoDocumentos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.resultadoGenerarNumeroRadicado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSvcDocumento\UGPP.CobrosCoativo.Servicios.UGPPSvcDocumento.resultadoIdentificadorDocumentos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\UGPPSrvIntCobros\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UGPPSrvIntDocumento\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UGPPSrvIntExpediente\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UGPPSvcDocumento\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ISrvAplCobros.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ServiciosEntrada\ServiceParent.vb" />
+    <Compile Include="ServiciosEntrada\SrvIntCobros.vb" />
+    <Compile Include="ServiciosEntrada\SrvIntDocumento.vb" />
+    <Compile Include="ServiciosEntrada\SvcDocumento.vb" />
+    <Compile Include="SrvAplCobros.svc.vb">
+      <DependentUpon>SrvAplCobros.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosEntrada\SrvIntExpediente.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connected Services\UGPPSrvIntExpediente\UGPP.CobrosCoativo.Servicios.UGPPSrvIntExpediente.OpBuscarPorCriteriosExpedienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntExpediente\UGPP.CobrosCoativo.Servicios.UGPPSrvIntExpediente.OpBuscarPorCriteriosExpedienteRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntExpediente\UGPP.CobrosCoativo.Servicios.UGPPSrvIntExpediente.OpBuscarPorIdExpedienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntExpediente\UGPP.CobrosCoativo.Servicios.UGPPSrvIntExpediente.OpBuscarPorIdExpedienteRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntExpediente\UGPP.CobrosCoativo.Servicios.UGPPSrvIntExpediente.OpCrearExpedienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\UGPPSrvIntExpediente\UGPP.CobrosCoativo.Servicios.UGPPSrvIntExpediente.OpCrearExpedienteRespTipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\UGPPSrvIntExpediente\VS_SrvIntExpediente.wsdl" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="XSD\ContextoRespuestaTipo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ContextoTransaccionalTipo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\CriterioOrdenamientoTipo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\Deudor.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\UGPPSrvIntCobros\" />
+    <WCFMetadataStorage Include="Connected Services\UGPPSrvIntDocumento\" />
+    <WCFMetadataStorage Include="Connected Services\UGPPSrvIntExpediente\" />
+    <WCFMetadataStorage Include="Connected Services\UGPPSvcDocumento\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UGPP.CobrosCoactivo.Entidades\UGPP.CobrosCoactivo.Entidades.vbproj">
+      <Project>{d140cf9c-312d-4aba-9ae1-fbfb95b3daae}</Project>
+      <Name>UGPP.CobrosCoactivo.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UGPP.CobrosCoactivo.Logica\UGPP.CobrosCoactivo.Logica.vbproj">
+      <Project>{10306937-67d5-4a41-a1f7-3de27fdbb814}</Project>
+      <Name>UGPP.CobrosCoactivo.Logica</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63368</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63368/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

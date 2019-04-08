@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:HDR3="http://www.ugpp.gov.co/esb/schema/ParametroTipo/v1" xmlns:tns="http://172.21.3.125/AP_SRV_GestionDocumental.co.gov.ugpp.srv.gestionDocumental.proveedor.expediente:SrvIntExpediente" xmlns:HDR9="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" xmlns:HDR10="http://www.ugpp.gov.co/esb/schema/DepartamentoTipo/v1" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:HDR2="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1" xmlns:HDR4="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1" xmlns:HDR7="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" xmlns:HDR6="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" xmlns:HDR8="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" xmlns:tns1="http://www.ugpp.gov.co/GestionDocumental/SrvIntExpediente/v1" xmlns:HDR11="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:HDR1="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" xmlns:HDR5="http://www.ugpp.gov.co/schema/GestionDocumental/ExpedienteTipo/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="VS_SrvIntExpediente" targetNamespace="http://www.ugpp.gov.co/GestionDocumental/SrvIntExpediente/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Servicio que crea, busca y actualiza un expediente.
+</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema xmlns:dx5="http://www.ugpp.gov.co/schema/GestionDocumental/ExpedienteTipo/v1" xmlns:tns="http://www.ugpp.gov.co/GestionDocumental/SrvIntExpediente/v1" xmlns:dx="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" xmlns:dx10="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" xmlns:dx3="http://www.ugpp.gov.co/esb/schema/ParametroTipo/v1" xmlns:dx4="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" targetNamespace="http://www.ugpp.gov.co/GestionDocumental/SrvIntExpediente/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ParametroTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/GestionDocumental/ExpedienteTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" />
+      <xsd:element name="portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Input" type="tns:portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Input" />
+      <xsd:element name="OpBuscarPorCriteriosExpedienteSol" nillable="true" type="tns:OpBuscarPorCriteriosExpedienteSolTipo" />
+      <xsd:element name="portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Output" type="tns:portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Output" />
+      <xsd:element name="OpBuscarPorCriteriosExpedienteResp" nillable="true" type="tns:OpBuscarPorCriteriosExpedienteRespTipo" />
+      <xsd:element name="msjOpBuscarPorCriteriosExpedienteFallo" type="tns:msjOpBuscarPorCriteriosExpedienteFallo" />
+      <xsd:element name="OpBuscarPorCriteriosExpedienteFallo" nillable="true" type="dx10:FalloTipo" />
+      <xsd:element name="portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Input" type="tns:portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Input" />
+      <xsd:element name="OpBuscarPorIdExpedienteSol" nillable="true" type="tns:OpBuscarPorIdExpedienteSolTipo" />
+      <xsd:element name="portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Output" type="tns:portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Output" />
+      <xsd:element name="OpBuscarPorIdExpedienteResp" nillable="true" type="tns:OpBuscarPorIdExpedienteRespTipo" />
+      <xsd:element name="msjOpBuscarPorIdExpedienteFallo" type="tns:msjOpBuscarPorIdExpedienteFallo" />
+      <xsd:element name="OpBuscarPorIdExpedienteFallo" nillable="true" type="dx10:FalloTipo" />
+      <xsd:element name="portSrvIntExpedienteSOAP_OpCrearExpediente_Input" type="tns:portSrvIntExpedienteSOAP_OpCrearExpediente_Input" />
+      <xsd:element name="OpCrearExpedienteSol" nillable="true" type="tns:OpCrearExpedienteSolTipo" />
+      <xsd:element name="portSrvIntExpedienteSOAP_OpCrearExpediente_Output" type="tns:portSrvIntExpedienteSOAP_OpCrearExpediente_Output" />
+      <xsd:element name="OpCrearExpedienteResp" nillable="true" type="tns:OpCrearExpedienteRespTipo" />
+      <xsd:element name="msjOpCrearExpedienteFallo" type="tns:msjOpCrearExpedienteFallo" />
+      <xsd:element name="OpCrearExpedienteFallo" nillable="true" type="dx10:FalloTipo" />
+      <xsd:complexType name="portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpBuscarPorCriteriosExpedienteSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpBuscarPorCriteriosExpedienteSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="parametro" type="dx3:ParametroTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="idTx">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:length value="36" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaProceso">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idDefinicionProceso">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="valNombreDefinicionProceso">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="100" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaActividad">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="valNombreDefinicionActividad">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="100" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpBuscarPorCriteriosExpedienteResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpBuscarPorCriteriosExpedienteRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx4:ContextoRespuestaTipo" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="expediente" type="dx5:ExpedienteTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="idTx2">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:length value="36" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaProceso2">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="idInstanciaActividad2">
+        <xsd:restriction base="xsd:string">
+          <xsd:whiteSpace value="preserve" />
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="48" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="msjOpBuscarPorCriteriosExpedienteFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpBuscarPorCriteriosExpedienteFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpBuscarPorIdExpedienteSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpBuscarPorIdExpedienteSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element maxOccurs="unbounded" name="idExpediente" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpBuscarPorIdExpedienteResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpBuscarPorIdExpedienteRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx4:ContextoRespuestaTipo" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="expedientes" type="dx5:ExpedienteTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="msjOpBuscarPorIdExpedienteFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpBuscarPorIdExpedienteFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntExpedienteSOAP_OpCrearExpediente_Input">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpCrearExpedienteSol" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpCrearExpedienteSolTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoTransaccional" type="dx:ContextoTransaccionalTipo" />
+          <xsd:element name="expediente" type="dx5:ExpedienteTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="portSrvIntExpedienteSOAP_OpCrearExpediente_Output">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpCrearExpedienteResp" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OpCrearExpedienteRespTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx4:ContextoRespuestaTipo" />
+          <xsd:element minOccurs="0" name="expediente" type="dx5:ExpedienteTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="msjOpCrearExpedienteFallo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:OpCrearExpedienteFallo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx9="http://www.ugpp.gov.co/esb/schema/DepartamentoTipo/v1" xmlns:dx8="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/DepartamentoTipo/v1" />
+      <xsd:complexType name="MunicipioTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="codMunicipio" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNombre" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="departamento" nillable="true" type="dx9:DepartamentoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx11="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1">
+      <xsd:complexType name="ErrorTipo">
+        <xsd:sequence>
+          <xsd:element name="codError" nillable="true" type="xsd:string" />
+          <xsd:element name="valDescError" nillable="true" type="xsd:string" />
+          <xsd:element name="valDescErrorTecnico" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx3="http://www.ugpp.gov.co/esb/schema/ParametroTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/ParametroTipo/v1">
+      <xsd:complexType name="ParametroTipo">
+        <xsd:sequence>
+          <xsd:element name="idLlave" nillable="true" type="xsd:string" />
+          <xsd:element name="valValor" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx7="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1" xmlns:dx8="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/MunicipioTipo/v1" />
+      <xsd:complexType name="IdentificacionTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="codTipoIdentificacion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNumeroIdentificacion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="municipioExpedicion" nillable="true" type="dx8:MunicipioTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx7="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1" xmlns:dx5="http://www.ugpp.gov.co/schema/GestionDocumental/ExpedienteTipo/v1" xmlns:dx6="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/GestionDocumental/ExpedienteTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/IdentificacionTipo/v1" />
+      <xsd:complexType name="ExpedienteTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="idNumExpediente" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codSeccion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valSeccion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codSubSeccion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valSubSeccion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="serieDocumental" nillable="true" type="dx6:SerieDocumentalTipo" />
+          <xsd:element minOccurs="0" name="valAnoApertura" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valFondo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valEntidadPredecesora" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="identificacion" nillable="true" type="dx7:IdentificacionTipo" />
+          <xsd:element minOccurs="0" name="descDescripcion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="idCarpetaFileNet" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx2="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" targetNamespace="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo">
+      <xsd:complexType name="CriterioOrdenamientoTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="valOrden" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="valNombreCampo" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx11="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" xmlns:dx4="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" xmlns:dx10="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/FalloTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/ErrorTipo/v1" />
+      <xsd:complexType name="FalloTipo">
+        <xsd:sequence>
+          <xsd:element name="contextoRespuesta" type="dx4:ContextoRespuestaTipo" />
+          <xsd:element maxOccurs="unbounded" name="errores" type="dx11:ErrorTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://www.ugpp.gov.co/GestionDocumental/SrvIntExpediente/v1" xmlns:dx4="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/ContextoRespuestaTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/GestionDocumental/SrvIntExpediente/v1" />
+      <xsd:complexType name="ContextoRespuestaTipo">
+        <xsd:sequence>
+          <xsd:element name="idTx" type="tns:idTx2" />
+          <xsd:element name="codEstadoTx" type="xsd:string" />
+          <xsd:element name="fechaTx" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="idInstanciaProceso" nillable="true" type="tns:idInstanciaProceso2" />
+          <xsd:element minOccurs="0" name="idInstanciaActividad" nillable="true" type="tns:idInstanciaActividad2" />
+          <xsd:element minOccurs="0" name="valCantidadPaginas" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="valNumPagina" nillable="true" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx2="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" xmlns:tns="http://www.ugpp.gov.co/GestionDocumental/SrvIntExpediente/v1" xmlns:dx="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1">
+      <xsd:import namespace="http://www.ugpp.gov.co/GestionDocumental/SrvIntExpediente/v1" />
+      <xsd:import namespace="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo" />
+      <xsd:complexType name="ContextoTransaccionalTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="idTx" nillable="true" type="tns:idTx" />
+          <xsd:element name="fechaInicioTx" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="idInstanciaProceso" nillable="true" type="tns:idInstanciaProceso" />
+          <xsd:element minOccurs="0" name="idDefinicionProceso" nillable="true" type="tns:idDefinicionProceso" />
+          <xsd:element minOccurs="0" name="valNombreDefinicionProceso" nillable="true" type="tns:valNombreDefinicionProceso" />
+          <xsd:element minOccurs="0" name="idInstanciaActividad" nillable="true" type="tns:idInstanciaActividad" />
+          <xsd:element minOccurs="0" name="valNombreDefinicionActividad" nillable="true" type="tns:valNombreDefinicionActividad" />
+          <xsd:element name="idUsuarioAplicacion" type="xsd:string" />
+          <xsd:element name="valClaveUsuarioAplicacion" type="xsd:string" />
+          <xsd:element name="idUsuario" type="xsd:string" />
+          <xsd:element name="idEmisor" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valTamPagina" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" name="valNumPagina" nillable="true" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="criteriosOrdenamiento" nillable="true" type="dx2:CriterioOrdenamientoTipo" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx6="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1" targetNamespace="http://www.ugpp.gov.co/schema/GestionDocumental/SerieDocumentalTipo/v1">
+      <xsd:complexType name="SerieDocumentalTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="valNombreSerie" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codSerie" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNombreSubserie" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codSubserie" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="codTipoDocumental" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:dx9="http://www.ugpp.gov.co/esb/schema/DepartamentoTipo/v1" targetNamespace="http://www.ugpp.gov.co/esb/schema/DepartamentoTipo/v1">
+      <xsd:complexType name="DepartamentoTipo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="codDepartamento" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="valNombre" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Output" />
+  </wsdl:message>
+  <wsdl:message name="msjOpCrearExpedienteFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_expediente_SrvIntExpediente_docTypes_msjOpCrearExpedienteFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpCrearExpedienteFallo" />
+  </wsdl:message>
+  <wsdl:message name="msjOpBuscarPorCriteriosExpedienteFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_expediente_SrvIntExpediente_docTypes_msjOpBuscarPorCriteriosExpedienteFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpBuscarPorCriteriosExpedienteFallo" />
+  </wsdl:message>
+  <wsdl:message name="msjOpBuscarPorIdExpedienteFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_expediente_SrvIntExpediente_docTypes_msjOpBuscarPorIdExpedienteFallo">
+    <wsdl:part name="parameters" element="tns1:msjOpBuscarPorIdExpedienteFallo" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpCrearExpediente_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntExpedienteSOAP_OpCrearExpediente_Input" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Input" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpCrearExpediente_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntExpedienteSOAP_OpCrearExpediente_Output" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Input">
+    <wsdl:part name="parameters" element="tns1:portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Input" />
+  </wsdl:message>
+  <wsdl:message name="portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Output">
+    <wsdl:part name="parameters" element="tns1:portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Output" />
+  </wsdl:message>
+  <wsdl:portType name="portSrvIntExpedienteSOAP">
+    <wsdl:operation name="OpBuscarPorIdExpediente">
+      <wsdl:input message="tns1:portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Input" />
+      <wsdl:output message="tns1:portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpBuscarPorIdExpediente_Output" />
+      <wsdl:fault name="msjOpBuscarPorIdExpedienteFallo" message="tns1:msjOpBuscarPorIdExpedienteFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_expediente_SrvIntExpediente_docTypes_msjOpBuscarPorIdExpedienteFallo" />
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearExpediente">
+      <wsdl:input message="tns1:portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpCrearExpediente_Input" />
+      <wsdl:output message="tns1:portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpCrearExpediente_Output" />
+      <wsdl:fault name="msjOpCrearExpedienteFallo" message="tns1:msjOpCrearExpedienteFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_expediente_SrvIntExpediente_docTypes_msjOpCrearExpedienteFallo" />
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarPorCriteriosExpediente">
+      <wsdl:input message="tns1:portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Input" />
+      <wsdl:output message="tns1:portSrvIntExpedienteSOAP_portSrvIntExpedienteSOAP_OpBuscarPorCriteriosExpediente_Output" />
+      <wsdl:fault name="msjOpBuscarPorCriteriosExpedienteFallo" message="tns1:msjOpBuscarPorCriteriosExpedienteFallo_AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_expediente_SrvIntExpediente_docTypes_msjOpBuscarPorCriteriosExpedienteFallo" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="bndSrvIntExpedienteHttp" type="tns1:portSrvIntExpedienteSOAP">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpBuscarPorIdExpediente">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_expediente_SrvIntExpediente_Binder_OpBuscarPorIdExpediente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpBuscarPorIdExpedienteFallo">
+        <soap12:fault use="literal" name="msjOpBuscarPorIdExpedienteFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpCrearExpediente">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_expediente_SrvIntExpediente_Binder_OpCrearExpediente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpCrearExpedienteFallo">
+        <soap12:fault use="literal" name="msjOpCrearExpedienteFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OpBuscarPorCriteriosExpediente">
+      <soap12:operation soapAction="AP_SRV_GestionDocumental_co_gov_ugpp_srv_gestionDocumental_proveedor_expediente_SrvIntExpediente_Binder_OpBuscarPorCriteriosExpediente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="msjOpBuscarPorCriteriosExpedienteFallo">
+        <soap12:fault use="literal" name="msjOpBuscarPorCriteriosExpedienteFallo" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VS_SrvIntExpediente">
+    <wsdl:port name="VS_SrvIntExpedientesoap12http" binding="tns1:bndSrvIntExpedienteHttp">
+      <soap12:address location="http://ugpp-cl-wmis-mg/ws/VS_SrvIntExpediente" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

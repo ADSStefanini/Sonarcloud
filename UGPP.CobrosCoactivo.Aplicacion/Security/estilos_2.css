@@ -1,0 +1,30 @@
+h3 {
+	color:#838c98;
+}
+
+#principal {
+	margin:0 auto;
+	position: relative;
+}
+
+.contenedorfoto {
+	float:left;
+	width:190px;
+	height:146px;
+	margin:10px;
+	padding:5px;
+	background-color:#f5f7f9;
+	border-right: #a5a7aa solid 1px;
+	border-bottom: #a5a7aa solid 1px;
+	text-align:center;
+}
+
+.contenedorfoto a {
+	text-decoration: none;
+}
+
+.contenedorfoto span {
+	color:#515151;
+	font-family: Trebuchet MS;
+	font-size: 9pt;
+}

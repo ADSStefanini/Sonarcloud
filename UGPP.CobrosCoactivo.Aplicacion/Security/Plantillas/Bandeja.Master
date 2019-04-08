@@ -1,0 +1,51 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Bandeja.master.vb" Inherits="coactivosyp.Bandeja" %>
+
+<%@ Register TagPrefix="HeadControl" TagName="HeadScripts" Src="~/Security/Controles/commons-head.ascx" %>
+<%@ Register TagPrefix="FooterControl" TagName="FootScripts" Src="~/Security/Controles/commons-footer.ascx" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <HeadControl:HeadScripts id="headScripts" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <link href="<%=ResolveClientUrl("~/css/bandejas.css") %>" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True" />
+
+        <div id="encabezado" class="inbox">
+            <div id="tituloencabezado">
+
+                <%  Response.Write("&nbsp Usuario actual: " & Session("ssnombreusuario") & ".")%>
+                
+                <span style="font-weight: normal">Perfil (<asp:Label ID="lblNomPerfil" runat="server" Text="Label"></asp:Label>)</span>
+                <div class="head-page-link">
+                    <asp:ContentPlaceHolder ID="headPageLinks" runat="server" />
+                    <asp:LinkButton ID="A3" runat="server" ToolTip="Cerrar sesión">
+                        <img alt ="Cerrar sesión" src="<%=ResolveClientUrl("~/Security/images/icons/Shutdown.png") %>" height="18" width="18" style=" vertical-align:middle" id="imgCerrarSesion" title="Cerrar sesión" />
+                        <span>Cerrar sesión&nbsp;</span>
+                    </asp:LinkButton>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="ui-widget-content ui-widget">
+                <asp:ContentPlaceHolder ID="SearchForm" runat="server" />
+            </div>
+            <asp:Label ID="lblRecordsFound" runat="server"></asp:Label>
+            <asp:ContentPlaceHolder ID="InboxTable" runat="server" />
+        </div>
+    </form>
+
+    <FooterControl:FootScripts id="footScripts1" runat="server" />
+    <script src="<%=ResolveClientUrl("~/js/bandejas.js") %>" type="text/javascript"></script>
+
+</body>
+</html>

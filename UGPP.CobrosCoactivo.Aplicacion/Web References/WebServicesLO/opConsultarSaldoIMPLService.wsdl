@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:tns="http://ws.validador_pagos.com/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="opConsultarSaldoIMPLService" targetNamespace="http://ws.validador_pagos.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://172.20.0.137:8080/validador_pagos/opConsultarSaldoIMPLService?xsd=1" namespace="http://ws.validador_pagos.com/" />
+    </xsd:schema>
+  </types>
+  <message name="oConsultarSaldoCAB">
+    <part name="parameters" element="tns:oConsultarSaldoCAB" />
+  </message>
+  <message name="oConsultarSaldoCABResponse">
+    <part name="parameters" element="tns:oConsultarSaldoCABResponse" />
+  </message>
+  <message name="oConsultarSaldo">
+    <part name="parameters" element="tns:oConsultarSaldo" />
+  </message>
+  <message name="oConsultarSaldoResponse">
+    <part name="parameters" element="tns:oConsultarSaldoResponse" />
+  </message>
+  <portType name="opConsultarSaldoIMPL">
+    <operation name="oConsultarSaldoCAB">
+      <input wsam:Action="http://ws.validador_pagos.com/opConsultarSaldoIMPL/oConsultarSaldoCABRequest" message="tns:oConsultarSaldoCAB" />
+      <output wsam:Action="http://ws.validador_pagos.com/opConsultarSaldoIMPL/oConsultarSaldoCABResponse" message="tns:oConsultarSaldoCABResponse" />
+    </operation>
+    <operation name="oConsultarSaldo">
+      <input wsam:Action="http://ws.validador_pagos.com/opConsultarSaldoIMPL/oConsultarSaldoRequest" message="tns:oConsultarSaldo" />
+      <output wsam:Action="http://ws.validador_pagos.com/opConsultarSaldoIMPL/oConsultarSaldoResponse" message="tns:oConsultarSaldoResponse" />
+    </operation>
+  </portType>
+  <binding name="opConsultarSaldoIMPLPortBinding" type="tns:opConsultarSaldoIMPL">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="oConsultarSaldoCAB">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="oConsultarSaldo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="opConsultarSaldoIMPLService">
+    <port name="opConsultarSaldoIMPLPort" binding="tns:opConsultarSaldoIMPLPortBinding">
+      <soap:address location="http://172.20.0.137:8080/validador_pagos/opConsultarSaldoIMPLService" />
+    </port>
+  </service>
+</definitions>

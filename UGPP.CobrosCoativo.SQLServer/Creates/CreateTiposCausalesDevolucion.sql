@@ -1,0 +1,25 @@
+﻿-- =============================================
+-- Author:		Stefanini - yeferson alba
+-- Create date: 2018-11-30
+-- Description:	Crear tabla tabla [TIPOS_CAUSALES_DEVOLUCION]
+-- =============================================
+/****** Object:  Table [dbo].[TIPOS_CAUSALES_DEVOLUCION]    Script Date: 29/11/2018 23:00:49 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'TIPOS_CAUSALES_DEVOLUCION' AND TABLE_SCHEMA = 'dbo')
+    drop table dbo.TIPOS_CAUSALES_DEVOLUCION;
+
+CREATE TABLE [dbo].[TIPOS_CAUSALES_DEVOLUCION](
+	[ID_TIPO_CAUSAL_DEVOLUCION] [int] NOT NULL,
+	[VAL_TIPO_CAUSAL_DEVOLUCION] [varchar](250) NOT NULL,
+	[IND_ESTADO] [bit] NOT NULL,
+ CONSTRAINT [PK_TIPOS_CAUSALES_DEVOLUCION] PRIMARY KEY CLUSTERED 
+(
+	[ID_TIPO_CAUSAL_DEVOLUCION] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO

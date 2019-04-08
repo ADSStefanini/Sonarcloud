@@ -1,0 +1,1 @@
+ALTER TABLE [dbo].[SOLICITUDES_CAMBIOESTADO] ADD efietapaprocesal INT

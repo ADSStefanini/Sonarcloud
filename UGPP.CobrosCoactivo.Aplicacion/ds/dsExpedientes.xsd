@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsExpedientes" targetNamespace="http://www.tempuri.org/dsExpedientes.xsd" xmlns:mstns="http://www.tempuri.org/dsExpedientes.xsd" xmlns="http://www.tempuri.org/dsExpedientes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="bktecnoexpbdConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="bktecnoexpbdConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.bktecnoexpbdConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsExpedientes" msdata:IsDataSet="true" msdata:Locale="es-CO" msprop:Generator_UserDSName="dsExpedientes" msprop:Generator_DataSetName="dsExpedientes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="documentos2" msprop:Generator_UserTableName="documentos2" msprop:Generator_RowDeletedName="documentos2RowDeleted" msprop:Generator_TableClassName="documentos2DataTable" msprop:Generator_RowChangedName="documentos2RowChanged" msprop:Generator_RowClassName="documentos2Row" msprop:Generator_RowChangingName="documentos2RowChanging" msprop:Generator_RowEvArgName="documentos2RowChangeEvent" msprop:Generator_RowEvHandlerName="documentos2RowChangeEventHandler" msprop:Generator_TablePropName="documentos2" msprop:Generator_TableVarName="tabledocumentos2" msprop:Generator_RowDeletingName="documentos2RowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="entidad" msprop:Generator_UserColumnName="entidad" msprop:Generator_ColumnPropNameInRow="entidad" msprop:Generator_ColumnVarNameInTable="columnentidad" msprop:Generator_ColumnPropNameInTable="entidadColumn" type="xs:string" />
+              <xs:element name="idacto" msprop:Generator_UserColumnName="idacto" msprop:Generator_ColumnPropNameInRow="idacto" msprop:Generator_ColumnVarNameInTable="columnidacto" msprop:Generator_ColumnPropNameInTable="idactoColumn" type="xs:string" />
+              <xs:element name="ruta" msprop:Generator_UserColumnName="ruta" msprop:Generator_ColumnPropNameInRow="ruta" msprop:Generator_ColumnVarNameInTable="columnruta" msprop:Generator_ColumnPropNameInTable="rutaColumn" type="xs:string" />
+              <xs:element name="nomarchivo" msprop:Generator_UserColumnName="nomarchivo" msprop:Generator_ColumnPropNameInRow="nomarchivo" msprop:Generator_ColumnVarNameInTable="columnnomarchivo" msprop:Generator_ColumnPropNameInTable="nomarchivoColumn" type="xs:string" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:decimal" />
+              <xs:element name="paginas" msprop:Generator_UserColumnName="paginas" msprop:Generator_ColumnPropNameInRow="paginas" msprop:Generator_ColumnVarNameInTable="columnpaginas" msprop:Generator_ColumnPropNameInTable="paginasColumn" type="xs:decimal" />
+              <xs:element name="fecharadic" msprop:Generator_UserColumnName="fecharadic" msprop:Generator_ColumnPropNameInRow="fecharadic" msprop:Generator_ColumnVarNameInTable="columnfecharadic" msprop:Generator_ColumnPropNameInTable="fecharadicColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cobrador" msprop:Generator_UserColumnName="cobrador" msprop:Generator_ColumnPropNameInRow="cobrador" msprop:Generator_ColumnVarNameInTable="columncobrador" msprop:Generator_ColumnPropNameInTable="cobradorColumn" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="actuaciones" msprop:Generator_UserTableName="actuaciones" msprop:Generator_RowDeletedName="actuacionesRowDeleted" msprop:Generator_TableClassName="actuacionesDataTable" msprop:Generator_RowChangedName="actuacionesRowChanged" msprop:Generator_RowClassName="actuacionesRow" msprop:Generator_RowChangingName="actuacionesRowChanging" msprop:Generator_RowEvArgName="actuacionesRowChangeEvent" msprop:Generator_RowEvHandlerName="actuacionesRowChangeEventHandler" msprop:Generator_TablePropName="actuaciones" msprop:Generator_TableVarName="tableactuaciones" msprop:Generator_RowDeletingName="actuacionesRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo" msprop:Generator_UserColumnName="codigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" type="xs:string" />
+              <xs:element name="nombre" msprop:Generator_UserColumnName="nombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" type="xs:string" />
+              <xs:element name="idetapa" msprop:Generator_UserColumnName="idetapa" msprop:Generator_ColumnPropNameInRow="idetapa" msprop:Generator_ColumnVarNameInTable="columnidetapa" msprop:Generator_ColumnPropNameInTable="idetapaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="manejaterm" msprop:Generator_UserColumnName="manejaterm" msprop:Generator_ColumnPropNameInRow="manejaterm" msprop:Generator_ColumnVarNameInTable="columnmanejaterm" msprop:Generator_ColumnPropNameInTable="manejatermColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="termino" msprop:Generator_UserColumnName="termino" msprop:Generator_ColumnPropNameInRow="termino" msprop:Generator_ColumnVarNameInTable="columntermino" msprop:Generator_ColumnPropNameInTable="terminoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="dependen1" msprop:Generator_UserColumnName="dependen1" msprop:Generator_ColumnPropNameInRow="dependen1" msprop:Generator_ColumnVarNameInTable="columndependen1" msprop:Generator_ColumnPropNameInTable="dependen1Column" type="xs:string" minOccurs="0" />
+              <xs:element name="dependen2" msprop:Generator_UserColumnName="dependen2" msprop:Generator_ColumnPropNameInRow="dependen2" msprop:Generator_ColumnVarNameInTable="columndependen2" msprop:Generator_ColumnPropNameInTable="dependen2Column" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="documentos" msprop:Generator_UserTableName="documentos" msprop:Generator_RowDeletedName="documentosRowDeleted" msprop:Generator_TableClassName="documentosDataTable" msprop:Generator_RowChangedName="documentosRowChanged" msprop:Generator_RowClassName="documentosRow" msprop:Generator_RowChangingName="documentosRowChanging" msprop:Generator_RowEvArgName="documentosRowChangeEvent" msprop:Generator_RowEvHandlerName="documentosRowChangeEventHandler" msprop:Generator_TablePropName="documentos" msprop:Generator_TableVarName="tabledocumentos" msprop:Generator_RowDeletingName="documentosRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="entidad" msprop:Generator_UserColumnName="entidad" msprop:Generator_ColumnPropNameInRow="entidad" msprop:Generator_ColumnVarNameInTable="columnentidad" msprop:Generator_ColumnPropNameInTable="entidadColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idacto" msprop:Generator_UserColumnName="idacto" msprop:Generator_ColumnPropNameInRow="idacto" msprop:Generator_ColumnVarNameInTable="columnidacto" msprop:Generator_ColumnPropNameInTable="idactoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ruta" msprop:Generator_UserColumnName="ruta" msprop:Generator_ColumnPropNameInRow="ruta" msprop:Generator_ColumnVarNameInTable="columnruta" msprop:Generator_ColumnPropNameInTable="rutaColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomarchivo" msprop:Generator_UserColumnName="nomarchivo" msprop:Generator_ColumnPropNameInRow="nomarchivo" msprop:Generator_ColumnVarNameInTable="columnnomarchivo" msprop:Generator_ColumnPropNameInTable="nomarchivoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:decimal" />
+              <xs:element name="paginas" msprop:Generator_UserColumnName="paginas" msprop:Generator_ColumnPropNameInRow="paginas" msprop:Generator_ColumnVarNameInTable="columnpaginas" msprop:Generator_ColumnPropNameInTable="paginasColumn" type="xs:decimal" />
+              <xs:element name="fecharadic" msprop:Generator_UserColumnName="fecharadic" msprop:Generator_ColumnPropNameInRow="fecharadic" msprop:Generator_ColumnVarNameInTable="columnfecharadic" msprop:Generator_ColumnPropNameInTable="fecharadicColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cobrador" msprop:Generator_UserColumnName="cobrador" msprop:Generator_ColumnPropNameInRow="cobrador" msprop:Generator_ColumnVarNameInTable="columncobrador" msprop:Generator_ColumnPropNameInTable="cobradorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="docexpediente" msprop:Generator_UserColumnName="docexpediente" msprop:Generator_ColumnPropNameInRow="docexpediente" msprop:Generator_ColumnVarNameInTable="columndocexpediente" msprop:Generator_ColumnPropNameInTable="docexpedienteColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="docproceso" msprop:Generator_UserColumnName="docproceso" msprop:Generator_ColumnPropNameInRow="docproceso" msprop:Generator_ColumnVarNameInTable="columndocproceso" msprop:Generator_ColumnPropNameInTable="docprocesoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="docpredio_refecatrastal" msprop:Generator_UserColumnName="docpredio_refecatrastal" msprop:Generator_ColumnPropNameInRow="docpredio_refecatrastal" msprop:Generator_ColumnVarNameInTable="columndocpredio_refecatrastal" msprop:Generator_ColumnPropNameInTable="docpredio_refecatrastalColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="docacumulacio" msprop:Generator_UserColumnName="docacumulacio" msprop:Generator_ColumnPropNameInRow="docacumulacio" msprop:Generator_ColumnVarNameInTable="columndocacumulacio" msprop:Generator_ColumnPropNameInTable="docacumulacioColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="docfechadoc" msprop:Generator_UserColumnName="docfechadoc" msprop:Generator_ColumnPropNameInRow="docfechadoc" msprop:Generator_ColumnVarNameInTable="columndocfechadoc" msprop:Generator_ColumnPropNameInTable="docfechadocColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:documentos2" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="actuaciones_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:actuaciones" />
+      <xs:field xpath="mstns:codigo" />
+    </xs:unique>
+    <xs:unique name="documentos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:documentos" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

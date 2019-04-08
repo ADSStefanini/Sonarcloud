@@ -1,0 +1,27 @@
+﻿div#container
+{
+position:relative;
+width: 800px;
+margin-top: 0px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 0px;
+text-align:left; 
+padding:30px 70px 70px 70px;
+background-color:#fff;
+border: solid 1px #ccc;
+margin-bottom:35px;
+}
+body 
+{
+text-align:center;
+margin:0;
+background-color:#ccc;
+font-family: "Arial", "Helvetica", "Verdana", "sans-serif";
+font-size: 12px;
+}
+.wrap{width:800px; background-color:#fff; text-align:justify;}
+
+
+
+

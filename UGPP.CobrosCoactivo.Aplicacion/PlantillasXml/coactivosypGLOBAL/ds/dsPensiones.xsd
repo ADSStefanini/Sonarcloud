@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPensiones" targetNamespace="http://www.tempuri.org/dsPensiones.xsd" xmlns:mstns="http://www.tempuri.org/dsPensiones.xsd" xmlns="http://www.tempuri.org/dsPensiones.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPensiones" msdata:IsDataSet="true" msdata:Locale="es-CO" msprop:Generator_UserDSName="dsPensiones" msprop:Generator_DataSetName="dsPensiones">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="entescobradores" msprop:Generator_UserTableName="entescobradores" msprop:Generator_RowDeletedName="entescobradoresRowDeleted" msprop:Generator_RowChangedName="entescobradoresRowChanged" msprop:Generator_RowClassName="entescobradoresRow" msprop:Generator_RowChangingName="entescobradoresRowChanging" msprop:Generator_RowEvArgName="entescobradoresRowChangeEvent" msprop:Generator_RowEvHandlerName="entescobradoresRowChangeEventHandler" msprop:Generator_TableClassName="entescobradoresDataTable" msprop:Generator_TableVarName="tableentescobradores" msprop:Generator_RowDeletingName="entescobradoresRowDeleting" msprop:Generator_TablePropName="entescobradores">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo" msprop:Generator_UserColumnName="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" type="xs:string" />
+              <xs:element name="nombre" msprop:Generator_UserColumnName="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" type="xs:string" />
+              <xs:element name="ent_ruta" msprop:Generator_UserColumnName="ent_ruta" msprop:Generator_ColumnVarNameInTable="columnent_ruta" msprop:Generator_ColumnPropNameInRow="ent_ruta" msprop:Generator_ColumnPropNameInTable="ent_rutaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ent_rutalocal" msprop:Generator_UserColumnName="ent_rutalocal" msprop:Generator_ColumnPropNameInRow="ent_rutalocal" msprop:Generator_ColumnVarNameInTable="columnent_rutalocal" msprop:Generator_ColumnPropNameInTable="ent_rutalocalColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:entescobradores" />
+      <xs:field xpath="mstns:codigo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

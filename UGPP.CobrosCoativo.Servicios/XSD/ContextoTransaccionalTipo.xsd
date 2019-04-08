@@ -1,0 +1,117 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1"
+	xmlns="http://www.ugpp.gov.co/esb/schema/ContextoTransaccionalTipo/v1"
+	xmlns:cot="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo"
+	elementFormDefault="qualified"
+	version="1.0">
+	
+	<xsd:import schemaLocation="CriterioOrdenamientoTipo.xsd" namespace="http://www.ugpp.gov.co/esb/schema/CriterioOrdenamientoTipo"/>
+	
+	<xsd:complexType name="ContextoTransaccionalTipo">
+		<xsd:sequence>
+           		
+			<!--Este elemento hace referencia a un identificador único generado por el algoritmo GUID-->
+
+			<xsd:element name="idTx" maxOccurs="1" minOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="36"></xsd:length>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>           	
+
+
+<!--Hace referencia a la fecha y hora de inicio de la transacción.-->
+			<xsd:element name="fechaInicioTx" type="xsd:dateTime" maxOccurs="1" minOccurs="1"></xsd:element>
+
+		
+			<!--Id de la instancia del proceso, si el consumidor es un procesos automatizado-->
+			<xsd:element name="idInstanciaProceso" maxOccurs="1" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="48"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+
+
+			<!--Id de la definiciÃ³n de la instancia del proceso, si el consumidor es un proceso automatizado-->
+			<xsd:element name="idDefinicionProceso" maxOccurs="1" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="48"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+
+			<!--Nombre de la definiciÃ³n de la instancia del proceso, si el consumidor es un proceso automatizado-->
+			<xsd:element name="valNombreDefinicionProceso" maxOccurs="1" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="100"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+
+
+		
+			<!--Id de la instancia de la actividad de la instancia del proceso, si el consumidor es un proceso automatizado-->
+			<xsd:element name="idInstanciaActividad" maxOccurs="1" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="48"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+
+
+	<!--Nombre de la definición de la instancia de  la actividad consumidora del servicio, si el consumidor es un proceso automatizado-->
+			<xsd:element name="valNombreDefinicionActividad" maxOccurs="1" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:minLength value="0"/>
+						<xsd:maxLength value="100"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+
+		
+<!--Autenticación-->
+
+			<!--Hace referencia al identificador de usuario de la aplicación que se autentica frente a las aplicaciones proveedores-->
+			<xsd:element name="idUsuarioAplicacion" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			
+<!--Hace referencia a la contraseÃ±a de usuario de la aplicación que se autentica frente a las aplicaciones proveedores-->
+			<xsd:element name="valClaveUsuarioAplicacion" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+        
+
+<!--Auditoría-->
+		
+			<!--Hace referencia al identificador de usuario que realiza las actuaciones y audita las transacciones-->
+			<xsd:element name="idUsuario" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+		
+			<!--Identificador de la Aplicación Consumidora o Identificador de la definición de Proceso que emite el mensaje para consumir un servcio-->  
+			<xsd:element name="idEmisor" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+  	
+<!--URL para ser invocada posterior a la ejecución del servicio, cuando el servicio es asincrono.  Este atributo es opcional para mantener compatilibidad hacia atras, se adiciona 04/03/2014-->			
+<xsd:element name="valURL" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+		
+<!--Paginación-->
+			<!--Hace referencia al tamaño de la página de la consulta que se requiere-->
+			<xsd:element name="valTamPagina" type="xsd:integer" maxOccurs="1" minOccurs="0"></xsd:element>
+		
+			<!--Número de la página del total de páginas resultantes de la consulta que se requiere--> 
+			<xsd:element name="valNumPagina" type="xsd:integer" maxOccurs="1" minOccurs="0"></xsd:element>
+
+<!--Criterios de ordenamiento para las consultas-->
+
+			<xsd:element name="criteriosOrdenamiento" type="cot:CriterioOrdenamientoTipo" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+	
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
+

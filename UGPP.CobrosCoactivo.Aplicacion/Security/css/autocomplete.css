@@ -1,0 +1,35 @@
+﻿.CompletionListCssClass 
+{
+position:absolute;
+visibility : hidden;
+font-size: 11px;
+color:#000;
+text-align:left;
+padding: 0px;
+border: 1px solid #4977D3;
+background-color : #fff;
+margin : 0px !important;
+cursor : pointer;
+overflow: auto;
+max-height:200px;
+text-align : left;
+z-index: 99999;
+font-size:12px;
+font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+list-style-type : none;
+white-space:nowrap;
+}
+.CompletionListItemCssClass
+{
+background-color : #fff;
+padding: 3px;
+}
+.CompletionListHighlightedItemCssClass 
+{
+background-color: #EFE817;
+font-weight:bold;
+padding : 3px;
+color:#42451e;
+border-top:solid 1px #b1bb50;
+border-bottom:solid 1px #b1bb50;
+}

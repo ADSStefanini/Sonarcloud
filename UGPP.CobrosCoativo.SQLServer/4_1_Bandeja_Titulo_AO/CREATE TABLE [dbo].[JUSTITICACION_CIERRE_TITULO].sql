@@ -1,0 +1,19 @@
+IF EXISTS ( SELECT  *
+            FROM    sys.objects
+            WHERE   object_id = OBJECT_ID(N'[dbo].[JUSTITICACION_CIERRE_TITULO]')
+                    AND type IN ( N'P', N'PC','U' ) ) 
+
+BEGIN 
+	DROP TABLE [dbo].[JUSTITICACION_CIERRE_TITULO]
+END
+
+GO
+
+CREATE TABLE [dbo].[JUSTITICACION_CIERRE_TITULO](
+	[ID_JUSTIFICACION_CIERRE_TIT] [bigint] IDENTITY(1,1) NOT NULL,
+	[ID_UNICO_MT] [bigint] NULL,
+	[DESC_JUSTIFICACION_CIERRE] [varchar](300) NULL,
+	[FEC_JUSTIFICACION_CIERRE] [datetime] NULL
+) ON [PRIMARY]
+
+

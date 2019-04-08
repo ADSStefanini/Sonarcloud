@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.ugpp.gov.co/contracts/1.0" name="SvcDocumento" targetNamespace="http://www.ugpp.gov.co/contracts/1.0" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="SvcDocumento_schema1.xsd" namespace="http://www.ugpp.gov.co/contracts/1.0" />
+    </xsd:schema>
+  </types>
+  <message name="ReferenciarDocumentoFromRadicadoMasivo">
+    <part name="InformacionDocumentosRadicadosReferenciar" element="tns:InformacionDocumentosRadicadosReferenciar" />
+  </message>
+  <message name="ActualizarDocumento">
+    <part name="InformacionMoverDocumento" element="tns:InformacionMoverDocumento" />
+  </message>
+  <message name="EnvioDocumento">
+    <part name="InformacionEnvioDocumento" element="tns:InformacionEnvioDocumento" />
+  </message>
+  <message name="GeneracionNumeroRadicado">
+    <part name="InformacionGeneracionRadicacion" element="tns:InformacionGeneracionRadicacion" />
+  </message>
+  <message name="obtenerDocumentosZip">
+    <part name="InformacionIdentificacionDocumento" element="tns:identificacionDocumento" />
+  </message>
+  <message name="GeneracionNumeroRadicadoResponse">
+    <part name="ResultadoGenerarNumeroRadicado" element="tns:ResultadoGenerarNumeroRadicado" />
+  </message>
+  <message name="obtenerDocumentosZipResponse">
+    <part name="ResultadoDocumento" element="tns:ResultadoDocumento" />
+  </message>
+  <message name="ConsultarDocumentosResponse">
+    <part name="ResultadoIdentificadorDocumentos" element="tns:ResultadoIdentificadorDocumentos" />
+  </message>
+  <message name="ConfirmacionEntregaCorrespondenciaResponse">
+    <part name="EstadoEjecucion" element="tns:EstadoEjecucion" />
+  </message>
+  <message name="OpConsultaDocumentosPorIdCarpeta">
+    <part name="InformacionConsultaDocumentosPorIdCarpeta" element="tns:InformacionConsultaDocumentosPorIdCarpeta" />
+  </message>
+  <message name="DevolucionesResponse">
+    <part name="EstadoEjecucion" element="tns:EstadoEjecucion" />
+  </message>
+  <message name="IngresarDocumentoBASE64Response">
+    <part name="ResultadoDocumentos" element="tns:ResultadoDocumentos" />
+  </message>
+  <message name="ConsultarDocumentos">
+    <part name="InformacionConsultaDocumentos" element="tns:InformacionConsultaDocumentos" />
+  </message>
+  <message name="ObtenerDocumento">
+    <part name="InformacionIdentificacionDocumento" element="tns:InformacionIdentificacionDocumento" />
+  </message>
+  <message name="ObtenerDocumentoResponse">
+    <part name="ResultadoDocumento" element="tns:ResultadoDocumento" />
+  </message>
+  <message name="IngresarDocumentoResponse">
+    <part name="ResultadoDocumentos" element="tns:ResultadoDocumentos" />
+  </message>
+  <message name="EnvioDocumentoResponse">
+    <part name="EstadoEjecucion" element="tns:EstadoEjecucion" />
+  </message>
+  <message name="ReferenciarDocumento">
+    <part name="InformacionDocumentoMover" element="tns:InformacionDocumentoMover" />
+  </message>
+  <message name="ConfirmacionEntregaCorrespondencia">
+    <part name="InformacionEntregaCorrespondencia" element="tns:InformacionEntregaCorrespondencia" />
+  </message>
+  <message name="IngresarDocumento">
+    <part name="InformacionRegistrarDocumento" element="tns:InformacionRegistrarDocumento" />
+  </message>
+  <message name="IngresarDocumentoBASE64">
+    <part name="InformacionRegistrarDocumento" element="tns:InformacionRegistrarDocumento" />
+  </message>
+  <message name="ReferenciarDocumentoFromRadicadoMasivoResponse">
+    <part name="EstadoEjecucion" element="tns:EstadoEjecucion" />
+  </message>
+  <message name="MoverDocumento">
+    <part name="InformacionDocumentoMover" element="tns:InformacionDocumentoMover" />
+  </message>
+  <message name="Devoluciones">
+    <part name="InformacionDevolucion" element="tns:InformacionDevolucion" />
+  </message>
+  <message name="OpConsultaDocumentosPorIdCarpetaResponse">
+    <part name="ResultadoIdentificadorDocumentos" element="tns:ResultadoIdentificadorDocumentos" />
+  </message>
+  <message name="obtenerContenidoBASE64">
+    <part name="InformacionIdentificacionDocumento" element="tns:InformacionIdentificacionDocumento" />
+  </message>
+  <message name="obtenerContenidoBASE64Response">
+    <part name="ResultadoDocumento" element="tns:ResultadoDocumento" />
+  </message>
+  <message name="ReferenciarDocumentoResponse">
+    <part name="EstadoEjecucion" element="tns:EstadoEjecucion" />
+  </message>
+  <message name="ActualizarDocumentoResponse">
+    <part name="EstadoEjecucion" element="tns:EstadoEjecucion" />
+  </message>
+  <message name="MoverDocumentoResponse">
+    <part name="EstadoEjecucion" element="tns:EstadoEjecucion" />
+  </message>
+  <portType name="IContratoSvcDocumento">
+    <operation name="ConsultarDocumentos">
+      <input message="tns:ConsultarDocumentos" />
+      <output message="tns:ConsultarDocumentosResponse" />
+    </operation>
+    <operation name="OpConsultaDocumentosPorIdCarpeta">
+      <input message="tns:OpConsultaDocumentosPorIdCarpeta" />
+      <output message="tns:OpConsultaDocumentosPorIdCarpetaResponse" />
+    </operation>
+    <operation name="obtenerContenidoBASE64">
+      <input message="tns:obtenerContenidoBASE64" />
+      <output message="tns:obtenerContenidoBASE64Response" />
+    </operation>
+    <operation name="ObtenerDocumento">
+      <input message="tns:ObtenerDocumento" />
+      <output message="tns:ObtenerDocumentoResponse" />
+    </operation>
+    <operation name="IngresarDocumentoBASE64">
+      <input message="tns:IngresarDocumentoBASE64" />
+      <output message="tns:IngresarDocumentoBASE64Response" />
+    </operation>
+    <operation name="IngresarDocumento">
+      <input message="tns:IngresarDocumento" />
+      <output message="tns:IngresarDocumentoResponse" />
+    </operation>
+    <operation name="ActualizarDocumento">
+      <input message="tns:ActualizarDocumento" />
+      <output message="tns:ActualizarDocumentoResponse" />
+    </operation>
+    <operation name="EnvioDocumento">
+      <input message="tns:EnvioDocumento" />
+      <output message="tns:EnvioDocumentoResponse" />
+    </operation>
+    <operation name="GeneracionNumeroRadicado">
+      <input message="tns:GeneracionNumeroRadicado" />
+      <output message="tns:GeneracionNumeroRadicadoResponse" />
+    </operation>
+    <operation name="ConfirmacionEntregaCorrespondencia">
+      <input message="tns:ConfirmacionEntregaCorrespondencia" />
+      <output message="tns:ConfirmacionEntregaCorrespondenciaResponse" />
+    </operation>
+    <operation name="Devoluciones">
+      <input message="tns:Devoluciones" />
+      <output message="tns:DevolucionesResponse" />
+    </operation>
+    <operation name="MoverDocumento">
+      <input message="tns:MoverDocumento" />
+      <output message="tns:MoverDocumentoResponse" />
+    </operation>
+    <operation name="ReferenciarDocumento">
+      <input message="tns:ReferenciarDocumento" />
+      <output message="tns:ReferenciarDocumentoResponse" />
+    </operation>
+    <operation name="ReferenciarDocumentoFromRadicadoMasivo">
+      <input message="tns:ReferenciarDocumentoFromRadicadoMasivo" />
+      <output message="tns:ReferenciarDocumentoFromRadicadoMasivoResponse" />
+    </operation>
+    <operation name="obtenerDocumentosZip">
+      <input message="tns:obtenerDocumentosZip" />
+      <output message="tns:obtenerDocumentosZipResponse" />
+    </operation>
+  </portType>
+  <binding name="EndpointDocumentoBinding" type="tns:IContratoSvcDocumento">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ConsultarDocumentos">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/ConsultarDocumentos" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="OpConsultaDocumentosPorIdCarpeta">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/OpConsultaDocumentosPorIdCarpeta" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerContenidoBASE64">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/obtenerContenidoBASE64" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerDocumento">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/ObtenerDocumento" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="IngresarDocumentoBASE64">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/IngresarDocumentoBASE64" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="IngresarDocumento">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/IngresarDocumento" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ActualizarDocumento">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/ActualizarDocumento" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="EnvioDocumento">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/EnvioDocumento" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GeneracionNumeroRadicado">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/GeneracionNumeroRadicado" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ConfirmacionEntregaCorrespondencia">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/ConfirmacionEntregaCorrespondencia" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Devoluciones">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/Devoluciones" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="MoverDocumento">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/MoverDocumento" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ReferenciarDocumento">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/ReferenciarDocumento" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ReferenciarDocumentoFromRadicadoMasivo">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/ReferenciarDocumentoFromRadicadoMasivo" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerDocumentosZip">
+      <soap:operation soapAction="http://www.ugpp.gov.co/contracts/1.0/IContratoSvcDocumento/obtenerDocumentosZip" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="SvcDocumento">
+    <port name="EndpointDocumento" binding="tns:EndpointDocumentoBinding">
+      <soap:address location="http://192.168.80.62:80/WebServicesUGPP/SvcDocumento" />
+    </port>
+  </service>
+</definitions>

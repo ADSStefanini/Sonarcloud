@@ -1,0 +1,92 @@
+﻿#Mensaje1
+{    
+top: 609px;
+left: 41px;
+position: absolute;
+height: 353px;
+width: 700px;
+color: #FFFFCC;
+background-color: #CCFFFF;
+}
+#Mensaje2
+{
+top: 176px;
+left: 38px;
+position: absolute;
+height: 364px;
+width: 697px;
+background-color: #FFFFFF;
+border: 1px solid #FE2E2E;
+
+padding: 5px;
+overflow: auto;
+color: #000000;
+}
+#Mensaje3
+{
+top: 143px;
+left: 38px;
+position: absolute;
+width: 697px;
+color: #690207;
+font-weight: 700;
+font-size: 14pt;
+background-color: #FFFFFF;
+
+padding: 5px;
+border-style: solid;
+border-width: 1px;
+border-color:Red;
+background-image: url('images/resultados_Error.jpg');
+background-repeat: repeat-x;
+text-align: left; /* right; */
+}
+.FondoAplicacion
+{
+background-color: black;
+filter: alpha(opacity=70);
+opacity: 0.7;
+}
+.CajaDialogo
+{
+background-color:#f0f0f0;
+border-width: 7px;
+border-style: solid;
+border-color: #FB6464;
+padding: 0px;
+color:#000000;
+font-weight: bold;
+font-size:12px
+font-style: italic;
+}
+.CajaDialogo div
+{
+margin: 5px;
+text-align: left;
+font-size : 11px;
+}
+.RedButton 
+{
+/*display: none;*/
+height: 23px; background-color: #DF0101; border-bottom: 1px solid #555555;
+border-right:1px solid #555555; border-top:0px; border-left:0px; font-size: 10px;
+color:#FFF; 
+}
+.RedButton:hover /* Efectos del Mouse en los botones */
+{
+height: 23px; background-color: #FE2E2E; border-bottom: 1px solid #AAAAAA;
+border-right:1px solid #AAAAAA; border-top:0px; border-left:0px;
+}
+
+.btnFallaTecnica
+{
+background-image: url('images/icons/tools.png');
+}
+.btncerrarsesion
+{
+background-image: url('images/icons/1user_delete.png');
+}
+.btnregresarpro
+{
+background-image: url('images/icons/user_business.png');
+}

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TitulosEjecutivos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<titulosEjecutivos>
+		<TituloEjecutivo>
+			<numeroExpedienteOrigen>123</numeroExpedienteOrigen>
+			<areaOrigen>FISCALES</areaOrigen>
+			<tipoTitulo>Otros</tipoTitulo>
+			<numeroTitulo>123ABC</numeroTitulo>
+			<fechaTituloEjecutivo>2018-10-16T21:29:36.2012004Z</fechaTituloEjecutivo>
+			<deudor>
+				<tipoPersona>NaturalContratista</tipoPersona>
+				<nombreDeudor>Prueba de Formatio XML</nombreDeudor>
+				<tipoIdentificacion>CC</tipoIdentificacion>
+				<numeroIdentificacion>123</numeroIdentificacion>
+				<direccionUbicacion>
+					<direccionCompleta>Calle 122 # 23-46</direccionCompleta>
+					<idDepartamento>1</idDepartamento>
+					<idCiudad>1</idCiudad>
+					<fuentesDirecciones>Otra</fuentesDirecciones>
+					<otrasFuentesDirecciones>Obligatorio si la fuente de la dirección es otra</otrasFuentesDirecciones>
+				</direccionUbicacion>
+			</deudor>
+			<valorTitulo>200</valorTitulo>
+			<formaNotificacion>FormaNotificacion</formaNotificacion>
+			<fechaNotificacion>2018-10-16T21:29:36.2071818Z</fechaNotificacion>
+			<presentaRecursoReconsideracion>1</presentaRecursoReconsideracion>
+			<tituloEjecutivoRecursoReconsideracion>
+				<numeroExpedienteOrigen xsi:nil="true" />
+				<areaOrigen xsi:nil="true" />
+				<tipoTitulo xsi:nil="true" />
+				<numeroTitulo>456ACBA</numeroTitulo>
+				<fechaTituloEjecutivo>2018-10-16T21:29:36.208181Z</fechaTituloEjecutivo>
+				<valorTitulo xsi:nil="true" />
+				<formaNotificacion>FormaNotificacion</formaNotificacion>
+				<fechaNotificacion>2018-10-16T21:29:36.208181Z</fechaNotificacion>
+				<presentaRecursoReconsideracion xsi:nil="true" />
+				<existeSentenciaSegundaInstncia xsi:nil="true" />
+				<existeFalloCasacion xsi:nil="true" />
+				<fechaEjecutoria xsi:nil="true" />
+				<fechaExigibilidad xsi:nil="true" />
+			</tituloEjecutivoRecursoReconsideracion>
+			<existeSentenciaSegundaInstncia>1</existeSentenciaSegundaInstncia>
+			<tituloSentenciaSegundaInstncia>
+				<numeroExpedienteOrigen xsi:nil="true" />
+				<areaOrigen xsi:nil="true" />
+				<tipoTitulo xsi:nil="true" />
+				<numeroTitulo>91011CBA</numeroTitulo>
+				<fechaTituloEjecutivo>2018-10-16T21:29:36.2091769Z</fechaTituloEjecutivo>
+				<valorTitulo xsi:nil="true" />
+				<formaNotificacion>FormaNotificacion</formaNotificacion>
+				<fechaNotificacion>2018-10-16T21:29:36.2091769Z</fechaNotificacion>
+				<presentaRecursoReconsideracion xsi:nil="true" />
+				<existeSentenciaSegundaInstncia xsi:nil="true" />
+				<existeFalloCasacion xsi:nil="true" />
+				<fechaEjecutoria xsi:nil="true" />
+				<fechaExigibilidad xsi:nil="true" />
+			</tituloSentenciaSegundaInstncia>
+			<existeFalloCasacion>1</existeFalloCasacion>
+			<tituloFalloCasacion>
+				<numeroExpedienteOrigen xsi:nil="true" />
+				<areaOrigen xsi:nil="true" />
+				<tipoTitulo xsi:nil="true" />
+				<fechaTituloEjecutivo>0001-01-01T00:00:00</fechaTituloEjecutivo>
+				<valorTitulo xsi:nil="true" />
+				<formaNotificacion xsi:nil="true" />
+				<fechaNotificacion xsi:nil="true" />
+				<presentaRecursoReconsideracion xsi:nil="true" />
+				<existeSentenciaSegundaInstncia xsi:nil="true" />
+				<existeFalloCasacion xsi:nil="true" />
+				<fechaEjecutoria xsi:nil="true" />
+				<fechaExigibilidad xsi:nil="true" />
+			</tituloFalloCasacion>
+			<fechaEjecutoria>2018-10-16T21:29:36.208181Z</fechaEjecutoria>
+			<fechaExigibilidad>2018-10-17T21:29:36.208181Z</fechaExigibilidad>
+		</TituloEjecutivo>
+	</titulosEjecutivos>
+</TitulosEjecutivos>

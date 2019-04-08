@@ -1,0 +1,171 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="tecnoexpedientes.Site" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="../web_page.ico" />
+    <link href="../css/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    
+    <style type="text/css">
+        body {text-align:center;margin:0;margin-top:30px;background: transparent  url(../images/page_gl.png) no-repeat;font-family: "Arial", "Helvetica", "Verdana", "sans-serif";font-size: 12px;}
+        .contenido {position:relative;width: 900px;margin-top: 0px;margin-left: auto;margin-right: auto;margin-bottom: 0px;text-align:left; background-color:#fff;border: solid 1px #455270;}
+        img {border-style: none;}
+        #contenedor {overflow: hidden;width: 900px;}
+        #flotanteizquierda {float: left;width: 480px;}
+        #flotantederecha {float: right;background-color:#455270;width:420px;height:291px;}
+        .head {background: transparent url(../images/bg.gif) repeat-x;height:65px;}
+        fieldset {padding:0 15px 10px 15px;}         h1{font-size:2.4em;margin:0;color:#fff;}        h2{font-size:1.7em;margin:0;color:#cc0000;}         h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;}         #header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#fff;background-color:#555555;}        #content{margin:0 0 0 2%;position:relative;}        .content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}        .err_http {color:#fff;}        .err_http:hover {color:#CBCDD3;}        .ttecno {color:#fff;font-size:20px;}        .ttecno:hover {cursor:pointer;}        #table_help img{background-color:#455270;}        /*#xparametrosError ul {margin-left:160px;}*/        /*padding:7px;border:solid 1px #b1bb50;background-color:#ecfa6b;*/    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Dialog Info
+            $('#xparametrosInfo').dialog({
+                autoOpen: false,
+                width: 630,
+                height: 465,
+                modal: true,
+                buttons: {
+                    "Aceptar": function() {
+                        $(this).dialog("close");
+                    }
+                },
+                show: 'blind',
+                hide: 'blind'
+            });
+
+            // Dialog Error
+            $('#xparametrosError').dialog({
+                open: function() {
+                    $(this).parents(".ui-dialog:first").find(".ui-widget-header").removeClass("ui-widget-header").addClass("ui-widget-header-custom");
+                },
+                autoOpen: false,
+                width: 630,
+                modal: true,
+                buttons: {
+                    "Aceptar": function() {
+                        $(this).dialog("close");
+                    }
+                },
+                show: 'blind',
+                hide: 'blind'
+            });
+
+            $('#dialog_link').click(function() {
+                $('#xparametrosInfo').dialog('open');
+                return false;
+            });
+
+            $('#dialog_Error').click(function() {
+                $('#xparametrosError').dialog('open');
+                return false;
+            });
+
+            $(".ttecno").mouseenter(function() { $(this).fadeOut(200); $(this).fadeIn(500); });
+            $("#table_help td").mouseenter(function() {$(this).fadeOut(100); $(this).fadeIn(800); });
+
+        });
+    </script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="contenido">
+        <form id="form1" runat="server">
+        
+        <div class="head">
+        </div>
+	    <div id="contenedor">
+		    <div id="flotanteizquierda">
+			    <img width="480" height="291" alt="" src="../images/contentimage01-3.jpg" style="margin:0;" />
+		    </div>
+		    <div id="flotantederecha">
+			   <div style="color:#fff;padding:10px;">
+				    <h2>
+				        <span class="ttecno">TECNOEXPEDIENTES</span><br />
+				        <span style="font-size:16px;color:#fff;">Gestion  Documetal</span>
+				    </h2>
+				    <p>
+				       <span style="color:#fff;font-size:11px;">
+                       <b style="font-size:14px;">¿Porque estoy viendo esta ventana?</b>
+                       <br />
+                       Esta ventana es diferente a cualquier modulo o escritorio de <b>Tecno Expedientes</b> ya que hace parte del soporte técnico y ayudas dinamicas que ofrece <b>Tecno Expedientes</b> a los diferentes usuarios del sistema.
+                       <br /><br />
+                       Esta sección o ventana le facilita o proporciona la información necesaria acerca de la causa y soluciones de los errores <a href="#" class="err_http" title="En caso de que no conozca el termino hacer clic aquí">HTTP</a> o infracciones a la hora de procesar alguna operación hecha por Tecno Expedientes con intervención de por lo menos uno de los usuarios del sistema.  
+				       </span>
+				    </p>
+				    <table id="table_help" style="margin:0px; margin-left:-14px">
+				        <tr>
+				            <td><a href="#" id="dialog_link"><img src="../images/1320451994_Help.png" height="75" width="75" alt="Ayuda" title="Ayuda" /></a></td>
+				            <td><a href="#" id="dialog_Error"><img src="../images/1320451999_Close.png" height="75" width="75" alt="Error" title="Error" /></a></td>
+				            <td><a href="../login.aspx" id="A2"><img src="../images/1320452016_Home_01.png" height="75" width="75" alt="Inicio" title="Inicio"  /></a></td>
+				        </tr>
+				    </table>
+		        </div>
+		        
+		        <div id="err_http" style="display:none;text-align:justify;" title="Ayuda">
+		            <div style="text-align:center;color:#0071AF"><b>Hypertext Transfer Protocol o HTTP (Protocolo de transferencia de hipertexto)</b></div>
+		            <br /><br />
+		            <div>
+		                <img src="../images/1320449197_Location HTTP.png" style="float:left; margin-right:5px;" />
+		                Es un código de estado que indica que el navegador web ha sido capaz de comunicarse con el servidor. 
+		                <br />
+                        Cuando se establece una comunicación <b>HTTP</b> se pide al servidor que responda a una petición, como un navegador web solicitando un documento <b>HTML</b> (<span style=" color:#062B50;font-style:italic;">Una página web o Modulo y escritorios de Tecno Expedientes</span>). El servidor responde con un código numérico de error <b>HTTP</b> y un mensaje.
+		            </div>
+		            <br /><br />
+		            <div style="background-color:#EEEEEE;">
+                        <div id="header" style=" background-color:#0b4295"><h1 style="font-size:17px">EJEMPLO: Error del servidor</h1></div>                        <div id="content">                            <div class="content-container">                                <fieldset>                                    <h2 style="font-size:17px">404: archivo o directorio no encontrado.</h2>                                    <h3 style="font-size:12px">Puede que se haya quitado el recurso que está buscando, que se le haya cambiado el nombre o que no esté disponible temporalmente.</h3>                                </fieldset>                            </div>                        </div>                        <br />                    </div>
+		        </div>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        // Dialog
+                        $('#err_http').dialog({
+                            autoOpen: false,
+                            width: 640,
+                            modal: true,
+                            buttons: {
+                                "Aceptar": function() {
+                                    $(this).dialog("close");
+                                }
+                            },
+                            show: 'blind',
+                            hide: 'blind'
+                        });
+
+                        $('.err_http').click(function() {
+                            $('#err_http').dialog('open');
+                            return false;
+                        });
+                    });
+                </script>
+		    </div>
+	    </div>
+	    <div>
+	      <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+	      </asp:ContentPlaceHolder>
+	    </div>    		
+	    
+	    <!-- Informacion Dialog -->
+	    <div id="xparametrosInfo" style="width:600px;position:relative;display:none;" title="Ayuda (Tecno Expedientes)">
+	      <div style="float:left;width:211px">
+	       <img src="../images/ThumOficceMessenger.png" alt="" />
+	      </div>
+	      <div style="float:left;width:389px;display:block;">
+	        <div style="padding:10px;text-align:justify;">
+	            <div id="Help_info" runat="server"></div>
+	        </div>
+	      </div>
+	      <div style="clear: both;"></div> 
+	    </div>
+	    
+	    <!-- Error Dialog -->
+	    <div id="xparametrosError" style="width:600px;position:relative;display:none;text-align:justify;" title="...">
+	           <img src="../images/1320525583_receptionist.png" style="float:left; margin-right:5px;" />
+	           <div id="Help_err" runat="server"></div>
+	    </div>
+	    </form>
+	</div>
+	<br /><br />
+</body>
+</html>

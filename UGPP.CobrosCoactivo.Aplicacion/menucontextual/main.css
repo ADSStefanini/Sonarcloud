@@ -1,0 +1,88 @@
+/* CSS Document */
+/******* MENU *******/
+#menu_contextual{
+display: none; 
+width: 165px;
+padding: 6px;
+background:#B9CFFC; /*#618ce4;*/
+border: 1px solid #9fbefb;
+position: absolute;
+z-index:9999;
+}
+
+#menu_contextual ol, ul, li, a {
+border:0pt none;
+font-family:inherit;
+font-size:100%;
+font-style:inherit;
+font-weight:inherit;
+margin:0pt;
+padding:0pt;
+vertical-align:baseline;
+}
+#menu_contextual a{
+cursor: pointer;
+color: #296ba5;
+text-decoration: none;
+outline: none !Important;
+}
+#menu_contextual ul{
+list-style: none;
+list-style-type: none;
+list-style-position: outside;
+}
+#menu_contextual ul{
+font-family: Tahoma, Arial, Helvetica, sans-serif;
+color: #6d6d6d;
+background: #fff;
+border: 1px solid #B9CFFC;
+}
+#menu_contextual ul li{
+line-height: 1.5em;
+padding: 5px 5px 5px 25px;
+font-size: 11px;
+border-bottom: 1px solid #f4f6f8;
+}
+#menu_contextual ul li:hover{
+background-color: #fff8cc;
+border-bottom: 1px solid #ffe222;
+color: #000;
+cursor: pointer;
+}
+#menu_contextual ul li a{
+display: block;
+cursor: pointer;
+color: #296ba5;
+text-decoration: none;
+outline: none !Important;
+}
+#menu_contextual ul li.disabled, #menu_contextual ul li.disabled a{
+color: #bbbbbb;
+cursor: default;
+}
+#menu_contextual ul li.disabled:hover{
+background: #fff;
+border-bottom: 1px solid #fff;
+}
+#menu_contextual ul li{
+background-position: 3px 6px;
+background-repeat: no-repeat;
+}
+
+
+#menu ul li#menu_anterior{
+	background-image: url(../Security/images/icons/1.png);
+}
+#menu ul li#pmenu_recargar
+{
+    background-position: 3px 5px;
+	background-image: url(../Security/images/icons/1.png);
+}
+#menu ul li#menu_web{
+	background-position: 3px 5px;
+	background-image: url(../Security/images/icons/1.png);
+}
+#menu ul li#menu_favoritos{
+	background-image: url(../Security/images/icons/1.png);
+}
+/******* /MENU *******/

@@ -1,0 +1,29 @@
+﻿-- =============================================
+-- Author:		Stefanini - yeferson alba
+-- Create date: 2018-11-30
+-- Description:	Crear tabla tabla [ESTADO_OPERATIVO]
+-- =============================================
+/****** Object:  Table [dbo].[ESTADO_OPERATIVO]    Script Date: 30/11/2018 9:14:47 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'ESTADO_OPERATIVO' AND TABLE_SCHEMA = 'dbo')
+    drop table dbo.ESTADO_OPERATIVO;
+CREATE TABLE [dbo].[ESTADO_OPERATIVO](
+	[ID_ESTADO_OPERATIVOS] [int] IDENTITY(1,1) NOT NULL,
+	[COD_TIPO_OBJ] [int] NOT NULL,
+	[VAL_NOMBRE] [varchar](50) NOT NULL,
+	[DEC_ESTADO_OPERATIVO] [varchar](140) NOT NULL,
+	[IND_ESTADO] [bit] NOT NULL,
+ CONSTRAINT [PK_ESTADO_OPERATIVO] PRIMARY KEY CLUSTERED 
+(
+	[ID_ESTADO_OPERATIVOS] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[ESTADO_OPERATIVO] ADD  CONSTRAINT [DF_ESTADO_OPERATIVO_IND_ESTADO]  DEFAULT ((1)) FOR [IND_ESTADO]
+GO

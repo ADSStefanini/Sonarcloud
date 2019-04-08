@@ -1,0 +1,26 @@
+USE [UGPPCobrosCoactivo]
+GO
+/****** Object:  StoredProcedure [dbo].[ASIGNACION_GESTORES]    Script Date: 28/11/2018 9:55:30 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Luis Mario Lenis Ojeda>
+-- Create date: <19-Nov-2018>
+-- Description:	<Designacion de Usuarios Gestores>
+-- =============================================
+ALTER PROCEDURE [dbo].[ASIGNACION_GESTORES] 
+	-- Add the parameters for the stored procedure here
+	@USERS AS VARCHAR(200)
+AS
+BEGIN
+ -- EXEC [db_backupoperator].[ASIGNACION_GESTORES] 
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+    -- Insert statements for procedure here
+	UPDATE USUARIOS  SET ind_gestor_estudios=1 WHERE login=@USERS
+
+END

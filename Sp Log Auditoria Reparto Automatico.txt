@@ -1,0 +1,44 @@
+USE [UGPPCobrosCoactivo]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Luis Mario Lenis Ojeda>
+-- Create date: <28-Noviembre-2018>
+-- Description:	<Registro Auditoria Del Servicio Reparto Automatico>
+-- =============================================
+ALTER PROCEDURE [dbo].[LOG_AUDITORIA_REPARTO_AUTOMATICO]
+	-- Add the parameters for the stored procedure here
+	@FECHA AS DATETIME, @LOG AS VARCHAR(MAX),@HOST AS VARCHAR(MAX),@IP AS VARCHAR(MAX)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	INSERT INTO [dbo].[LOG_AUDITORIA]
+           ([LOG_USER_ID]
+           ,[LOG_USER_CC]
+           ,[LOG_HOST]
+           ,[LOG_IP]
+           ,[LOG_FECHA]
+           ,[LOG_APLICACION]
+           ,[LOG_MODULO]
+           ,[LOG_DOC_AFEC]
+           ,[LOG_CONSULTA]
+           ,[LOG_NEGOCIO])
+     VALUES
+           ('Reparto Automatico'
+           ,'Servicio Automatico Reparto Titulo y Expedientes'
+           ,@HOST
+           ,@IP
+           ,@FECHA
+           ,'Tarea Programada'
+           ,'Tarea Programada'
+           ,'Tarea Programada'
+           ,@LOG
+           ,'')
+END

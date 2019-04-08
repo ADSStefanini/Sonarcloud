@@ -1,0 +1,14 @@
+﻿* {
+    font-size: 12px;
+}
+
+.BoundFieldItemStyleHidden {
+    display: none
+}
+
+.BoundFieldHeaderStyleHidden {
+    display: none
+}
+.search-list-form{
+    margin-bottom: 1rem;
+}

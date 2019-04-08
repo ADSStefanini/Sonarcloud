@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"
+    xmlns="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<xs:complexType name="ContextoRespuestaTipo">
+		<xs:sequence>
+			<xs:element name="idTx" maxOccurs="1" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="36"></xs:length>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>   
+			<xs:element name="codEstadoTx" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+			<xs:element name="fechaTx" type="xs:dateTime" maxOccurs="1" minOccurs="1"></xs:element>
+			<xs:element name="idInstanciaProceso" maxOccurs="1" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="48"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="idInstanciaActividad" maxOccurs="1" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="48"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			
+			<xs:element name="valCantidadPaginas" type="xs:integer" maxOccurs="1" minOccurs="0"></xs:element>
+			<xs:element name="valNumPagina" type="xs:integer" maxOccurs="1" minOccurs="0"></xs:element>			
+			
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="ContextoRespuestaTipo" type="ContextoRespuestaTipo" />
+
+</xs:schema>

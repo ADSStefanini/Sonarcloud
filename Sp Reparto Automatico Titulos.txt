@@ -1,0 +1,222 @@
+﻿USE [UGPPCobrosCoactivo]
+GO
+/****** Object:  StoredProcedure [dbo].[REPARTO_AUTOMATICO]    Script Date: 29/11/2018 11:26:53 a. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Luis Mario Lenis Ojeda>
+-- Create date: <15-Nov-2018>
+-- Description:	<ASIGNACIÓN AUTOMATICA DEL REPARTO>
+-- =============================================
+ALTER PROCEDURE [dbo].[REPARTO_AUTOMATICO] 
+	-- Add the parameters for the stored procedure here
+	
+AS
+BEGIN
+--EXEC [REPARTO_AUTOMATICO]
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+DECLARE @TABLA TABLE(
+Numero_Registro int,
+Id bigint,
+Codigo_Titulo varchar(MAX),
+Codigo_Expediente varchar(MAX),
+Tipo_Titulo varchar(2),
+Fecha_Prescripcion DateTime,
+Fecha_Recepcion DateTime
+);
+
+DECLARE @USERS TABLE(
+NUMERO_FILA INT,
+CONUSER INT,
+USUARIO VARCHAR(MAX));
+
+DECLARE @USERSDESC TABLE(
+NUMERO_FILA INT,
+CONUSER INT,
+USUARIO VARCHAR(MAX));
+
+DECLARE @TABLA2 TABLE(
+Numero_Registro int,
+Id bigint,
+Codigo_Titulo varchar(MAX),
+Codigo_Expediente varchar(MAX),
+Tipo_Titulo varchar(2),
+Fecha_Prescripcion DateTime,
+Fecha_Recepcion DateTime
+);
+
+DECLARE @ASIGNACION TABLE(
+USUARIO VARCHAR(MAX),
+TITULO VARCHAR(MAX)
+);
+declare @IdUnico bigint;
+declare @Cod_Tipo varchar(2);
+declare @Cod_Titulo varchar(max);
+declare @Cod_Exp varchar(max);
+declare @Fecha DateTime;
+declare @Fecha_Recepcion DateTime;
+declare @Fecha1 DateTime;
+declare @Number_Register int;
+declare @i int=1;
+declare @r int=1;
+declare @bandera int=0;
+declare @bande int=0;
+declare @Tota_Titulos int;
+declare @Total_User int;
+declare @login varchar(max);
+declare @titulo varchar(max);
+
+
+DECLARE fecha_prescripcion CURSOR FOR 
+  SELECT numero_registro, 
+         id, 
+         codigo_titulo, 
+         codigo_expediente, 
+         tipo_titulo, 
+         fecha_prescripcion, 
+         fecha_recepcion 
+  FROM   @TABLA 
+
+-- Insert statements for procedure here 
+INSERT INTO @TABLA 
+SELECT Row_number() 
+         OVER ( 
+           ORDER BY M.idunico), 
+       M.idunico, 
+       M.mt_nro_titulo, 
+       mt_expediente, 
+       mt_tipo_titulo, 
+       mt_fec_cad_presc, 
+       mt_fec_expedicion_titulo 
+FROM   maestro_titulos M 
+JOIN TAREA_ASIGNADA T
+ON T.ID_UNICO_TITULO=M.idunico
+WHERE T.COD_ESTADO_OPERATIVO=2 OR T.COD_ESTADO_OPERATIVO=4; 
+
+OPEN fecha_prescripcion 
+
+FETCH next FROM fecha_prescripcion INTO @Number_Register, @IdUnico, @Cod_Titulo, 
+@Cod_Exp, @Cod_Tipo, @Fecha, @Fecha_Recepcion 
+
+WHILE @@fetch_status = 0 
+  BEGIN 
+      IF @Fecha IS NULL 
+        BEGIN 
+            SET @Fecha1=NULL; 
+            SET @Fecha1=(SELECT TOP 1 Max(fec_notificacion) 
+                         FROM   maestro_titulos_for_notificacion 
+                         WHERE  id_unico_maestro_titulos = @IdUnico 
+                                AND cod_tipo_notificacion = 1 
+                                AND fec_notificacion IS NOT NULL); 
+            SET @Fecha=Dateadd(year, 1, @Fecha1); 
+        END 
+
+      INSERT INTO @TABLA2 
+      VALUES      (@Number_Register, 
+                   @IdUnico, 
+                   @Cod_Titulo, 
+                   @Cod_Exp, 
+                   @Cod_Tipo, 
+                   @Fecha, 
+                   @Fecha_Recepcion); 
+
+      FETCH next FROM fecha_prescripcion INTO @Number_Register, @IdUnico, 
+      @Cod_Titulo, @Cod_Exp, @Cod_Tipo, @Fecha, @Fecha_Recepcion 
+  END 
+
+CLOSE fecha_prescripcion 
+
+DEALLOCATE fecha_prescripcion 
+
+SET @Tota_Titulos=(SELECT Count(*) 
+                   FROM   @TABLA2); 
+
+INSERT INTO @USERS 
+SELECT Row_number() 
+         OVER ( 
+           ORDER BY U.conuser), 
+       U.conuser, 
+       U.login 
+FROM   usuarios U 
+WHERE  U.useractivo = 1 
+       AND U.ind_gestor_estudios = 1 
+ORDER  BY U.conuser; 
+
+INSERT INTO @USERSDESC 
+SELECT Row_number() 
+         OVER ( 
+           ORDER BY U.conuser DESC), 
+       U.conuser, 
+       U.login 
+FROM   usuarios U 
+WHERE  U.useractivo = 1 
+       AND U.ind_gestor_estudios = 1 
+ORDER  BY U.conuser DESC; 
+
+SET @Total_User=(SELECT Count(*) 
+                 FROM   @USERS); 
+
+WHILE ( @r <= @Tota_Titulos ) 
+  BEGIN 
+      SET @titulo=(SELECT id 
+                   FROM   @TABLA2 
+                   WHERE  numero_registro = @r); 
+
+      IF @bandera = 0 
+        BEGIN 
+            SET @login=(SELECT usuario 
+                        FROM   @USERS 
+                        WHERE  numero_fila = @i); 
+						print(@login)
+        END 
+      ELSE 
+        BEGIN 
+            SET @login=(SELECT usuario 
+                        FROM   @USERSDESC 
+                        WHERE  numero_fila = @i); 
+						
+        END 
+
+      IF( @i = @Total_User ) 
+        --Validacion de Usuarios vs Total para cambio de orden de los usuarios 
+        BEGIN 
+            SET @bandera=1; 
+            SET @i=1; 
+            SET @bande=@bande + 1 
+        END 
+      ELSE
+	BEGIN
+	SET @i=@i + 1; --incremento para asignacion de usuarios 
+	END
+
+
+      IF @bande = 2 --Validacion Seteo de variables 
+        BEGIN 
+            SET @bandera=0; 
+            SET @bande=0; 
+        END 
+ 
+      SET @r=@r + 1; --incremento while 
+     
+      --Asignacion Titulo a Gestor 
+	 
+	  
+      UPDATE tarea_asignada 
+      SET    val_usuario_nombre = @LOGIN, 
+             fec_entrega_gestor = Getdate(), 
+			 FEC_ACTUALIZACION=Getdate(),
+             cod_estado_operativo = 4 
+      WHERE  id_unico_titulo = @titulo; 
+	  print(@titulo)
+      ---Cambio Estado Operativo Titulo 
+      UPDATE maestro_titulos 
+      SET    estado = 4 
+      WHERE  idunico = @titulo; 
+  END 
+ 
+END

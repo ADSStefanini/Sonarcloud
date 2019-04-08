@@ -1,0 +1,63 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="predialvariable034Reports.aspx.vb" Inherits="coactivosyp.predialvariable034Reports" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+      <div id="container">
+           <div id="wrap" class="wrap">	
+                <div style="text-align:center;position:relative;">
+                    <div style=" position:absolute;right:5px;top:10px;">Expediente. <b><%=ViewState("NUMERO_EXPEDIENTE")%></b></div>
+                    <img alt="Logo" src="imagen.ashx?ImageFileName=<%= Session("mcobrador") %>&tipo=Logo" width="340" height="115" style="width:340px; height:115px;" /><br /><br />
+                    <b>ALCALDIA DE BUCARAMANGA</b><br />
+                    <b>SECRETARIA DE HACIENDA MUNICIPAL</b><br />
+                    <b>TESORERIA MUNICIPAL</b> <br />
+                    <b>RESOLUCIÓN No. <%=ViewState("RESOLUCION")%></b><br />
+                </div>
+                <br />
+                <br />
+                <br />
+                <b><i><%=ViewState("FECHA_DE_ACTO")%></i></b><br />
+                <br />
+                <br />
+                El Tesorero General del Municipio de Bucaramanga, en ejercicio de la facultades legales dispuestas en el Decreto municipal No. 0050 del 31 marzo 2006, Decreto municipal No. 0232 del 7 Noviembre 2008, además de la potestad contemplada en el numeral 6, literal ‘D’, del Artículo No. 91 de la Ley 136 de 1994 y los atributos reglamentarios otorgados a través del Artículo No. 450 del Acuerdo Municipal 044 de 22 de Diciembre de 2008 y el inciso 2 del Artículo 817 E.T.N., procede a efectuar el estudio a la excepción propuesta dentro del proceso administrativo de cobro coactivo radicado No. <b><%=ViewState("NUMERO_EXPEDIENTE")%></b> por el contribuyente <b><%=ViewState("EfiNom")%></b>, en calidad de propietario(a) del bien inmueble identificado con el No. Predial <b><%=ViewState("PreNum")%></b>, ubicado en la <b><%=ViewState("EfiDir")%></b>, teniendo en cuenta los siguientes: <br />
+                <br />
+                <br />
+                <br />
+                <div style="text-align:center;"><b>HECHOS: </b></div><br />
+                <%=ViewState("HECHOS")%><br />
+                <br />
+                <br />
+                Las anteriores situaciones fácticas recopiladas constituyen el norte que fundamentan el presente estudio y por lo anterior este Despacho argumenta su decisión basándose en las siguientes:<br />
+                <br />
+                <br />
+                <div style="text-align:center;"><b>CONSIDERACIONES: </b></div><br />
+                <%=ViewState("CONSIDERACIONES")%>
+                <br />
+                <br />
+                <br />
+                <div style="text-align:center;"><b>RESUELVE:</b></div><br />
+                <br /> 
+                <br />
+                <%=ViewState("ARTICULO_VARIABLE")%>
+                <br />
+                <br />
+                <br />
+                <b>Notifíquese y cúmplase,</b><br />
+                <br />
+                <img alt="Firma" 
+                    src ="imagen.ashx?ImageFileName=<%= Session("mcobrador")%>&tipo=Firma" 
+                    id="ImgFirma" height="123" style="width:274px; height:123px;" />
+                <br />
+                <b>RICARDO ORDOÑEZ RODRIGUEZ</b><br />
+                Tesorero General Bucaramanga<br />
+            </div>
+       </div>             
+    </form>
+</body>
+</html>

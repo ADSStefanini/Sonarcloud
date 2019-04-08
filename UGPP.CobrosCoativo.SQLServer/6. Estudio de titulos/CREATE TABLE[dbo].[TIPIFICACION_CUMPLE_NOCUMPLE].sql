@@ -1,0 +1,21 @@
+IF EXISTS ( SELECT  *
+            FROM    sys.objects
+            WHERE   object_id = OBJECT_ID(N'[dbo].[TIPIFICACION_CUMPLE_NOCUMPLE]')
+                    AND type IN ( N'P', N'PC','U' ) ) 
+
+BEGIN 
+	DROP TABLE [dbo].[TIPIFICACION_CUMPLE_NOCUMPLE]
+END
+
+GO
+
+CREATE TABLE [dbo].[TIPIFICACION_CUMPLE_NOCUMPLE](
+	[ID_TIPIFICACION] [bigint] IDENTITY(1,1) NOT NULL,
+	[DESCRIPCION_TIPIFICACION] [varchar](300) NULL,
+	[HABILITADO] [BIT]  NULL,
+) ON [PRIMARY]
+
+
+
+
+

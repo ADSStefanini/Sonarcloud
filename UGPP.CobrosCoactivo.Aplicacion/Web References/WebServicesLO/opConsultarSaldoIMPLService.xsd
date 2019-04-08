@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws.validador_pagos.com/" targetNamespace="http://ws.validador_pagos.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="oConsultarSaldo" type="tns:oConsultarSaldo" />
+  <xs:element name="oConsultarSaldoCAB" type="tns:oConsultarSaldoCAB" />
+  <xs:element name="oConsultarSaldoCABResponse" type="tns:oConsultarSaldoCABResponse" />
+  <xs:element name="oConsultarSaldoResponse" type="tns:oConsultarSaldoResponse" />
+  <xs:complexType name="oConsultarSaldoCAB">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:consultarSaldo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultarSaldo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="expediente" type="xs:string" />
+      <xs:element minOccurs="0" name="nit" type="xs:string" />
+      <xs:element minOccurs="0" name="transaccion" type="xs:string" />
+      <xs:element name="valor" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="oConsultarSaldoCABResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:consultarSaldo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="oConsultarSaldo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:consultarSaldo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="oConsultarSaldoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="tns:consultarSaldoRespuesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultarSaldoRespuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="administradora" type="xs:string" />
+      <xs:element name="ajuste" type="xs:int" />
+      <xs:element minOccurs="0" name="anio" type="xs:string" />
+      <xs:element name="aporte_liquidado" type="xs:int" />
+      <xs:element name="aporte_pagado" type="xs:int" />
+      <xs:element minOccurs="0" name="cedula" type="xs:string" />
+      <xs:element name="ibc" type="xs:int" />
+      <xs:element minOccurs="0" name="inf" type="xs:string" />
+      <xs:element minOccurs="0" name="mes" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreTrabajador" type="xs:string" />
+      <xs:element minOccurs="0" name="observaciones" type="xs:string" />
+      <xs:element name="tipo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

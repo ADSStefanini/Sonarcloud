@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Documentos_extenciones" xml:space="preserve">
+    <value>ppt, pptx, doc, docx, xls, xlsx, odt, ods, odp, odb, odg, zip, 7z, txt, png, jpeg, jpg, xps, pdf,bmp,gif,gif,jpeg,png,psd,ai,cdr,dwg,svg,raw,nef</value>
+  </data>
+  <data name="LblTituloAutomatico" xml:space="preserve">
+    <value>Este titulo proviene del cargue automático</value>
+  </data>
+  <data name="MensajeErrorHtml" xml:space="preserve">
+    <value>&lt;div class="alert alert-danger alert-dismissible" style="margin: 0 auto; position: fixed; bottom: 100px; left: 0; width:70%; padding: 5px; box-sizing: border-box; color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; padding-right: 4rem; height:42px;opacity: .9;text-align: center;"&gt;&lt;a href="#" class="close" data-dismiss="alert" aria-label="close" style="color: #721c24; font-family: Verdana, Geneva, sans-serif; position: absolute; top: 0; right: 0; padding: 0.75rem 0.75rem; float: right; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff;"&gt;&amp;times;&lt;/a&gt;&lt;strong&gt;Error&lt;/strong&gt; {0}&lt;/div&gt;</value>
+  </data>
+  <data name="MsgActualizacionTitulo" xml:space="preserve">
+    <value>Se ha actualizado la información del titulo</value>
+  </data>
+  <data name="MsgDefaultAceptacionDocumento" xml:space="preserve">
+    <value>Se acepta el documento</value>
+  </data>
+  <data name="MsgDefaultAceptacionInformacionGeneral" xml:space="preserve">
+    <value>Se acepta la información del título</value>
+  </data>
+  <data name="MsgError" xml:space="preserve">
+    <value>Se ha ocasionado un error</value>
+  </data>
+  <data name="MsgErrorAlGuardar" xml:space="preserve">
+    <value>No pudo realizar el guardado inténtalo luego</value>
+  </data>
+  <data name="MsgErrorIntento" xml:space="preserve">
+    <value>Se ha ocasionado un error en la transacción inténtalo luego</value>
+  </data>
+  <data name="MsgErrorNoControladoMalla" xml:space="preserve">
+    <value>Error inesperado en la validación</value>
+  </data>
+  <data name="MsgExitosoObservacionTitulo" xml:space="preserve">
+    <value>Se ingresan las observaciones </value>
+  </data>
+  <data name="MsgGuardadoRegistroParcialTitulo" xml:space="preserve">
+    <value>Se realiza guardado parcial </value>
+  </data>
+  <data name="MsgIngresoTituloExitoso" xml:space="preserve">
+    <value>Titulo ingresado No: </value>
+  </data>
+  <data name="MsgMensajeDeudor" xml:space="preserve">
+    <value>No se encontro ningun deudor</value>
+  </data>
+  <data name="MsgNoObservacionDocumentoAreaOrigen" xml:space="preserve">
+    <value>CNC: Se debe informar los cambios realizados de los documentos en sus observaciónes</value>
+  </data>
+  <data name="MsgNoObservacionDocumentoEstudio" xml:space="preserve">
+    <value>CNC: Se debe Justificar por que se rechaza los documentos  en sus observaciónes</value>
+  </data>
+  <data name="MsgNoObservacionGeneralAreaOrigen" xml:space="preserve">
+    <value>CNC: Se debe Informar los cambios realizados en la observación</value>
+  </data>
+  <data name="MsgNoObservacionGeneralEstudio" xml:space="preserve">
+    <value>CNC: Se debe Justificar por que se rechaza la informaciòn titulo en la observación</value>
+  </data>
+  <data name="MsgNoValidacionTitulo" xml:space="preserve">
+    <value>Se debe corregir los siguientes resultados</value>
+  </data>
+  <data name="MsgNuevoRegistroParcialTitulo" xml:space="preserve">
+    <value>Se ha creado un nuevo registro parcial de un título</value>
+  </data>
+  <data name="TxtObservacionDocAutomaticoNoCumple" xml:space="preserve">
+    <value>El documento no cumple con lo solicitado</value>
+  </data>
+  <data name="TxtObservacionDocAutomaticoSiCumple" xml:space="preserve">
+    <value>El documento si cumple con lo solicitado</value>
+  </data>
+  <data name="TxtRespuestaCalificacionExitosa" xml:space="preserve">
+    <value>Cumple</value>
+  </data>
+  <data name="TxtRespuestaCalificacionNoExitosa" xml:space="preserve">
+    <value>No Cumple</value>
+  </data>
+  <data name="TxtServicioFallo" xml:space="preserve">
+    <value>No se pudo conectar con el servicio</value>
+  </data>
+</root>

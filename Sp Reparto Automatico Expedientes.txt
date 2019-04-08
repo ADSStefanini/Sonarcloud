@@ -1,0 +1,145 @@
+USE [UGPPCobrosCoactivo]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Luis Mario Lenis Ojeda>
+-- Create date: <26-NOV-2018>
+-- Description:	<Reparto Automatico de Expedientes>
+-- =============================================
+ALTER PROCEDURE [dbo].[REPARTO_EXPEDIENTES]
+	-- Add the parameters for the stored procedure here
+
+AS
+BEGIN
+-- EXEC [REPARTO_EXPEDIENTES]
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+DECLARE @TABLA TABLE(
+Numero_Registro int,
+Codigo_Expediente varchar(MAX)
+);
+
+
+    -- Insert statements for procedure here
+
+declare @i int=1;
+declare @r int=1;
+declare @Tota_Expedientes int;
+declare @Total_User int;
+declare @login varchar(max);
+declare @expediente varchar(max);
+declare @bandera int=0;
+declare @bande int=0;
+declare @validador int=0;
+
+DECLARE @USERS TABLE(
+NUMERO_FILA INT,
+CONUSER INT,
+USUARIO VARCHAR(MAX));
+
+DECLARE @USERSDESC TABLE(
+NUMERO_FILA INT,
+CONUSER INT,
+USUARIO VARCHAR(MAX));
+
+INSERT INTO @TABLA
+SELECT Row_number() 
+         OVER ( 
+           ORDER BY E.EFINROEXP),
+  E.EFINROEXP FROM EJEFISGLOBAL E
+ WHERE E.EFIESTADO=10; 
+
+ SET @Tota_Expedientes=(SELECT count(*) FROM EJEFISGLOBAL E
+ WHERE E.EFIESTADO=10); 
+
+ INSERT INTO @USERS 
+SELECT Row_number() 
+         OVER ( 
+           ORDER BY U.conuser), 
+       U.conuser, 
+       U.login 
+FROM   usuarios U 
+WHERE  U.useractivo = 1 
+       AND U.ind_gestor_expedientes = 1 
+ORDER  BY U.conuser; 
+
+INSERT INTO @USERSDESC 
+SELECT Row_number() 
+         OVER ( 
+           ORDER BY U.conuser DESC), 
+       U.conuser, 
+       U.login 
+FROM   usuarios U 
+WHERE  U.useractivo = 1 
+       AND U.ind_gestor_expedientes = 1 
+ORDER  BY U.conuser DESC; 
+
+WHILE ( @r <= @Tota_Expedientes ) 
+  BEGIN 
+      SET @expediente=(SELECT Codigo_Expediente 
+                   FROM   @TABLA 
+                   WHERE  Numero_Registro = @r); 
+
+	 IF @bandera = 0 
+        BEGIN 
+            SET @login=(SELECT usuario 
+                        FROM   @USERS 
+                        WHERE  numero_fila = @i); 
+        END 
+      ELSE 
+        BEGIN 
+            SET @login=(SELECT usuario 
+                        FROM   @USERSDESC 
+                        WHERE  numero_fila = @i); 
+        END 
+
+      IF( @i = @Total_User ) 
+        --Validacion de Usuarios vs Total para cambio de orden de los usuarios 
+        BEGIN 
+            SET @bandera=1; 
+            SET @i=1; 
+            SET @bande=@bande + 1 
+        END 
+	 ELSE
+		BEGIN
+		SET @i=@i + 1; --incremento para asignacion de usuarios 
+		END	
+
+      IF @bande = 2 --Validacion Seteo de variables 
+        BEGIN 
+            SET @bandera=0; 
+            SET @bande=0; 
+        END 
+
+      SET @r=@r + 1; --incremento while 
+      
+
+	  SET @validador=(SELECT COUNT(1) FROM TAREA_ASIGNADA WHERE EFINROEXP_EXPEDIENTE=@expediente)
+
+	  IF @validador=0 --Verifica si existe el expediente
+	   BEGIN --creacion del expediente en tarea asignadas
+	   INSERT INTO TAREA_ASIGNADA VALUES (@login,5,NULL,@expediente,GETDATE(),GETDATE(),0,NULL,10);
+	   UPDATE EJEFISGLOBAL 
+		 SET EFIESTADO = 11
+		 WHERE  EFINROEXP = @expediente; 
+	  END 
+		ELSE
+	  --Asignacion Expediente a Gestor 
+		 UPDATE tarea_asignada 
+		SET  VAL_USUARIO_NOMBRE = @login, 
+		      fec_entrega_gestor = Getdate(), 
+             cod_estado_operativo = 4 
+      WHERE  EFINROEXP_EXPEDIENTE = @expediente; 
+
+      ---Cambio Estado Operativo Expediente 
+      UPDATE EJEFISGLOBAL 
+      SET    EFIESTADO = 11
+      WHERE  EFINROEXP = @expediente; 
+	   END   
+  END

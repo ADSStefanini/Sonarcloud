@@ -1,0 +1,57 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Tabs.master.vb" Inherits="coactivosyp.Tabs" %>
+<%@ Register TagPrefix="HeadControl" TagName="HeadScripts" Src="~/Security/Controles/commons-head.ascx" %>
+<%@ Register TagPrefix="FooterControl" TagName="FootScripts" Src="~/Security/Controles/commons-footer.ascx" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    
+    <HeadControl:HeadScripts id="headScripts" runat="server" />
+    <link href="<%=ResolveClientUrl("~/css/tabs.css") %>" rel="stylesheet" />
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Security/Maestros/css/csstable.css") %>" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    
+    <style type="text/css">
+        iframe{
+            background-image: url("<%=ResolveClientUrl("~/images/ajax-loading.gif") %>");   
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="encabezado">
+            <div id="tituloencabezado">
+
+                <%  Response.Write("&nbsp Usuario actual: " & Session("ssnombreusuario") & ".")%>
+                
+                <span style="font-weight: normal">Perfil (<asp:Label ID="lblNomPerfil" runat="server" Text="Label"></asp:Label>)</span>
+                <div class="head-page-link">
+                    <asp:LinkButton ID="A3" runat="server" ToolTip="Cerrar sesión">
+                        <img alt ="Cerrar sesión" src="<%=ResolveClientUrl("~/Security/images/icons/Shutdown.png") %>" height="18" width="18" style=" vertical-align:middle" id="imgCerrarSesion" title="Cerrar sesión" />
+                    </asp:LinkButton>
+                    <span>Cerrar sesión&nbsp;</span>
+                    <asp:ContentPlaceHolder ID="headPageLinks" runat="server" />
+                </div>
+
+                
+
+            </div>
+        </div>
+        <div id="tabs-parent">
+
+            <asp:ContentPlaceHolder ID="BeforeTabs" runat="server" />
+            <div id="tabs-content"></div>
+            <asp:ContentPlaceHolder ID="AfterTabs" runat="server" />
+
+        </div>
+    </form>
+
+    <FooterControl:FootScripts id="footScripts1" runat="server" />
+    <script type="text/javascript" src="<%=ResolveClientUrl("~/js/tabs.js") %>"></script>
+</body>
+</html>

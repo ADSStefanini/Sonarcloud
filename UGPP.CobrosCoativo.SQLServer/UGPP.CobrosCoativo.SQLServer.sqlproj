@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>UGPP.CobrosCoativo.SQLServer</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{115b3df7-b89d-40da-a7d2-b90522526fd5}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>UGPP.CobrosCoativo.SQLServer</RootNamespace>
+    <AssemblyName>UGPP.CobrosCoativo.SQLServer</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="4_1_Bandeja_Titulo_AO" />
+    <Folder Include="ClasificacionManual" />
+    <Folder Include="3.1 Malla de Validacion" />
+    <Folder Include="6. Estudio de titulos" />
+    <Folder Include="Inserts" />
+    <Folder Include="Updates" />
+    <Folder Include="Alters" />
+    <Folder Include="Creates" />
+    <Folder Include="GestionDocumental" />
+    <Folder Include="Queries Soporte" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="4_1_Bandeja_Titulo_AO\CREATE PROCEDURE [dbo].[SP_GrillaAreaOrigen].sql" />
+    <None Include="4_1_Bandeja_Titulo_AO\CREATE PROCEDURE [dbo].[SP_InsertaJustificacionCierreTit].sql" />
+    <None Include="4_1_Bandeja_Titulo_AO\CREATE TABLE [dbo].[JUSTITICACION_CIERRE_TITULO].sql" />
+    <None Include="4_1_Bandeja_Titulo_AO\INSERT INTO [dbo].[ESTADO_OPERATIVO].sql" />
+    <Folder Include="Procedimientos" />
+    <None Include="Auditoria\INSERT_MAESTRO_HOMOLOGACION.sql" />
+    <None Include="Procedimientos\SP_ObtenerTitulosEstudioTitulos.sql" />
+    <None Include="Procedimientos\SP_ObtenerPaginasPorPerfil.sql" />
+    <None Include="Alters\AlterPerfiles.sql" />
+    <None Include="Inserts\InsertPerfiles.sql" />
+    <None Include="Creates\Create_Pagina.sql" />
+    <None Include="Creates\Create_Modulo.sql" />
+    <None Include="Creates\Create_PERFIL_MODULO.sql" />
+    <None Include="Creates\Create_PERFIL_PAGINA.sql" />
+    <None Include="Procedimientos\SP_OBTENER_DEUDORES_POR_TITULO.sql" />
+    <None Include="Inserts\InsertModulos.sql" />
+    <None Include="Inserts\InsertPaginas.sql" />
+    <None Include="Inserts\InsertPerfilPaginas.sql" />
+    <None Include="Inserts\InsertPerfilModulo.sql" />
+    <None Include="GestionDocumental\SP_DOCUMENTOS_TITULO_TIPO_TITULO.sql" />
+    <None Include="GestionDocumental\SP_INGRESAR_DOCUMENTOTITULO_TIPOTITULO.sql" />
+    <None Include="ClasificacionManual\CREATEHISTORICO_CLASIFICACION_MANUAL.sql" />
+    <None Include="2.Data.SQL" />
+    <None Include="Alters\AlterTableSolicitudes_CambioEstado.txt" />
+    <None Include="4.Incremental.sql" />
+    <None Include="5.Incremental.sql" />
+    <None Include="6.Incremental_IPC.sql" />
+    <None Include="6.Incremental.sql" />
+    <None Include="7.Incremental.sql" />
+    <None Include="8.Incremental.sql" />
+    <None Include="1.Soporte_Incremental.sql" />
+    <None Include="9.Incremental.sql" />
+    <None Include="Queries Soporte\298311.sql" />
+    <None Include="EstructuraFinal.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Procedimientos\SP_TIPOS_TITULO_POR_CARTERA.sql" />
+    <Build Include="Procedimientos\SP_ALMACENAMIENTO_TEMPORAL_POR_IDTAREA.sql" />
+    <Build Include="Procedimientos\SP_DOCUMENTOS_TIPO_TITULO.sql" />
+    <Build Include="Procedimientos\SP_DOMINIO_DETALLE_DOMINIOID.sql" />
+    <Build Include="Procedimientos\SP_FUENTE_DIRECCIONES.sql" />
+    <Build Include="Procedimientos\SP_TAREA_ASIGNADA_POR_ID.sql" />
+    <Build Include="Procedimientos\SP_TIPOS_AREA_ORIGEN.sql" />
+    <Build Include="Procedimientos\SP_TIPOS_CARTERA_POR_PROCEDENCIA.sql" />
+    <Build Include="Procedimientos\SP_ALMACENAMIENTO_TEMPORAL_ACTUALIZAR.sql" />
+    <Folder Include="Integracion" />
+    <Folder Include="Auditoria" />
+    <Build Include="Procedimientos\SP_TAREA_ASIGNADA_INGRESAR.sql" />
+    <None Include="6. Estudio de titulos\ALTER TABLE MAESTRO_TITULOS ADD Automatico BIT NULL%3b.sql" />
+    <None Include="6. Estudio de titulos\CREATE PROCEDURE [dbo].[SP_InsertaObservacionCNC].sql" />
+    <None Include="6. Estudio de titulos\CREATE PROCEDURE [dbo].[SP_InsertaObservacionCNCDoc].sql" />
+    <None Include="6. Estudio de titulos\CREATE PROCEDURE [dbo].[SP_InsertaTipificacionCNC].sql" />
+    <None Include="6. Estudio de titulos\CREATE TABLE [dbo].[OBSERVACIONES_CUMPLE_NOCUMPLE].sql" />
+    <None Include="6. Estudio de titulos\CREATE TABLE [dbo].[OBSERVACIONESDOC_CUMPLE_NOCUMPLE].sql" />
+    <None Include="6. Estudio de titulos\CREATE TABLE [dbo].[TIPIFICACION_CNC].sql" />
+    <None Include="6. Estudio de titulos\CREATE TABLE[dbo].[TIPIFICACION_CUMPLE_NOCUMPLE].sql" />
+    <None Include="3.1 Malla de Validacion\ALTER TABLE [dbo].[MAESTRO_TITULOS_DOCUMENTOS].sql" />
+    <None Include="3.1 Malla de Validacion\CREATE PROCEDURE [dbo].[SP_GuardaDatosValores].sql" />
+    <None Include="3.1 Malla de Validacion\CREATE PROCEDURE [dbo].[SP_InsertaDeudor].sql" />
+    <None Include="3.1 Malla de Validacion\CREATE PROCEDURE [dbo].[SP_InsertaDireccion].sql" />
+    <None Include="3.1 Malla de Validacion\CREATE PROCEDURE [dbo].[SP_InsertaDocumento].sql" />
+    <None Include="3.1 Malla de Validacion\CREATE PROCEDURE [dbo].[SP_InsertaNotificacion].sql" />
+    <None Include="3.1 Malla de Validacion\CREATE PROCEDURE [dbo].[SP_InsertaTituloEjecutivo].sql" />
+    <None Include="3.1 Malla de Validacion\CREATE PROCEDURE [dbo].[SP_ObtenDatosValores].sql" />
+    <None Include="3.1 Malla de Validacion\INSERT INTO [dbo].[DOCUMENTO_TITULO].sql" />
+    <None Include="Inserts\scriptDBINSERT.sql" />
+    <None Include="Updates\scriptDBModificados.sql" />
+    <None Include="6. Estudio de titulos\CREATE TABLE GESTION DOCUMENTAL.sql" />
+    <None Include="Alters\AlterTableEjefisglobal.sql" />
+    <None Include="Creates\CreateEstadoOperativo.sql" />
+    <None Include="Creates\CreateTipificacionErrores.sql" />
+    <None Include="Creates\CreateTiposCausalesDevolucion.sql" />
+    <None Include="Creates\CreateTiposCausalesPriorizacion.sql" />
+    <None Include="Creates\CreateTiposCausalesReasignacion.sql" />
+    <None Include="Inserts\InsertDataToEstadoOperativo.sql" />
+    <None Include="Inserts\InsertTiposProcesosConcursales.sql" />
+    <None Include="Alters\Alter CambiosEstado.sql" />
+    <None Include="1.Estructura.SQL" />
+    <None Include="3.Incremental.sql" />
+    <Build Include="Creates\Create_Relacion_Estado_Proceso_Etapa_Procesal.sql" />
+    <Build Include="Procedimientos\SP_TAREA_SOLICITUD_INGRESAR.sql" />
+    <None Include="Creates\Create table UVT.sql" />
+    <None Include="Procedimientos\SP_ConsultarDeudoresExpedienteTitulo.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Integracion\SP_CONTEXTO_TRANSACCIONAL.sql" />
+    <None Include="Auditoria\SP_OBTENER_HOMOLOGACION.sql" />
+  </ItemGroup>
+</Project>

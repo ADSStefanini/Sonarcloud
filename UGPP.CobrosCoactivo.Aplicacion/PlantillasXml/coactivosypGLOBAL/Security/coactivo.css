@@ -1,0 +1,326 @@
+/********************************************
+   HTML ELEMENTS
+********************************************/ 
+
+/* Top Elements */
+* { margin: 0; padding: 0; outline: 0 }
+
+body {
+	/*background: #002503 url(images/bg.jpg) repeat-x;*/
+	background: #EBEEF2; /*002503*/
+	font: 12px Verdana, Tahoma, Arial, Geneva, sans-serif;
+	color: #666666; 
+	text-align: center;
+	margin: 0 0 50px 0;
+}
+
+/* links */
+a, a:visited {	
+	color: #5A93C9;
+	background: inherit;
+	text-decoration: none;	
+}
+a:hover {
+	color: #88ac0b;
+	background: inherit;
+	text-decoration: underline;	
+}
+
+/* headers */
+h1, h2, h3 {
+	font-family: 'Trebuchet MS', Tahoma, Sans-serif;
+	color: #444;
+}
+h1 {
+	font-size: 230%;	
+	font-weight: normal;
+	letter-spacing: -1px;
+}
+h2 {
+	font-size: 180%;
+	color: #88ac0b;
+}
+h3 {
+	font-size: 150%;	
+	font-weight: normal;	
+}
+
+h1, h2, h3, p {
+	padding: 10px;		
+	margin: 0;
+}
+
+/* images */
+img {
+	background: #fafafa;
+   border: 1px solid #dcdcdc;
+	padding: 5px;
+}
+img.float-right {
+  	margin: 5px 0px 10px 10px;  
+}
+img.float-left {
+  	margin: 5px 10px 10px 0px;
+}
+
+
+/********************************************
+   LAYOUT
+********************************************/ 
+#wrap {
+	position: relative;
+	/*background: #fff url(images/wrap-bg.jpg) repeat-y;*/
+	width: 900px;	
+	margin: 0px auto 0 auto;
+	text-align: left;
+}
+#content-wrap {
+	position: relative;
+	background: #fff url(images/content-bg.jpg) repeat-x;
+	clear: both;
+	float: left;	
+	width: 870px;	
+	padding: 0; 			
+	margin-left: 15px;	
+	display: inline;
+	border-top: 5px solid #fff;
+	border-bottom: 1px solid #e5e5e5;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+}
+#header {
+	position: relative;
+	background: #fff url(images/header-bg.jpg) repeat-x;
+	width: 870px;	
+	height: 100px;	
+	padding: 0;	
+	margin: 0px auto;
+}
+#header h1#logo-text {	
+	color:#000000;
+	text-align:center;
+	font-family:"Arial";
+	font-weight:bold;
+	font-size:14px;
+	/* change the values of top and left to adjust the position of the logo*/
+	/*top: 517px; left: 296px;	*/
+}
+#header p#slogan {
+	font: bold 14px Arial;
+	color: #000000;
+	text-align:center;
+	margin-top:-6px;
+}
+
+img.logorafa {
+	/*
+	position: absolute;
+	float: left;
+	margin: 20px 20px 0 10px;
+	*/
+	padding: 0;
+	border:0;
+	width:200px;
+	height:68px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	/*margin-top:10px;
+	margin-bottom:10px;	*/
+}
+
+/* header links */
+#header #header-links {
+	position: absolute;
+	top: 25px; right: 10px;	
+	color: #5b4a29;
+	font: normal 11px Georgia, "Times New Roman", Times, serif;
+	text-transform: uppercase;
+}
+#header #header-links a {	
+	color: #5b4a29;
+	text-decoration: none;	
+	padding: 0 2px;
+	font-weight: bold;
+}
+#header #header-links a:hover {
+	color: #111;		
+}
+
+/* titulo-reporte */
+#titulo-reporte {
+	/*clear: both;*/
+	background: #fff;
+	padding: 0;	
+	margin: 0px auto;
+	padding-top:30px;	
+	height:26px; 
+	width: 870px;
+	color:#000000;
+	text-align:center;
+	font-family:Arial;
+	font-weight:bold;
+	font-size:14px;
+}
+#ciudad-fecha {
+	/*clear: both;*/
+	background: #fff;
+	padding: 0;	
+	margin: 0px auto;
+	padding-top:4px;	
+	height:26px; 
+	width: 870px;
+	color:#000000;
+	font-family:Arial;
+	font-size:11px;
+}
+
+#texto-ciudad-fecha {
+	margin-left:58px;
+	margin-top:-5px;
+}
+
+#titulo-reporte img {
+	border: none;
+	margin: 0; padding: 0;
+} 
+
+#datos-cabecera {
+	background: #fff;
+	padding-top:6px;
+	margin: 0px auto;		
+	height:76px; 
+	width: 870px;
+	color:#000000;
+	text-align:left;
+	font-family:Arial;
+	font-weight:bold;
+}
+#datos-detalle-pack {
+	background: #fff;
+	padding:0px;
+	margin: 0px auto;		
+	height:12px; 
+	width: 870px;
+	color:#000000;
+	text-align:left;
+	font-family:Arial;
+	font-weight:bold;
+}
+.etiqueta-detalle {	
+	margin-top:0px;
+	margin:0;
+	width:88px;
+	height:12px;
+	float:left;		
+	font-size:11px;	
+	text-align:right;
+	/*border-bottom: solid 1px #000000; */
+}
+/*div de texto izquierdo*/
+.etiqueta-cabecera {
+	margin-left:60px;	
+	margin-top:0px;
+	width:220px;
+	height:20px;
+	float:left;		
+	font-size:12px;
+}
+
+.campo-cabecera {
+	margin-left:0px;
+	margin-top:0px;
+	width:520px;
+	height:20px;
+	float:left;
+	font-size:12px;
+}
+#contenido {
+	background: #fff;
+	padding-top:20px;
+	margin: 0px auto;		
+	height:740px; 
+	width: 870px;
+	color:#000000;
+	text-align:left;
+	font-family:Arial;
+}
+/*div de texto izquierdo*/
+#contenido-texto {
+	margin-left:60px;
+	margin-top:5px;
+	width:730px;
+	text-align:justify;
+	font-family:Arial;
+	font-size:14px;
+}
+
+#firma {
+	background: #fff;
+	padding-top:20px;
+	margin: 0px auto;		
+	height:140px; 
+	width: 870px;
+	color:#000000;
+	text-align:left;
+	font-family:Arial;
+}
+
+#firma-texto {
+	/*background: url(images/firmanadinhernandez.jpg);*/
+	margin-left:0px;
+	margin-top:12px;
+	width:220px;
+	text-align:left;
+	font-family:Arial;
+	font-size:15px;
+	float:left;
+	position:absolute;	
+	z-index: 1;
+	left:80px;
+}
+
+#cuadro-notificacion {
+	margin-left:400px;
+	margin-top:12px;
+	width:220px;
+	text-align:left;
+	font-family:Arial;
+	font-size:15px;
+	float:left;
+	position:absolute;	
+	z-index: 1;
+	left:80px;
+}
+
+#firma-mecanica {
+	margin-left:-60px;
+	margin-top:65px;
+	width:220px;
+	height:44px;
+	text-align:left;
+	font-family:Arial;
+	font-size:9px;
+	float:left;
+	position:absolute;	
+	left:290px;
+	padding:0;
+}
+
+img.logofirma {
+	position: absolute;
+	float: left;
+	margin: 0px 20px 0 10px; /*top right bottom left*/	
+	padding: 0;
+	border:0;
+	width:174px;	
+	height:123px;
+	left:64px;
+	z-index: 0;
+}
+
+.dospuntos{
+	width:6px;
+	float:left;	
+}
+	

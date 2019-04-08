@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="areaorigen" xml:space="preserve">
+    <value>Area origen --</value>
+  </data>
+  <data name="ciudad" xml:space="preserve">
+    <value>Ciudad --</value>
+  </data>
+  <data name="codguid" xml:space="preserve">
+    <value>Falta Codigo GUID de Documentic --</value>
+  </data>
+  <data name="codTipoDocumento" xml:space="preserve">
+    <value>Falta Tipo de Documento --</value>
+  </data>
+  <data name="departamento" xml:space="preserve">
+    <value>Departamento -- </value>
+  </data>
+  <data name="desrutaDoc" xml:space="preserve">
+    <value>Falta la ruta del Documento --</value>
+  </data>
+  <data name="deudor" xml:space="preserve">
+    <value>Falta diligenciar datos de deudor --</value>
+  </data>
+  <data name="direccioncompleta" xml:space="preserve">
+    <value>Dirección completa --</value>
+  </data>
+  <data name="direcciones" xml:space="preserve">
+    <value>Falta diligenciar datos de direcciones--</value>
+  </data>
+  <data name="documentos" xml:space="preserve">
+    <value>Falta diligenciar datos de documentos--</value>
+  </data>
+  <data name="errorGeneral" xml:space="preserve">
+    <value>Señor Usuario: Falta diligenciar los siguientes campos:</value>
+  </data>
+  <data name="faltadocumento" xml:space="preserve">
+    <value>Falta documento --</value>
+  </data>
+  <data name="fchejecutoria" xml:space="preserve">
+    <value>Fecha de Ejecutoria --</value>
+  </data>
+  <data name="fchejecutoriasuperior" xml:space="preserve">
+    <value>Fecha de Ejecutoria no puede ser superior a la fecha actual --</value>
+  </data>
+  <data name="fchenotificacion" xml:space="preserve">
+    <value>Falta diligenciar la fecha--</value>
+  </data>
+  <data name="fchexigibilidad" xml:space="preserve">
+    <value>Fecha de Exigibilidad --</value>
+  </data>
+  <data name="fchexigibilidadsuperior" xml:space="preserve">
+    <value>Fecha de Exigibilidad no puede ser superior a la fecha actual --</value>
+  </data>
+  <data name="fchnotificacionsuperior" xml:space="preserve">
+    <value>Fecha de notificación no puede ser superior a la fecha actual --</value>
+  </data>
+  <data name="fchnotificaciontituloejec" xml:space="preserve">
+    <value>Fecha de notificación del título ejecutivo --</value>
+  </data>
+  <data name="fchtituloejecutivo" xml:space="preserve">
+    <value>Fecha del título ejecutivo --</value>
+  </data>
+  <data name="fchtituloejecutivosuperior" xml:space="preserve">
+    <value>Fecha del título ejecutivo no puede ser superior a la fecha actual --</value>
+  </data>
+  <data name="formanotificacion" xml:space="preserve">
+    <value>Forma de Notificación --</value>
+  </data>
+  <data name="fuendireccion" xml:space="preserve">
+    <value>Fuente de la dirección --</value>
+  </data>
+  <data name="nombredeudor" xml:space="preserve">
+    <value>Nombre del deudor --</value>
+  </data>
+  <data name="numeroexporigen" xml:space="preserve">
+    <value>Número de expediente de origen --</value>
+  </data>
+  <data name="numeroidentificacion" xml:space="preserve">
+    <value>Número de identificación -- </value>
+  </data>
+  <data name="numerotituloejecutivo" xml:space="preserve">
+    <value>Número de título ejecutivo --</value>
+  </data>
+  <data name="otrasfuentesdireccion" xml:space="preserve">
+    <value>Otras fuente de la dirección --</value>
+  </data>
+  <data name="tipocartera" xml:space="preserve">
+    <value>Tipo de Cartera --</value>
+  </data>
+  <data name="tipoidentificacion" xml:space="preserve">
+    <value>Tipo  de identificación --</value>
+  </data>
+  <data name="tipoobligacion" xml:space="preserve">
+    <value>Tipo de Obligación --</value>
+  </data>
+  <data name="tipopersona" xml:space="preserve">
+    <value>Tipo Persona -- </value>
+  </data>
+  <data name="tituloejecutivo" xml:space="preserve">
+    <value>Falta diligenciar datos de título ejecutivo--</value>
+  </data>
+  <data name="totalobligaciontitulo" xml:space="preserve">
+    <value>Total Obligación del título --</value>
+  </data>
+  <data name="valortituloejecutivo" xml:space="preserve">
+    <value>Valor del título ejecutivo --</value>
+  </data>
+  <data name="valoresObligatorios" xml:space="preserve">
+    <value>Debe diligenciar los valores obligatorios--</value>
+  </data>
+  <data name="expedienteOrigen" xml:space="preserve">
+    <value>Numero Expediente Origen</value>
+  </data>
+</root>

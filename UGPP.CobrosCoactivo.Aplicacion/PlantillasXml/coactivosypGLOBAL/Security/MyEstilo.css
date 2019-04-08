@@ -1,0 +1,94 @@
+body 
+{
+ background-color: #003366;
+ margin: 0;
+}
+
+.Cuadro_texto
+{
+   	float:left;/* Importante, para la alineacin */
+	width:143px; height:22px;/* Medidas del Input */
+	color:#0B0B61;font-size:10px;
+}
+
+.Cuadro_textoUser
+{
+    text-align:left;
+    float:left;/* Importante, para la alineacin */
+	width:143px; height:22px;/* Medidas del Input */
+	color:#0B0B61;font-size:10px;
+    padding:0px 0px 0px 22px;
+    background:#FFF url(Imagenes/user.png) no-repeat left;
+}
+
+.Cuadro_textoPWS
+{
+    text-align:left;
+    float:left;/* Importante, para la alineacin */
+	width:143px; height:22px;/* Medidas del Input */
+	color:#0B0B61;font-size:10px;
+    padding:0px 0px 0px 22px;
+    background:#FFF url(Imagenes/pass.png) no-repeat left;
+}
+
+.Botones
+{
+  text-align:center;
+  width:99px;
+  height:22px;
+  border-bottom: 1px solid #AAAAAA;border-right:1px solid #AAAAAA; border-top:0px; border-left:0px;
+  font-weight:bold;
+  background-color:#1295f1;
+  padding:1px;
+  color:#FFF;
+  cursor:hand; cursor:pointer;
+}
+
+.black_overlay {
+  position: absolute;
+  top: 0%; left: 0%;
+  
+  width: 100%; height: 100%;
+  background-color: black;
+  z-index:1001;
+  -moz-opacity: 0.8;
+  opacity:.80;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80); 
+}
+
+.white_content {
+  position: absolute;
+  top: 50%; left: 50%;
+		
+  margin-left:-200px;
+  margin-top:-150px;
+      
+  width: 50%;
+  padding: 10px;
+  border: 16px solid #003366;
+  background-color: white;
+  z-index:1002;
+  overflow: auto;
+  /* Importante, para la alineacin 
+  -webkit-box-shadow:rgba(0,0,0,.4) 0px 0px 10px;
+  -moz-box-shadow:rgba(0,0,0,.4) 0px 0px 10px;
+   box-shadow:rgba(0,0,0,.4) 0px 0px 10px; */
+  -moz-box-shadow: 10px 10px 20px #000; /* Firefox */
+  -webkit-box-shadow: 10px 10px 20px #000; /* Safari y Chrome */
+   box-shadow: 10px 10px 20px #000;
+   /* borde interior
+   -webkit-box-shadow: inset 0px -10px 20px 0px rgba(0, 0, 0, 0.5);
+   -moz-box-shadow:inset 0px -10px 20px 0px rgba(0, 0, 0, 0.5);
+   */
+}
+#white_content, #bottom{
+	margin:0 auto;
+	width:640px;
+}
+#bottom{
+	width:auto;
+	height:auto !important;
+	margin-bottom:10px;
+	display:block !important;
+}

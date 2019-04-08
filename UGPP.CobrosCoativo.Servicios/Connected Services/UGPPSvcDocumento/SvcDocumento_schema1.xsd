@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.ugpp.gov.co/contracts/1.0" targetNamespace="http://www.ugpp.gov.co/contracts/1.0" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="EstadoEjecucion" nillable="true" type="tns:estadoEjecucion" />
+  <xs:element name="InformacionConsultaDocumentos" nillable="true" type="tns:informacionConsultaDocumentos" />
+  <xs:element name="InformacionConsultaDocumentosPorIdCarpeta" nillable="true" type="tns:informacionConsultaDocumentosPorIdCarpeta" />
+  <xs:element name="InformacionDevolucion" nillable="true" type="tns:informacionDevolucion" />
+  <xs:element name="InformacionDocumentoMover" nillable="true" type="tns:informacionDocumentoMover" />
+  <xs:element name="InformacionDocumentosRadicadosReferenciar" nillable="true" type="tns:informacionDocumentosRadicadosReferenciar" />
+  <xs:element name="InformacionEntregaCorrespondencia" nillable="true" type="tns:informacionEntregaCorrespondencia" />
+  <xs:element name="InformacionEnvioDocumento" nillable="true" type="tns:informacionEnvioDocumento" />
+  <xs:element name="InformacionGeneracionRadicacion" nillable="true" type="tns:informacionGeneracionRadicacion" />
+  <xs:element name="InformacionIdentificacionDocumento" nillable="true" type="tns:informacionIdentificacionDocumento" />
+  <xs:element name="InformacionMoverDocumento" nillable="true" type="tns:informacionMoverDocumento" />
+  <xs:element name="InformacionRegistrarDocumento" nillable="true" type="tns:informacionRegistrarDocumento" />
+  <xs:element name="ResultadoDocumento" nillable="true" type="tns:resultadoDocumento" />
+  <xs:element name="ResultadoDocumentos" nillable="true" type="tns:resultadoDocumentos" />
+  <xs:element name="ResultadoGenerarNumeroRadicado" nillable="true" type="tns:resultadoGenerarNumeroRadicado" />
+  <xs:element name="ResultadoIdentificadorDocumentos" nillable="true" type="tns:resultadoIdentificadorDocumentos" />
+  <xs:element name="identificacionDocumento" nillable="true" type="tns:documentosConsultar" />
+  <xs:complexType name="informacionRegistrarDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credenciales" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="documentos" nillable="true" type="tns:documentoGeneral" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="credencialesAutenticacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="claveUsuarioSistema" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreUsuarioNegocio" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreUsuarioSistema" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="documentoGeneral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoEntidadOriginadora" type="xs:string" />
+      <xs:element minOccurs="0" name="contenido" type="xs:string" />
+      <xs:element minOccurs="0" name="datosDocumento" type="tns:informacionDocumento" />
+      <xs:element minOccurs="0" name="descripcionExpediente" type="xs:string" />
+      <xs:element minOccurs="0" name="direccionOficina" type="xs:string" />
+      <xs:element minOccurs="0" name="extension" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="idExpediente" type="xs:string" />
+      <xs:element minOccurs="0" name="medioRecepcion" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreEntidadOriginadora" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreTipoDocumental" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agrupador1" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador2" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador3" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador4" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador5" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador6" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador7" type="xs:string" />
+      <xs:element minOccurs="0" name="autorOriginador" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoSubSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="documentTitle" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaRadicacionCorrespondencia" type="xs:string" />
+      <xs:element minOccurs="0" name="legible" type="xs:string" />
+      <xs:element minOccurs="0" name="naturalezaDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreSubSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroPaginasDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroRadicadoCorrespondencia" type="xs:string" />
+      <xs:element minOccurs="0" name="observacionLegibilidad" type="xs:string" />
+      <xs:element minOccurs="0" name="origenDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumental" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultadoDocumentos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="documentos" nillable="true" type="tns:documentoGeneral" />
+      <xs:element minOccurs="0" name="estadoEjecucion" type="tns:estadoEjecucion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estadoEjecucion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionDocumentoMover">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credencialesAutenticacion" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" name="datosMover" type="tns:datosMover" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datosMover">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="idExpedienteNuevo" type="xs:string" />
+      <xs:element minOccurs="0" name="idExpedienteOrigen" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionDevolucion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credenciales" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" name="datosDevolucion" type="tns:datosDevolucion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datosDevolucion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="documentos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="motivo" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroRadicado" type="xs:string" />
+      <xs:element minOccurs="0" name="observaciones" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionIdentificacionDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credenciales" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" name="idDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="idSession" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultadoDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="documento" type="tns:documentoGeneral" />
+      <xs:element minOccurs="0" name="estadoEjecucion" type="tns:estadoEjecucion" />
+      <xs:element minOccurs="0" name="idZip" type="xs:string" />
+      <xs:element minOccurs="0" name="ruta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionEntregaCorrespondencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credenciales" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="datosEntregaCorrespondencia" nillable="true" type="tns:datosEntregaCorrespondencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datosEntregaCorrespondencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="causalDevolucion" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaEntregaDevolucion" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaEntregaRemitente" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaEnvio" type="xs:string" />
+      <xs:element minOccurs="0" name="link" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroGuia" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroRadicado" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionConsultaDocumentos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credenciales" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" name="documento" type="tns:informacionDocumentoConsultar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionDocumentoConsultar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agrupador1" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador2" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador3" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador4" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador5" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador6" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador7" type="xs:string" />
+      <xs:element minOccurs="0" name="autorOriginador" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoEntidadOriginadora" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoSubSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="documentTitle" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaRadicacionCorrespondenciaFinal" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaRadicacionCorrespondenciaInicial" type="xs:string" />
+      <xs:element minOccurs="0" name="idExpediente" type="xs:string" />
+      <xs:element minOccurs="0" name="naturalezaDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreSubSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroRadicadoCorrespondencia" type="xs:string" />
+      <xs:element minOccurs="0" name="observacionLegibilidad" type="xs:string" />
+      <xs:element minOccurs="0" name="origenDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumental" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultadoIdentificadorDocumentos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="documento" nillable="true" type="tns:documentoGeneral" />
+      <xs:element minOccurs="0" name="estadoEjecucion" type="tns:estadoEjecucion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionConsultaDocumentosPorIdCarpeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credenciales" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" name="documento" type="tns:informacionDocumentoConsultar" />
+      <xs:element minOccurs="0" name="idCarpeta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionDocumentosRadicadosReferenciar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credencialesAutenticacion" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="infoReferenciaProcesar" nillable="true" type="tns:infoReferencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="infoReferencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numeroExpediente" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroRadicado" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionMoverDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credenciales" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" name="datosDocumentoMov" type="tns:datosMoverDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datosMoverDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoEntidadOriginadoraInicial" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoSubSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="idDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="infoMetadata" type="tns:metadataActulizarDocumento" />
+      <xs:element name="mover" type="xs:boolean" />
+      <xs:element minOccurs="0" name="numeroIdentificacionSolicitanteInicial" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroRadicado" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoIdentificacionSolicitanteInicial" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="metadataActulizarDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agrupador1" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador2" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador3" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador4" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador5" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador6" type="xs:string" />
+      <xs:element minOccurs="0" name="agrupador7" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoEntidadOriginadora" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocumental" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionEnvioDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credenciales" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" name="datosDestinatario" type="tns:datosDestinatario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datosDestinatario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="celular1" type="xs:string" />
+      <xs:element minOccurs="0" name="ciudad" type="xs:string" />
+      <xs:element minOccurs="0" name="departamento" type="xs:string" />
+      <xs:element minOccurs="0" name="dependencia" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcionAnexos" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="documentos" nillable="true" type="tns:documentoRadicado" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="ind_requiere_respuesta_notificacion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="medioEnvio" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreCliente" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreEntidad" type="xs:string" />
+      <xs:element name="numeroFolios" type="xs:int" />
+      <xs:element minOccurs="0" name="numeroIdentificacion" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroRadicado" type="xs:string" />
+      <xs:element minOccurs="0" name="pais" type="xs:string" />
+      <xs:element minOccurs="0" name="primerApellido" type="xs:string" />
+      <xs:element minOccurs="0" name="puntoImpresion" type="xs:string" />
+      <xs:element minOccurs="0" name="sede" type="xs:string" />
+      <xs:element minOccurs="0" name="segundoApellido" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono1" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono2" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoCliente" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoEnvio" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoFirma" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoIdentificacion" type="xs:string" />
+      <xs:element minOccurs="0" name="usuarioEnvia" type="xs:string" />
+      <xs:element minOccurs="0" name="usuarioFirmante" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="documentoRadicado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="codigoSubSerie" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionGeneracionRadicacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credenciales" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" name="dependencia" type="xs:string" />
+      <xs:element minOccurs="0" name="medioRecepcion" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreProceso" type="xs:string" />
+      <xs:element minOccurs="0" name="puntoRecepcion" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoCorrespondencia" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resultadoGenerarNumeroRadicado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estadoEjecucion" type="tns:estadoEjecucion" />
+      <xs:element minOccurs="0" name="numeroRadicado" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="documentosConsultar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credenciales" type="tns:credencialesAutenticacion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="documentos" nillable="true" type="tns:informacionDocumentos" />
+      <xs:element minOccurs="0" name="nombreArchivo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="informacionDocumentos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombreDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="idDocumento" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

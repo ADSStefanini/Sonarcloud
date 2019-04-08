@@ -1,0 +1,36 @@
+/* SQLtoASPX Version 2.0 - Version Control */
+
+body
+{
+font:100% Tahoma, Verdana, sans-serif;
+}
+
+table
+{
+font-size:0.75em;
+}
+
+td.BoundFieldItemStyleHidden
+{
+    display: none;
+}
+
+th.BoundFieldHeaderStyleHidden
+{
+    display: none;
+}
+
+input.PCGButton
+{
+  cursor:pointer;
+}
+
+input.GridEditButton
+{
+   cursor:pointer;
+}
+
+.hidden
+{
+   display:none;
+}

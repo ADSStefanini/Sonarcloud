@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+		
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>BeautyTips Demo Page</title>
+	<meta name="author" content="Jeff Robbins">
+	
+	<!-- TOOLTIP  -->
+	<script src="../other_libs/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--[if IE]><script src="excanvas.js" type="text/javascript" charset="utf-8"></script><![endif]-->
+	<script src="jquery.bt.min.js" type="text/javascript" charset="utf-8"></script>
+	<link href="tooltip.css" rel="stylesheet" type="text/css">
+ 
+  
+</head>
+	<body>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+<br /><br /><br /><br />
+
+
+	   
+      <div class="ie-fix"><img src="demofiles/gmap-pin.png" alt="gmap-pin" title="" width="19" height="32" id="example17" class="alt-target" /></div>
+     
+                
+      <div id="example-17-content" class="gmap">
+        <div class="gmap-title">Address:</div>
+        <div class="gmap-addr">
+          <div>123 Main St.</div>
+          <div>Seekonk, MA 02771</div>
+        </div>
+        
+        <div class="gmap-bottom">
+          <div>Get directions: <a href="javascript:void(null);">To here</a> - <a href="javascript:void(null);">From here</a></div>
+          <div><a href="javascript:void(null);">Search nearby</a> - <a href="javascript:void(null);">Save to My Maps</a></div>
+          <div><a href="javascript:void(null);">Edit</a></div>
+        </div>
+        <a href="javascript:void($('#example17').btOff());"><img src="demofiles/close.gif" alt="close" width="12" height="12" class="gmap-close" /></a>
+      </div>
+
+        
+          <script type="text/javascript">$('#example-17-content').hide();
+$('#example17').bt({
+  positions: 'top',
+  contentSelector: "$('#example-17-content')", /*hidden div*/
+  trigger: 'click',
+  width: 220,
+  centerPointX: .9,
+  spikeLength: 65,
+  spikeGirth: 40,
+  padding: 15,
+  cornerRadius: 25,
+  fill: '#FFF',
+  strokeStyle: '#ABABAB',
+  strokeWidth: 1
+});</script>
+       
+      
+	
+	 </body> 
+</html>
+
+

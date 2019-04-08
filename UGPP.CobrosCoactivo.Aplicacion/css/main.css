@@ -1,0 +1,469 @@
+﻿* {
+    font-size: 12px;
+    font-family: Arial;
+}
+body {background-color: #01557C!important;}
+body.internal {
+    background-color: transparent !important;
+    border: 1px solid #a6c9e2;
+    background: #fcfdfd url(../Security/Maestros/css/redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png) 50% bottom repeat-x;
+    color: #222222;
+    margin: 0 auto !important;
+    max-width: 99%;
+    padding: 10px;
+}
+td{padding: 2px;}
+
+#encabezado {
+    background: url(images/resultados_busca.jpg);
+    height: 46px;
+    width: 100%;
+    border: solid 1px #a6c9e2;
+    padding-bottom: 5px;
+}
+
+#tituloencabezado {
+    color: White;
+    margin-top: 16px;
+    margin-left: 2px;
+    font: 12px Verdana;
+    font-weight: bold;
+}
+
+#infoexpediente {
+    /*background-color: #;*/
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.cboSelect {width: 150px;}
+.cboSelect option {width: auto;}
+th {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.BoundFieldItemStyleHidden, .BoundFieldHeaderStyleHidden {
+    display: none;
+}
+
+.add_edit {
+    width: 20px;
+    height: 16px;
+    float: none;
+}
+.numeros {text-align: right;}
+.numerosSL {text-align: right;}/* SL = Solo Lectura */
+.ui-tabs .ui-state-disabled {
+    display: none; /* disabled tabs don't show up */
+}
+
+.invalid {
+    display: block !important;
+    visibility: visible !important;
+}
+.large-label {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.float-left {
+    float: left;
+    margin-right: 20px;
+}
+.hide{display:none;}
+.force-hide {
+    visibility: hidden;
+    display: none;
+}
+/* Upload Docs*/
+.upload-doc {
+    background: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+.upload-doc .form-group{
+    margin: 0;
+}
+/* Upload Docs / End*/
+/*Tabs*/
+.head-page-link {
+    color: White;
+    width: auto;
+    height: 20px;
+    float: right;
+    text-align: right;
+    padding-right: 8px;
+}
+
+/*Bandeja*/
+#encabezado.inbox {
+    background-image: url(../Security/Maestros/images/resultados_busca.jpg);
+}
+.pnlGridContent{
+    padding: 10px;
+    margin: 0 auto!important;
+    width: 100%;
+}
+.pnlGridContent > div, .pnlGridContent table {
+    width: 100%;
+}
+.search-list-form .ui-widget-header {
+    min-width: 250px;
+    display: inline-block;
+    padding: 2px 3px;
+}
+
+.search-list-form .calendar {
+    min-width: auto!important;
+    width: 90px;
+}
+.search-list-form-large {
+    margin-top: 10px;
+}
+.search-list-form-large .ui-widget-header {
+    padding:5px;
+}
+.search-list-form-large .ui-widget-header, .search-list-form-large .ui-widget-header + input[type=text], .search-list-form-large .ui-widget-header + select {
+    min-width: 200px;
+}
+.search-list-form-large > div {
+    padding: 0 10px;
+    width: 100%;
+}
+.PCG-Content.list {
+    max-width: 1200px;
+    min-width: 60%;
+}
+
+.xsmall-column{
+    text-align: center;
+    width: 40px;
+}
+.small-column {
+    text-align: center;
+    width: 120px;
+}
+
+.text-indent-1 {
+    text-indent: 1em
+}
+.text-indent-2 {
+    text-indent: 2em
+}
+.text-indent-3 {
+    text-indent: 3em
+}
+.text-indent-4 {
+    text-indent: 4em
+}
+.text-indent-5 {
+    text-indent: 5em
+}
+
+.CajaDialogo.popup {
+    background: #ffffff;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #5c9ccc;
+    font: .7em Tahoma, Arial, sans-serif;
+    color: #454545;
+    padding: 10px;
+    min-width: 400px;
+    min-height: 150px;
+}
+.CajaDialogo.popup > div{
+    width: 100%;
+}
+
+.FondoAplicacion {
+    background-color: black;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    z-index: 1001;
+}
+
+.file-inline-upload {
+    display: inline-block;
+    width: 100%;
+}
+
+.file-inline-upload .upload-doc {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-dialog {
+    max-width: 650px!important;
+}
+.modal-body{padding: 0!important;}
+.modal-backdrop.fade.show{
+    z-index:1;
+}
+.modal-backdrop.fade {
+    z-index: -1;
+}
+
+tr.alert-suspension td {
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
+}
+
+.redalert-estadooperativo, .yellowalert-estadooperativo {
+    color: #fff !important;
+}
+.yellowalert-estadooperativo {
+    background-color: #ffba00 !important;
+}
+.redalert-estadooperativo {
+    background-color: #e0455e !important;
+}
+
+#pnlGridBandejaAprobacion {
+    padding: 0;
+}
+.bandeja-solicitudes {
+    width: 100%;
+}
+.lblRecorsFond {
+    width: 100%;
+    display: block;
+    background: #fff;
+}
+.btnAprobarInferior {
+    position: absolute;
+    margin: 1px;
+    right: 10px;
+    top: 0;
+    z-index: 9;
+    width: 120px !important;
+}
+.btns-respuesta-slicitud > input {
+    width: 100px!important;
+}
+.modules-content {
+    margin: 15px auto !important;
+}
+
+.format-number {
+    text-align: right;
+}
+
+.auto-style2 {
+    width: 761px;
+}
+
+#TblListViewDoc > tbody > tr > td:first-child {
+    max-width: 600px;
+}
+.documentoTitulo1 {
+    width: 57px;
+}
+
+.documentoTitulo2 {
+    width: 64px;
+}
+
+.documentoTitulo3 {
+    width: 130px;
+}
+
+.documentoTitulo4 {
+    width: 129px;
+}
+
+.auto-style3 {
+    height: 25px;
+}
+
+.auto-style4 {
+    border: 1px solid #4297d7;
+    background: #5c9ccc url('css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png') repeat-x 50% 50%;
+    color: #ffffff;
+    font-weight: bold;
+    height: 25px;
+}
+
+#PnlMalla {
+    max-width: 1100px;
+    overflow: scroll;
+}
+#lblMalla {
+    margin: 10px 0;
+    display: block;
+    width: auto;
+    font-weight: bold;
+}
+.formatoColombia {
+    text-align: right;
+}
+
+.title-number-content {
+    background: #fff;
+    margin: 5px;
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+iframe{
+    max-width: 100%;
+}
+
+#grdDocAutomatico{max-width: 800px;}
+#PaginadorDocAutomatico_pnlPaginador {
+    border: 0;
+    margin: 10px 0;
+    padding: 6px 0;
+    width: 100%;
+}
+#PaginadorDocAutomatico_pnlPaginador > div{padding: 0;}
+.separadorDocumentosServicio {
+    background: #5c9ccc;
+    width: 100%;
+}
+
+/* Absolute Center Spinner */
+.loading {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: visible;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+    /* Transparent Overlay */
+    .loading:before {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.3);
+    }
+
+    /* :not(:required) hides these rules from IE9 and below */
+    .loading:not(:required) {
+        /* hide "loading..." text */
+        font: 0/0 a;
+        color: transparent;
+        text-shadow: none;
+        background-color: transparent;
+        border: 0;
+    }
+
+        .loading:not(:required):after {
+            content: '';
+            display: block;
+            font-size: 10px;
+            width: 1em;
+            height: 1em;
+            margin-top: -0.5em;
+            -webkit-animation: spinner 1500ms infinite linear;
+            -moz-animation: spinner 1500ms infinite linear;
+            -ms-animation: spinner 1500ms infinite linear;
+            -o-animation: spinner 1500ms infinite linear;
+            animation: spinner 1500ms infinite linear;
+            border-radius: 0.5em;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+            box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+        }
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#ctl00_A3 span, #A3 span {
+    color: #ffffff;
+}
+.form-content {
+    background-color: #FFFFFF !important;
+}

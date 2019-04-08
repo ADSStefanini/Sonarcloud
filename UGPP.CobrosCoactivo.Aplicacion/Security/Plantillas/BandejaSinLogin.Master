@@ -1,0 +1,30 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="BandejaSinLogin.Master.vb" Inherits="coactivosyp.BandejaSinLogin" %>
+
+<%@ Register TagPrefix="HeadControl" TagName="HeadScripts" Src="~/Security/Controles/commons-head.ascx" %>
+<%@ Register TagPrefix="FooterControl" TagName="FootScripts" Src="~/Security/Controles/commons-footer.ascx" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title> 
+
+    <HeadControl:HeadScripts id="headScripts" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <link href="<%=ResolveClientUrl("~/css/bandejas.css") %>" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="ui-widget-content ui-widget">
+                <asp:ContentPlaceHolder ID="SearchForm" runat="server" />
+            </div>
+            <asp:Label ID="lblRecordsFound" runat="server"></asp:Label>
+            <asp:ContentPlaceHolder ID="InboxTable" runat="server" />
+        </div>
+    </form>
+
+    <FooterControl:FootScripts id="footScripts1" runat="server" />
+    <%--<script src="<%=ResolveClientUrl("~/js/bandeja.js") %>" type="text/javascript"></script>--%>
+
+</body>
+</html>
